@@ -119,56 +119,56 @@ def has_open_of_type(items, ctype: str) -> bool:
     return any(it.get("state") == "Open" and it.get("type") == ctype for it in items)
 
 def get_work_items(driver, timeout: int = 10):
-	"""
-	Return list of {'state': 'Open'|'Closed'|'Complete'|..., 'type': '<text>'}
-	from the visible Work Items tab.
-	Counts only real scan-record cards and reads headers for type/state.
-	"""
-	# Ensure the Work Items panel is visible
-	panel = WebDriverWait(driver, timeout).until(
-		EC.presence_of_element_located(
-			(By.CSS_SELECTOR, "div.bp6-tab-panel[id*='workItems'][aria-hidden='false']")
-		)
-	)
+    """
+    Return list of {'state': 'Open'|'Closed'|'Complete'|..., 'type': '<text>'}
+    from the visible Work Items tab.
+    Counts only real scan-record cards and reads headers for type/state.
+    """
+    # Ensure the Work Items panel is visible
+    panel = WebDriverWait(driver, timeout).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "div.bp6-tab-panel[id*='workItems'][aria-hidden='false']")
+        )
+    )
 
-	# STRICT tile selection: only real scan-record cards
-	tiles = panel.find_elements(By.CSS_SELECTOR, "div[class*='scan-record__'][class*='bp6-card']")
-	print(f"[WORKITEMS] collected {len(tiles)} tile(s) [strict scan-record cards]")
+    # STRICT tile selection: only real scan-record cards
+    tiles = panel.find_elements(By.CSS_SELECTOR, "div[class*='scan-record__'][class*='bp6-card']")
+    print(f"[WORKITEMS] collected {len(tiles)} tile(s) [strict scan-record cards]")
 
-	items = []
-	for i, t in enumerate(tiles, 1):
-		state, wtype = "", ""
+    items = []
+    for i, t in enumerate(tiles, 1):
+        state, wtype = "", ""
 
-		# TYPE: left header (e.g., 'PM')
-		try:
-			wtype = t.find_element(
-				By.CSS_SELECTOR, "div[class*='scan-record-header-title__']"
-			).text.strip()
-		except Exception:
-			pass
+        # TYPE: left header (e.g., 'PM')
+        try:
+            wtype = t.find_element(
+                By.CSS_SELECTOR, "div[class*='scan-record-header-title__']"
+            ).text.strip()
+        except Exception:
+            pass
 
-		# STATE: right header (e.g., 'Open', 'Complete')
-		try:
-			state = t.find_element(
-				By.CSS_SELECTOR, "div[class*='scan-record-header-title-right__']"
-			).text.strip()
-		except Exception:
-			pass
+        # STATE: right header (e.g., 'Open', 'Complete')
+        try:
+            state = t.find_element(
+                By.CSS_SELECTOR, "div[class*='scan-record-header-title-right__']"
+            ).text.strip()
+        except Exception:
+            pass
 
-		if state or wtype:
-			items.append({"state": state, "type": wtype})
-			print(f"[WORKITEMS][DBG] {i}: type='{wtype}' state='{state}'")
+        if state or wtype:
+            items.append({"state": state, "type": wtype})
+            print(f"[WORKITEMS][DBG] {i}: type='{wtype}' state='{state}'")
 
-	# Summary & debug after the loop
-	print(f"[WORKITEMS] collected {len(items)} item(s)")
-	if not items:
-		try:
-			html = panel.get_attribute("innerHTML")
-			print("[WORKITEMS][DEBUG] panel HTML length:", len(html))
-		except Exception:
-			pass
+    # Summary & debug after the loop
+    print(f"[WORKITEMS] collected {len(items)} item(s)")
+    if not items:
+        try:
+            html = panel.get_attribute("innerHTML")
+            print("[WORKITEMS][DEBUG] panel HTML length:", len(html))
+        except Exception:
+            pass
 
-	return items
+    return items
 
 
 
