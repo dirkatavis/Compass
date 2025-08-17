@@ -103,12 +103,18 @@ USERNAME = cfg.get("username")
 PASSWORD = cfg.get("password")
 LOGIN_ID = cfg.get("login_id")
 
+from pages.drivability_page import DrivabilityPage
 
 @pytest.mark.smoke
 def test_mva_complaints_tab():
+    print("Starting test_mva_complaints_tab...")
+    # Initialize the driver
     driver = driver_manager.get_or_create_driver()
+    print(f"Driver initialized: {driver}")
     try:
+        print("Navigating to the login page...")
         login_page = LoginPage(driver)
+        print("Login page initialized.")
         # Ensures login + clicks "Compass Mobile" + waits for WWID UI
         login_page.ensure_ready(USERNAME, PASSWORD, LOGIN_ID)
         login_page.enter_wwid(LOGIN_ID)
