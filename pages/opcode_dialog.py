@@ -43,13 +43,36 @@ class OpcodeDialog(BasePage):
         """Later: wait until dialog S.DIALOG is visible."""
         pass
 
-    def select_opcode(self, name: str) -> None:
-        """
-        Stub: locate and click an opcode by visible text.
-        Example: select_opcode("PM Gas")
-        """
-        pass
+    def select_opcode(self, name: str) -> bool:
+	# Try clicking an opcode item whose visible text (or child label) matches `name`.
+        items = self.driver.find_elements(*self.S.OPCODE_ITEM)
+        target = name.strip()
+        for el in items:
+            try:
+                if el.text.strip() == target:
+                    el.click()
+                    return True
+                label = el.find_element(*self.S.OPCODE_LABEL)
+                if label.text.strip() == target:
+                    label.click()
+                    return True
+            except Exception:
+                continue
+        # Fallback: click any matching label in the dialog.
+        for lb in self.driver.find_elements(*self.S.OPCODE_LABEL):
+            if lb.text.strip() == target:
+                lb.click()
+                return True
+        return False
 
-    def click_create(self) -> None:
-        """Stub: click the 'Create Work Item' button."""
-        pass
+
+    def click_create(self) -> bool:
+        try:
+            self.driver.find_element(*self.S.CREATE_BTN).click()
+            return True
+        except Exception:
+            return False
+
+    def click_create_button(self) -> bool:
+        return self.click_create()
+

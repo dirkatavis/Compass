@@ -13,12 +13,19 @@ except Exception:
 class DrivabilityPage(BasePage):
     class S:
         DIALOG: Tuple[str,str] = (By.CSS_SELECTOR, "div.bp6-dialog[data-testid='drivability-page'], div.fleet-operations-pwa__drivabilityPage")
-        YES_BTN: Tuple[str,str] = (By.CSS_SELECTOR, "button[data-testid='drivable-yes'], button.fleet-operations-pwa__drivableYes")
-        NO_BTN:  Tuple[str,str] = (By.CSS_SELECTOR, "button[data-testid='drivable-no'],  button.fleet-operations-pwa__drivableNo")
-        NEXT_BTN:Tuple[str,str] = (By.CSS_SELECTOR, "button[data-testid='drivability-next'], button.bp6-button.bp6-intent-primary")
+        # Use the container and the H1 text the page actually renders
+        YES_BTN = (By.XPATH, "//div[contains(@class,'drivable-options-container')]//button[.//h1[normalize-space()='Yes']]")
+        NO_BTN  = (By.XPATH, "//div[contains(@class,'drivable-options-container')]//button[.//h1[normalize-space()='No']]")
+        NEXT_BTN: Tuple[str, str] = (
+            By.XPATH,
+            "//h1[normalize-space()='Is vehicle drivable?']"
+            "/ancestor::div[contains(@class,'drivable-header-container')]"
+            "/following::button[.//span[normalize-space()='Next'] or normalize-space()='Next'][1]"
+        )
 
     def ensure_open(self) -> None:
-        self.find(*self.S.DIALOG)
+        self.find(By.XPATH, "//h1[normalize-space()='Is vehicle drivable?']")
+
 
     def select_drivable(self, drivable: bool) -> None:
         btn = self.S.YES_BTN if drivable else self.S.NO_BTN

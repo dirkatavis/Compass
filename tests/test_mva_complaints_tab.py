@@ -1,7 +1,8 @@
-import json
+﻿import json
 import time
 import pytest
 from selenium.webdriver.common.by import By
+from pages.opcode_dialog import OpcodeDialog
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -147,7 +148,6 @@ def test_mva_complaints_tab():
                 continue
             else:
                 print(f"[WORKITEM] {mva} — found {len(items)} work items")
-                input("Press Enter to continue or Ctrl+C to abort...")
             #debug_list_work_items(driver)
 
             # 3) If an OPEN PM exists, skip creation
@@ -173,11 +173,93 @@ def test_mva_complaints_tab():
 
             # after Add Complaint → open Drivability
             from pages.drivability_page import DrivabilityPage
-
             drv = DrivabilityPage(driver)
+
+            from selenium.webdriver.common.by import By
+
+            # **DEBUG CODE
+            # INSERT BEFORE drv.ensure_open()
+            from selenium.common.exceptions import NoSuchElementException
+            try:
+                driver.find_element(By.XPATH, "//h1[normalize-space()='Is vehicle drivable?']")
+                print("[DEBUG] Drivability heading found at top level")
+            except NoSuchElementException:
+                iframes = driver.find_elements(By.TAG_NAME, "iframe")
+                print(f"[DEBUG] iframe count: {len(iframes)}")
+                found = False
+                for idx, fr in enumerate(iframes[:5]):  # keep it minimal
+                    driver.switch_to.frame(fr)
+                    try:
+                        from selenium.webdriver.common.by import By
+                        from selenium.common.exceptions import NoSuchElementException
+                        driver.find_element(By.XPATH, "//h1[normalize-space()='Is vehicle drivable?']")
+                        print(f"[DEBUG] Found Drivability heading in iframe[{idx}]")
+                        found = True
+                        break
+                    except NoSuchElementException:
+                        pass
+                    finally:
+                        driver.switch_to.default_content()
+                if not found:
+                    print("[DEBUG] Drivability heading not found in any tested iframe")
+
+            # *********************END DEBUG CODE
+
+            #input("Press Enter to continue or Ctrl+C to abort...")
+
+
+            from selenium.webdriver.common.by import By
+
             drv.ensure_open()
-            drv.select_drivable(True)  # or False
-            drv.click_next()           # proceeds to ComplaintTypePage
+
+            print(f"[COMPLAINT] {mva} — Drivability dialog opened")
+
+            # >>> INSERT PROBE BLOCK HERE (keep 4-space indents) >>>
+            from pages.drivability_page import DrivabilityPage
+            from selenium.webdriver.common.by import By
+
+            print("[PROBE] YES_BTN hits:", len(driver.find_elements(*DrivabilityPage.S.YES_BTN)))
+            print("[PROBE] NO_BTN  hits:", len(driver.find_elements(*DrivabilityPage.S.NO_BTN)))
+            print("[PROBE] GT YES hits:", len(driver.find_elements(
+                By.XPATH, "//div[contains(@class,'drivable-options-container')]//button[.//h1[normalize-space()='Yes']]"
+            )))
+            print("[PROBE] GT NO  hits:", len(driver.find_elements(
+                By.XPATH, "//div[contains(@class,'drivable-options-container')]//button[.//h1[normalize-space()='No']]"
+            )))
+
+
+
+
+
+
+
+            print(f"[COMPLAINT] {mva} — Drivability dialog opened")
+            drv.select_drivable(True)
+            print(f"[COMPLAINT] {mva} — Drivability set to 'Yes' (drivable)")
+
+            # Click Next only if we're still on Drivability (app may auto-advance)
+            from pages.drivability_page import DrivabilityPage  # if not already imported here
+            if driver.find_elements(*DrivabilityPage.S.NEXT_BTN):
+                drv.click_next()
+
+            time.sleep(1)
+
+            # PROBE — Complaint Type tiles and Next
+            from selenium.webdriver.common.by import By
+
+            print("[PROBE] PM tiles:", len(driver.find_elements(
+                By.XPATH, "//div[contains(@class,'complaintItem')]//*[contains(@class,'tileContent')][normalize-space()='PM']/ancestor::div[contains(@class,'complaintItem')]"
+            )))
+            print("[PROBE] PM Hard Hold tiles:", len(driver.find_elements(
+                By.XPATH, "//div[contains(@class,'complaintItem')]//*[contains(@class,'tileContent')][normalize-space()='PM Hard Hold - PM']/ancestor::div[contains(@class,'complaintItem')]"
+            )))
+            print("[PROBE] Next buttons:", len(driver.find_elements(
+                By.XPATH, "//button[.//span[normalize-space()='Next'] or normalize-space()='Next']"
+            )))
+            input("Press Enter to continue or Ctrl+C to abort...")
+
+
+
 
 
                 # 8) Select complaint type → PM (auto-advances)
@@ -220,16 +302,15 @@ def test_mva_complaints_tab():
             else:
                 print(f"[COMPLAINT][WARN] {mva} — Submit button not found; continuing")
 
-
-            # 10) Next screen
-            if click_button(driver, text="Next", timeout=6):
-                print(f"[COMPLAINT] {mva} — Next clicked")
-            else:
-                print(f"[COMPLAINT][WARN] {mva} — Next button not found; continuing")
-
+            input("Press Enter to continue or Ctrl+C to abort...")
+            # 10) Opcode dialog — instantiate helper
+            opcode = OpcodeDialog(driver)
+            assert opcode.select_opcode("PM Gas"), "[OPCODE] 'PM Gas' not found"
+            assert opcode.click_create_button(), "[OPCODE] 'Create Work Item' button not found"
+            print(f"[COMPLAINT] {mva} — Op code 'PM Gas' selected")
             time.sleep(2)  # allow UI to settle
 
-            # 11) Select op code: PM Gas
+            # 11) Opcode dialog — select "PM Gas", then click Create
             try:
                 pm_gas = WebDriverWait(driver, 6).until(
                     EC.element_to_be_clickable((
@@ -237,8 +318,8 @@ def test_mva_complaints_tab():
                         "//*[contains(@class,'opCodeText')][normalize-space()='PM Gas']"
                     ))
                 )
-                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", pm_gas)
-                pm_gas.click()
+                assert opcode.click_create_button(), "[OPCODE] 'Create Work Item' button not found"
+
                 print(f"[COMPLAINT] {mva} — Op code 'PM Gas' selected")
             except Exception as e:
                 print(f"[COMPLAINT][WARN] {mva} — Op code 'PM Gas' not found ({e}); continuing")
