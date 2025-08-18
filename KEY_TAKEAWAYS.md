@@ -82,3 +82,9 @@ Keep messages short; prefer one log per meaningful user action.
 - Desktop (not mobile emulation); correct env/creds loaded.
 - CSV path valid; first MVA known-good.
 - Driver ready; no stale session in background.
+
+
+## General information
+- Use DIFF MODE + ≤20 LOC rule; no whole-file dumps.
+- Paste only the exact call site we’re touching (few lines), not whole classes.
+- Keep a mini step tracker so we don’t wander.

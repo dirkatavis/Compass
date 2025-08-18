@@ -4,6 +4,8 @@
 from __future__ import annotations
 from typing import Tuple
 from .base_page import BasePage
+from .base_page import BasePage
+from utils.ui_helpers import click_button
 
 try:
     from selenium.webdriver.common.by import By
@@ -61,3 +63,19 @@ class AdditionalInfoPage(BasePage):
     def click_next(self) -> None:
         """Stub: advance to the Mileage step."""
         pass
+
+
+
+    def click_submit(self) -> bool:
+        """
+        Minimal: click the Submit button on this page.
+        Tries 'Submit' first, then 'Submit Complaint'. Returns True if clicked.
+        """
+        if click_button(self.driver, text="Submit", timeout=6):
+            print("[COMPLAINT] Submit clicked")
+            return True
+        if click_button(self.driver, text="Submit Complaint", timeout=4):
+            print("[COMPLAINT] 'Submit Complaint' clicked")
+            return True
+        print("[COMPLAINT][WARN] Submit button not found")
+        return False

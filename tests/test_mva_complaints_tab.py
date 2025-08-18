@@ -19,6 +19,9 @@ from utils.ui_helpers import (
     has_complete_of_type,
     process_pm_workitem_flow,
     debug_list_work_items,
+    open_pm_workitem_card,
+    mark_complete_pm_workitem,
+    click_done,
 )
 
 # Utility: enter MVA and wait for the echoed value in the vehicle pane
@@ -150,10 +153,17 @@ def test_mva_complaints_tab():
                 print(f"[WORKITEM] {mva} — found {len(items)} work items")
             #debug_list_work_items(driver)
 
-            # 3) If an OPEN PM exists, skip creation
+            # 3) If an OPEN PM exists, use it: open → mark complete → Done
             if has_open_of_type(items, "PM"):
-                print(f"[WORKITEM] {mva} — PM work item already exists; skipping create")
-                print(f"[MVA] completed → {mva}")
+                print(f"[WORKITEM] {mva} — PM work item already exists; opening to process")
+                if open_pm_workitem_card(driver, timeout=8):
+                    if mark_complete_pm_workitem(driver, note="Done", timeout=10):
+                        click_done(driver, timeout=8)
+                        print(f"[MVA] completed → {mva}")
+                    else:
+                        print(f"[WORKITEM][WARN] {mva} — failed to mark complete")
+                else:
+                    print(f"[WORKITEM][WARN] {mva} — could not open existing PM work item")
                 continue
 
             # 4) No OPEN PM → run the built-in flow (it clicks Add Work Item and walks the dialog)
@@ -261,42 +271,14 @@ def test_mva_complaints_tab():
 
 
 
+            from pages.complaint_type_page import ComplaintTypePage
+            # 8) Select complaint type → PM (auto-advances)
+            ComplaintTypePage(driver).select_pm_tile(mva)
 
-                # 8) Select complaint type → PM (auto-advances)
-            try:
-                # Wait for complaint-type options to render (container or any known option text)
-                WebDriverWait(driver, 6).until(
-                    EC.presence_of_element_located((
-                        By.XPATH,
-                        "//*[contains(@class,'damage-options') or contains(., 'Mechanical Issue') or contains(., 'Tire Damage') or contains(., 'Glass Damage') or contains(., 'Keys') or .//h1[normalize-space()='PM']]"
-                    ))
-                )
-                # Try common labels first
-                clicked = (
-                    click_button(driver, text="PM", timeout=4)
-                    or click_button(driver, text="Preventive Maintenance", timeout=3)
-                )
-                # Fallback to a robust XPath match on the PM tile
-                if not clicked:
-                    pm_btn = WebDriverWait(driver, 5).until(
-                        EC.element_to_be_clickable((
-                            By.XPATH,
-                            "//button[contains(@class,'damage-option') or contains(@class,'damage-options')]"
-                            "[.//h1[normalize-space()='PM'] or .//span[normalize-space()='PM'] or normalize-space()='PM']"
-                        ))
-                    )
-                    # Scroll just in case, then click
-                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", pm_btn)
-                    pm_btn.click()
-                    clicked = True
-
-                print(f"[COMPLAINT] {mva} — Complaint type 'PM' selected")
-            except Exception as e:
-                print(f"[COMPLAINT][WARN] {mva} — 'PM' complaint button not available ({e}); continuing")
 
             # 9) Wait for the PM complaint tile to appear
             # 9) Submit complaint (simple)
-            time.sleep(2) # Allow UI to settle
+
             if click_button(driver, text="Submit Complaint", timeout=6):
                 print(f"[COMPLAINT] {mva} — Submit button clicked")
             else:
