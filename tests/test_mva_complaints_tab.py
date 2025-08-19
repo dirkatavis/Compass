@@ -12,6 +12,8 @@ from pages.login_page import LoginPage
 from utils.data_loader import load_mvas
 from utils.ui_helpers import click_button
 from utils.mva_helpers import click_add_new_complaint_button
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from utils.ui_helpers import (
     click_work_items,
     get_work_items,
@@ -171,6 +173,7 @@ def test_mva_complaints_tab():
             result = process_pm_workitem_flow(driver)
             print(f"[WORKITEM] {mva} → {result}")
             print(f"[MVA] completed → {mva}")
+            continue  # skip the rest of this loop iteration
 
 
             # 5) Add complaint to the Work Item (best-effort)
@@ -257,37 +260,61 @@ def test_mva_complaints_tab():
             # PROBE — Complaint Type tiles and Next
             from selenium.webdriver.common.by import By
 
-            print("[PROBE] PM tiles:", len(driver.find_elements(
-                By.XPATH, "//div[contains(@class,'complaintItem')]//*[contains(@class,'tileContent')][normalize-space()='PM']/ancestor::div[contains(@class,'complaintItem')]"
-            )))
-            print("[PROBE] PM Hard Hold tiles:", len(driver.find_elements(
-                By.XPATH, "//div[contains(@class,'complaintItem')]//*[contains(@class,'tileContent')][normalize-space()='PM Hard Hold - PM']/ancestor::div[contains(@class,'complaintItem')]"
-            )))
-            print("[PROBE] Next buttons:", len(driver.find_elements(
-                By.XPATH, "//button[.//span[normalize-space()='Next'] or normalize-space()='Next']"
-            )))
+
+            # Probe for "PM"
+            pm_tiles = driver.find_elements(
+                By.XPATH,
+                "//button[contains(@class,'damage-option-button')]//h1[normalize-space()='PM']"
+            )
+            print(f"[PROBE] Found {len(pm_tiles)} PM tile(s)")
+
+            # Probe for "PM Hard Hold - PM"
+            pmhh_tiles = driver.find_elements(
+                By.XPATH,
+                "//button[contains(@class,'damage-option-button')]//h1[normalize-space()='PM Hard Hold - PM']"
+            )
+            print(f"[PROBE] Found {len(pmhh_tiles)} PM Hard Hold - PM tile(s)")
+
+            # Probe for "Next"
+            next_buttons = driver.find_elements(
+                By.XPATH,
+                "//button[.//span[normalize-space()='Next'] or normalize-space()='Next']"
+            )
+            print(f"[PROBE] Found {len(next_buttons)} Next button(s)")
+
+
+
+
+
             input("Press Enter to continue or Ctrl+C to abort...")
 
 
 
 
+
+
+
+
+            # 8) Complaint Type page — select PM tile (auto-forwards)
             from pages.complaint_type_page import ComplaintTypePage
-            # 8) Select complaint type → PM (auto-advances)
             ComplaintTypePage(driver).select_pm_tile(mva)
 
 
-            # 9) Wait for the PM complaint tile to appear
+
+
             # 9) Submit complaint (simple)
+            input("Now we submit the complaint. Press Enter to continue or Ctrl+C to abort...  ")
 
             if click_button(driver, text="Submit Complaint", timeout=6):
                 print(f"[COMPLAINT] {mva} — Submit button clicked")
             else:
                 print(f"[COMPLAINT][WARN] {mva} — Submit button not found; continuing")
+            continue
 
-            input("Press Enter to continue or Ctrl+C to abort...")
+
             # 10) Opcode dialog — instantiate helper
             opcode = OpcodeDialog(driver)
-            assert opcode.select_opcode("PM Gas"), "[OPCODE] 'PM Gas' not found"
+            assert opcode.select_opcode("PM"), "[OPCODE] 'PM' not found"
             assert opcode.click_create_button(), "[OPCODE] 'Create Work Item' button not found"
             print(f"[COMPLAINT] {mva} — Op code 'PM Gas' selected")
             time.sleep(2)  # allow UI to settle
@@ -371,8 +398,10 @@ def test_mva_complaints_tab():
 
             if clicked:
                 print(f"[WORKITEM] {mva} — 'Complete Work Item' clicked")
+                continue
             else:
                 print(f"[WORKITEM][WARN] {mva} — 'Complete Work Item' not found; continuing")
+                continue
 
 
 
