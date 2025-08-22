@@ -170,6 +170,27 @@ def get_work_items(driver, timeout: int = 10):
 
     return items
 
+# INSERT ↓ generic text getter + create-date wrappers
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+def get_text(driver, xpath: str, timeout: int = 6) -> str:
+    el = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.XPATH, xpath)))
+    return el.text.strip()
+
+def get_create_date_workitem(driver, complaint: str = "PM", timeout: int = 6) -> str:
+    xp = ("(//div[contains(@class,'scan-record-row-2')]"
+          f"[.//div[strong[normalize-space()='Complaints']][contains(normalize-space(),'{complaint}')]]"
+          "//div[strong[normalize-space()='Created At']])[1]")
+    txt = get_text(driver, xp, timeout)
+    return txt.replace("Created At", "").lstrip(": ").strip()
+
+def get_create_date_complaint(driver, complaint: str = "PM", timeout: int = 6) -> str:
+    xp = ("(//div[contains(@class,'complaintItem') or contains(@class,'complaint')]"
+          f"[.//*[contains(normalize-space(),'{complaint}')]]"
+          "//div[strong[normalize-space()='Created At']])[1]")
+    txt = get_text(driver, xp, timeout)
+    return txt.replace("Created At", "").lstrip(": ").strip()
 
 
 
@@ -258,15 +279,12 @@ def find_pm_tiles(driver, timeout: int = 8):
         time.sleep(0.2)
     return []
 
-
-
 def _is_selected_tile(tile) -> bool:
     try:
         cls = tile.get_attribute("class") or ""
         return "fleet-operations-pwa__selected__153vo4c" in cls
     except Exception:
         return False
-
 
 def select_all_pm_tiles(driver, tiles, sleep_between_clicks: float = 0.3) -> int:
     """Click all unselected PM tiles; returns count clicked."""
@@ -281,7 +299,6 @@ def select_all_pm_tiles(driver, tiles, sleep_between_clicks: float = 0.3) -> int
             except Exception:
                 continue
     return clicked
-
 
 def select_all_pm_tiles(driver, timeout: int = 8, sleep_between_clicks: float = 0.2) -> int:
     """
@@ -356,11 +373,9 @@ def select_opcode_pm_gas(driver, timeout: int = 8) -> bool:
             continue
     return False
 
-
 def create_work_item(driver, timeout: int = 8) -> bool:
     """Click 'Create Work Item'."""
     return click_button(driver, text="Create Work Item", timeout=timeout)
-
 
 def click_done(driver, timeout: int = 8) -> bool:
     """Click 'Done' (post-create)."""
@@ -409,7 +424,6 @@ def click_next_in_dialog(driver, timeout: int = 10) -> bool:
     except Exception:
         return False
 
-
 def has_complete_of_type(items, ctype: str) -> bool:
     print("[WORKITEM] A total of", len(items), "work items found")
     print(f"[WORKITEM] Checking for completed PM work items of type '{ctype}'") 
@@ -450,7 +464,6 @@ def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, obs
     
     print("[DIALOG][ERROR] Complete Work Item button not found or not clickable")
     return {'status': 'error', 'reason': 'COMPLETE_BUTTON_NOT_FOUND'}
-
 
 def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5), pre_clicked: bool = False) -> dict:
     """
@@ -512,7 +525,6 @@ def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5), pre_clicked: bool =
         return {'status': 'failed', 'selected': selected, 'reason': 'DONE_BUTTON_NOT_FOUND'}
     return {'status': 'done', 'selected': selected, 'reason': 'SUCCESS'}
 
-
 def open_pm_workitem_card(driver, timeout: int = 8) -> bool:
     """Open the newly created PM work item (status: Open)."""
     loc = (By.XPATH, "//div[contains(@class,'scan-record')][.//div[normalize-space()='PM'] and .//div[normalize-space()='Open']]")
@@ -524,7 +536,6 @@ def open_pm_workitem_card(driver, timeout: int = 8) -> bool:
         return True
     except TimeoutException:
         return False
-
 
 def mark_complete_pm_workitem(driver, note: str = "Done", timeout: int = 8) -> bool:
     """Click 'Mark Complete', then use dialog-scoped helper to type note and complete."""
@@ -538,13 +549,11 @@ def mark_complete_pm_workitem(driver, note: str = "Done", timeout: int = 8) -> b
     print(f"[MARKCOMPLETE] complete_work_item_dialog → {res}")
     return res.get("status") == "ok"
 
-
 def complete_pm_workitem(driver, timeout: int = 8) -> bool:
     """Open the PM work item, mark complete with note='Done'."""
     if not open_pm_workitem_card(driver, timeout=timeout):
         return False
     return mark_complete_pm_workitem(driver, note="Done", timeout=timeout)
-
 
 # exact-text matches for the two PM variants
 _PM_TILE_OVERLAY = ("//div[contains(@class,'bp6-dialog')]"
@@ -566,7 +575,6 @@ def find_pm_tiles(driver, timeout: int = 6):
             return tiles
         time.sleep(0.2)
     return []
-
 
 def select_all_pm_tiles(driver, tiles, sleep_between_clicks: float = 0.2) -> int:
     """Click all unselected PM tiles; re-query each time to handle re-render."""
@@ -595,7 +603,6 @@ def select_all_pm_tiles(driver, tiles, sleep_between_clicks: float = 0.2) -> int
         clicked += 1
         time.sleep(sleep_between_clicks)
     return clicked
-
 
 def click_next_in_dialog(driver, timeout: int = 10) -> bool:
     locators = [
@@ -707,9 +714,6 @@ def click_next_in_dialog(driver, timeout: int = 10) -> bool:
     print(f"[NEXT][ERROR] No enabled Next button found. candidates={len(cands)}")
     return False
 
-
-
-
 def click_done(driver, timeout: int = 8) -> bool:
     """
     Click 'Done' if the wizard is open; if no dialog visible, consider it already done.
@@ -754,7 +758,6 @@ def click_done(driver, timeout: int = 8) -> bool:
         return True
     except Exception:
         return False
-
 
 def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5)) -> dict:
     """
@@ -824,7 +827,6 @@ def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5)) -> dict:
         return {'status': 'failed', 'selected': selected, 'reason': 'DONE_BUTTON_NOT_FOUND'}
 
     return {'status': 'done', 'selected': selected, 'reason': 'SUCCESS'}
-
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait

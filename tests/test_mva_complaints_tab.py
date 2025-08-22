@@ -1,6 +1,7 @@
 ﻿import json
 import time
 import pytest
+from datetime import datetime, timedelta
 from selenium.webdriver.common.by import By
 from pages.opcode_dialog import OpcodeDialog
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,6 +12,8 @@ from core import driver_manager
 from pages.login_page import LoginPage
 from utils.data_loader import load_mvas
 from utils.ui_helpers import click_button
+from datetime import datetime, timedelta
+from utils.ui_helpers import get_create_date_workitem
 from utils.mva_helpers import click_add_new_complaint_button
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -62,7 +65,6 @@ def create_pm_workitem(driver, mva: str):
         print(f"[WORKITEM][WARN] {mva} — complaint_pm"); return {"status":"failed","reason":"complaint_pm"}
     else:
         print(f"[COMPLAINT] {mva} — PM complaint selected")
-        #input("PM tile clicked: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection
 
     time.sleep(4)  # allow UI to settle
     # 5) Submit Complaint
@@ -70,7 +72,7 @@ def create_pm_workitem(driver, mva: str):
         print(f"[WORKITEM][WARN] {mva} — submit_complaint"); return {"status":"failed","reason":"submit_complaint"}
     else:
         print(f"[COMPLAINT] {mva} — Submit Complaint clicked")
-        input("Submit Complaint clicked: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection    
+
 
     # 6) Mileage → Next
     time.sleep(5)  # allow UI to settle
@@ -78,7 +80,7 @@ def create_pm_workitem(driver, mva: str):
         print(f"[WORKITEM][WARN] {mva} — mileage_next"); return {"status":"failed","reason":"mileage_next"}
     else:
         print(f"[COMPLAINT] {mva} — Mileage Next clicked")
-        input("Mileage Next clicked: Press Enter to continue or Ctrl+C to abort...")
+
 
     time.sleep(4)  # allow UI to settle
 
@@ -109,7 +111,6 @@ def create_pm_workitem(driver, mva: str):
 
 
     # 8) Create Work Item
-    input("Create Work Item: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection
     if not click_button(driver, text="Create Work Item", timeout=8):
         print(f"[WORKITEM][WARN] {mva} — create_wi")
         return {"status":"failed","reason":"create_wi"}
@@ -252,18 +253,35 @@ def test_mva_complaints_tab():
 
             # 2) Collect items and optionally debug if empty
             items = get_work_items(driver)
+
             if not items:
                 try:
                     debug_list_work_items(driver)
                 except Exception:
                     pass
-            if has_complete_of_type(items, "PM"):
-                print(f"[WORKITEM] {mva} — PM work item already completed; skipping MVA")
-                print(f"[MVA] completed → {mva}")
-                continue
+                # no items at all → continue on to creation later
             else:
+                # Completed-PM age check
                 if has_complete_of_type(items, "PM"):
-                    print(f"[WORKITEM] {mva} — PM work item already completed; skipping MVA")
+                    try:
+                        print(f"[WORKITEM] {mva} — found completed PM work item(s)")
+                        
+                        created_txt = get_create_date_workitem(driver, "PM")
+
+                        created_at = datetime.strptime(created_txt, "%m/%d/%Y, %I:%M:%S %p")
+                        if datetime.now() - created_at <= timedelta(days=30):
+                            print(f"[WORKITEM] {mva} — PM completed ≤30d; skipping")
+                            print(f"[MVA] completed → {mva}")
+                            continue
+                        else:
+                            print(f"[WORKITEM] {mva} — PM >30d; creating new PM")
+                    except Exception as e:
+                        print(f"[WORKITEM][WARN] {mva} — Created At parse failed; treating as expired → {e}")
+
+                    res = create_pm_workitem(driver, mva)
+                    if res.get("status") != "created":
+                        print(f"[WORKITEM][WARN] {mva} — create failed → {res.get('reason')}")
+                        continue
                     print(f"[MVA] completed → {mva}")
                     continue
 
@@ -352,7 +370,6 @@ def test_mva_complaints_tab():
 
             # *********************END DEBUG CODE
 
-            #input("Press Enter to continue or Ctrl+C to abort...")
 
 
             from selenium.webdriver.common.by import By
@@ -417,18 +434,6 @@ def test_mva_complaints_tab():
             print(f"[PROBE] Found {len(next_buttons)} Next button(s)")
 
 
-
-
-
-            input("Press Enter to continue or Ctrl+C to abort...")
-
-
-
-
-
-
-
-
             # 8) Complaint Type page — select PM tile (auto-forwards)
             from pages.complaint_type_page import ComplaintTypePage
             ComplaintTypePage(driver).select_pm_tile(mva)
@@ -437,7 +442,6 @@ def test_mva_complaints_tab():
 
 
             # 9) Submit complaint (simple)
-            input("Now we submit the complaint. Press Enter to continue or Ctrl+C to abort...  ")
 
             if click_button(driver, text="Submit Complaint", timeout=6):
                 print(f"[COMPLAINT] {mva} — Submit button clicked")

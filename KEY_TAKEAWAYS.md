@@ -169,3 +169,18 @@ _Last updated: 2025-08-18_
 - Use DIFF MODE + ≤20 LOC rule; no whole-file dumps.
 - Paste only the exact call site we’re touching (few lines), not whole classes.
 - Keep a mini step tracker so we don’t wander.
+
+
+## No-PM Work Item Flow
+
+- **Flow order locked:** Add Work Item → Add New Complaint → Drivability = Yes → PM → Submit Complaint → Mileage Next → PM Gas → Create Work Item.
+- **Single source of truth:** Keep creation steps only in `create_pm_workitem(driver, mva)`; the test just calls it. No inline duplicates.
+- **Success/fail pattern:**  
+  `if not click_button(...): print("[WARN] …"); return {"status":"failed","reason":"…"} else: print("[OK] …")`  
+  Only return success at the very end: `{"status":"created"}`.
+- **Click correctness:** Target the **clickable element** (e.g., `//button[.//h1='Yes']`, tile **container** for PM Gas), not inner text nodes.
+- **Simple timing aids:** tiny `sleep(0.2–0.3)` only where rendering lags; scroll to center before click.
+- **Debug that matters:** add brief `[DBG] found/clicked/selected` prints at key steps; pause with `input(...)` only for temporary inspection.
+- **Indentation = control flow:** dimmed code in VS Code usually meant an **unreachable success path** (fix indent so step 8 returns on success).
+- **Nil-safe call site:** `res = create_pm_workitem(...) or {"status":"failed","reason":"helper_returned_none"}` to avoid `NoneType.get` crashes.
+- **Commit hygiene:** Use messages that describe the **exact flow** fixed and the **return-path** correction.
