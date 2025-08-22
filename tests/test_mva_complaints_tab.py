@@ -26,6 +26,116 @@ from utils.ui_helpers import (
     click_done,
 )
 
+# INSERT BELOW (helper):
+from utils.ui_helpers import click_button
+
+from selenium.webdriver.common.by import By  # ensure present
+
+def create_pm_workitem(driver, mva: str):
+    print(f"[WORKITEM] {mva} — creating new PM Work Item")
+
+    # 1) Add Work Item
+    if not click_button(driver, text="Add Work Item", timeout=8):
+        print(f"[WORKITEM][WARN] {mva} — add_btn"); return {"status":"failed","reason":"add_btn"}
+
+    # 2) Entry: Add/Create New Complaint (flow-specific, but using generic helper)
+    if not (click_button(driver, text="Add New Complaint", timeout=8)
+            or click_button(driver, text="Create New Complaint", timeout=8)):
+        print(f"[WORKITEM][WARN] {mva} — entry_step"); return {"status":"failed","reason":"entry_step"}
+    time.sleep(4)  # allow UI to settle
+
+    # 3) Drivability → Yes (click the <button> itself)
+    try:
+        btn = driver.find_element(By.XPATH, "//button[.//h1[normalize-space()='Yes']]")
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", btn)
+        btn.click()
+        print(f"[COMPLAINT] {mva} — Drivable=Yes")
+    except Exception:
+        print(f"[WORKITEM][WARN] {mva} — drivable_yes")
+        return {"status": "failed", "reason": "drivable_yes"}
+    
+    time.sleep(4)  # allow UI to settle
+
+
+    # 4) Complaint type → PM
+    if not click_button(driver, text="PM", timeout=8):
+        print(f"[WORKITEM][WARN] {mva} — complaint_pm"); return {"status":"failed","reason":"complaint_pm"}
+    else:
+        print(f"[COMPLAINT] {mva} — PM complaint selected")
+        #input("PM tile clicked: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection
+
+    time.sleep(4)  # allow UI to settle
+    # 5) Submit Complaint
+    if not click_button(driver, text="Submit Complaint", timeout=8):
+        print(f"[WORKITEM][WARN] {mva} — submit_complaint"); return {"status":"failed","reason":"submit_complaint"}
+    else:
+        print(f"[COMPLAINT] {mva} — Submit Complaint clicked")
+        input("Submit Complaint clicked: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection    
+
+    # 6) Mileage → Next
+    time.sleep(5)  # allow UI to settle
+    if not click_button(driver, text="Next", timeout=8):
+        print(f"[WORKITEM][WARN] {mva} — mileage_next"); return {"status":"failed","reason":"mileage_next"}
+    else:
+        print(f"[COMPLAINT] {mva} — Mileage Next clicked")
+        input("Mileage Next clicked: Press Enter to continue or Ctrl+C to abort...")
+
+    time.sleep(4)  # allow UI to settle
+
+
+    # 7) Opcode → PM Gas
+    xp = ("//div[contains(@class,'opCodeItem')]"
+        "[.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]")
+    print(f"[DBG] searching for PM Gas tile → {xp}")
+    try:
+        tile = driver.find_element(By.XPATH, xp)
+        print(f"[DBG] found tile, class='{tile.get_attribute('class')}'")
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", tile)
+        try:
+            tile.click()
+            print(f"[DBG] Selenium .click() attempted")
+        except Exception:
+            driver.execute_script("arguments[0].click();", tile)
+            print(f"[DBG] JS click() attempted")
+        cls = tile.get_attribute("class") or ""
+        if "selected" in cls:
+            print(f"[COMPLAINT] {mva} — Opcode 'PM Gas' selected")
+        else:
+            print(f"[WORKITEM][WARN] {mva} — opcode_pm_gas not selected after click")
+            return {"status": "failed", "reason": "opcode_pm_gas"}
+    except Exception as e:
+        print(f"[WORKITEM][WARN] {mva} — opcode_pm_gas not found → {e}")
+        return {"status": "failed", "reason": "opcode_pm_gas_not_found"}
+
+
+    # 8) Create Work Item
+    input("Create Work Item: Press Enter to continue or Ctrl+C to abort...")  # pause for manual inspection
+    if not click_button(driver, text="Create Work Item", timeout=8):
+        print(f"[WORKITEM][WARN] {mva} — create_wi")
+        return {"status":"failed","reason":"create_wi"}
+
+    print(f"[WORKITEM] {mva} — PM Work Item created")
+    return {"status":"created"}
+
+
+
+
+def _dbg_dialog(driver):
+	try:
+		dlg = driver.find_element(By.CSS_SELECTOR, "div.bp6-dialog, div[class*='dialog']")
+	except Exception:
+		dlg = driver
+	btns = dlg.find_elements(By.XPATH, ".//button//*[self::span or self::div or self::p or self::strong]|.//button")
+	labels = [b.text.strip() for b in btns if b.text.strip()]
+	print(f"[DBG] dialog buttons → {labels[:12]}")
+	try:
+		driver.save_screenshot("debug_drivable.png")
+		print("[DBG] screenshot → debug_drivable.png")
+	except Exception:
+		pass
+
+
+
 # Utility: enter MVA and wait for the echoed value in the vehicle pane
 def _enter_mva_and_wait_for_hit(driver, mva: str, timeout: int = 12):
     # ensure we're focused on the Mobile Compass tab (new tab often opens)
@@ -152,10 +262,24 @@ def test_mva_complaints_tab():
                 print(f"[MVA] completed → {mva}")
                 continue
             else:
+                if has_complete_of_type(items, "PM"):
+                    print(f"[WORKITEM] {mva} — PM work item already completed; skipping MVA")
+                    print(f"[MVA] completed → {mva}")
+                    continue
+
+                print(f"[WORKITEM] {mva} — found {len(items)} work items")
+
+
+                # 3) If an OPEN PM exists, use it: open → mark complete → Done
+                if has_open_of_type(items, "PM"):
+                    print(f"[WORKITEM] {mva} — PM work item already exists; opening to process")
+                    continue
+
+
                 print(f"[WORKITEM] {mva} — found {len(items)} work items")
             #debug_list_work_items(driver)
 
-            # 3) If an OPEN PM exists, use it: open → mark complete → Done
+            # 3) If an OPEN PM exists → process; otherwise create a new PM
             if has_open_of_type(items, "PM"):
                 print(f"[WORKITEM] {mva} — PM work item already exists; opening to process")
                 if open_pm_workitem_card(driver, timeout=8):
@@ -167,6 +291,16 @@ def test_mva_complaints_tab():
                 else:
                     print(f"[WORKITEM][WARN] {mva} — could not open existing PM work item")
                 continue
+            else:
+                print(f"[WORKITEM] {mva} — no PM found; creating one")
+                res = create_pm_workitem(driver, mva) or {"status": "failed", "reason": "helper_returned_none"}
+                if res.get("status") != "created":
+                    print(f"[WORKITEM][WARN] {mva} — create failed → {res.get('reason')}")
+                    continue
+
+                print(f"[MVA] completed → {mva}")
+                continue
+
 
             # 4) No OPEN PM → run the built-in flow (it clicks Add Work Item and walks the dialog)
             time.sleep(2)  # allow UI to settle
