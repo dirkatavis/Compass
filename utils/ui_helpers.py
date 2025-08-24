@@ -171,8 +171,23 @@ def get_work_items(driver, timeout: int = 10):
     return items
 
 # INSERT ↓ generic text getter + create-date wrappers
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.common.by import By
+
+def find_dialog(driver):
+    """Return the current Compass dialog element, if present."""
+    return driver.find_element(By.CSS_SELECTOR, "div.bp6-dialog, div[class*='dialog']")
+
+
+def find_element(driver, locator, timeout=10):
+    """Wait for a single element to appear and return it."""
+    return WebDriverWait(driver, timeout).until(EC.presence_of_element_located(locator))
+
+def find_elements(driver, locator, timeout=10):
+    """Wait for one or more elements to appear and return them."""
+    return WebDriverWait(driver, timeout).until(EC.presence_of_all_elements_located(locator))
+
+
 
 def get_text(driver, xpath: str, timeout: int = 6) -> str:
     el = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.XPATH, xpath)))
@@ -192,6 +207,27 @@ def get_create_date_complaint(driver, complaint: str = "PM", timeout: int = 6) -
     txt = get_text(driver, xp, timeout)
     return txt.replace("Created At", "").lstrip(": ").strip()
 
+
+def click_element_by_text(driver, tag="div", text=None, timeout=6) -> bool:
+    """
+    Click an element by tag name and visible text.
+    Works for tabs, buttons, etc. (text must match exactly).
+    """
+    if not text:
+        raise ValueError("text is required")
+
+    xp = f"//{tag}[normalize-space()='{text}']"
+
+    try:
+        el = WebDriverWait(driver, timeout).until(
+            EC.element_to_be_clickable((By.XPATH, xp))
+        )
+        el.click()
+        print(f"[DBG] clicked <{tag}> '{text}'")
+        return True
+    except Exception as e:
+        print(f"[WARN] could not click <{tag}> '{text}' → {e}")
+        return False
 
 
 def has_open_workitems_of_type(items, itype: str) -> bool:
@@ -220,27 +256,26 @@ def debug_list_work_items(driver, timeout: int = 10):
             state = ""
         print(f"  - #{i} type='{wtype}' state='{state}'")
 
-def click_button_by_text(driver, text: str, timeout: int = 10) -> bool:
-    """Clicks a <button> (or button-like element) by its visible text."""
-    try:
-        loc = (By.XPATH, f"//button[normalize-space()='{text}'] | //*[self::button or self::span or self::div][normalize-space()='{text}']")
-        el = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable(loc))
-        el.click()
-        return True
-    except TimeoutException:
-        return False
     
-def click_button(driver, *, text: str = None, css_class: str = None, timeout: int = 8) -> bool:
-        """Click a button by visible text OR CSS class."""
-        if not text and not css_class:
-            raise ValueError("Either 'text' or 'css_class' is required.")
-        loc = (By.XPATH, f"//button[normalize-space()='{text}']") if text else (By.CSS_SELECTOR, f"button.{css_class}")
-        try:
-            btn = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable(loc))
-            btn.click()
-            return True
-        except TimeoutException:
-            return False
+def click_element_by_text(driver, tag="div", text=None, timeout=6) -> bool:
+    if not text:
+        raise ValueError("text is required")
+
+    xp = f"//{tag}[normalize-space()='{text}']"
+
+    try:
+        el = WebDriverWait(driver, timeout).until(
+            EC.element_to_be_clickable((By.XPATH, xp))
+        )
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", el)
+        el.click()
+        print(f"[DBG] clicked <{tag}> '{text}'")
+        return True
+    except Exception as e:
+        print(f"[WARN] could not click <{tag}> '{text}' → {e}")
+        return False
+
+
 
 def find_pm_tiles(driver, timeout: int = 8):
     """
@@ -375,7 +410,7 @@ def select_opcode_pm_gas(driver, timeout: int = 8) -> bool:
 
 def create_work_item(driver, timeout: int = 8) -> bool:
     """Click 'Create Work Item'."""
-    return click_button(driver, text="Create Work Item", timeout=timeout)
+    return click_element_by_text(driver, tag="button", text="Create Work Item", timeout=timeout)
 
 def click_done(driver, timeout: int = 8) -> bool:
     """Click 'Done' (post-create)."""
@@ -397,10 +432,10 @@ def click_done(driver, timeout: int = 8) -> bool:
 def next_step(driver, timeout: int = 10) -> bool:
     """Click the Next button when it is actually enabled."""
     # Prefer visible text; fallback to known class
-    if click_button(driver, text="Next", timeout=timeout):
+    if click_element_by_text(driver, tag="button", text="Next", timeout=timeout):
         time.sleep(0.3)
         return True
-    return click_button(driver, css_class="fleet-operations-pwa__nextButton__153vo4c", timeout=timeout)
+    return click_element_by_text(driver, tag="button", css_class="fleet-operations-pwa__nextButton__153vo4c", timeout=timeout)
 
 def click_next_in_dialog(driver, timeout: int = 10) -> bool:
     """
@@ -458,7 +493,7 @@ def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, obs
         return {'status': 'error', 'reason': 'NOTE_TEXTAREA_NOT_FOUND'}
 
     # Click Complete Work Item
-    if click_button(driver, text="Complete Work Item", timeout=timeout):
+    if click_element_by_text(driver, tag="button", text="Complete Work Item", timeout=timeout):
         print("[DIALOG] Clicked Complete Work Item")
         return {'status': 'ok', 'reason': 'COMPLETED'}
     
@@ -472,8 +507,8 @@ def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5), pre_clicked: bool =
     """
     # 1) Click "Add Work Item" unless the caller already did it
     if not pre_clicked:
-        if not click_button(driver, text="Add Work Item", timeout=8):
-            if not click_button(driver, css_class="fleet-operations-pwa__create-item-button__1gmnvu9", timeout=8):
+        if not click_element_by_text(driver, tag="button", text="Add Work Item", timeout=8):
+            if not click_element_by_text(driver, tag="button", css_class="fleet-operations-pwa__create-item-button__1gmnvu9", timeout=8):
                 return {'status': 'failed', 'selected': 0, 'reason': 'ADD_WORK_ITEM_NOT_FOUND'}
         wait = max(float(sleeps[0]), 0.8)
         print("[SLEEP]", wait)
@@ -540,8 +575,8 @@ def open_pm_workitem_card(driver, timeout: int = 8) -> bool:
 def mark_complete_pm_workitem(driver, note: str = "Done", timeout: int = 8) -> bool:
     """Click 'Mark Complete', then use dialog-scoped helper to type note and complete."""
     # 1) Mark Complete (class → text fallback)
-    if not click_button(driver, css_class="fleet-operations-pwa__mark-complete-button__spuz8c", timeout=timeout):
-        if not click_button(driver, text="Mark Complete", timeout=timeout):
+    if not click_element_by_text(driver, tag="button", css_class="fleet-operations-pwa__mark-complete-button__spuz8c", timeout=timeout):
+        if not click_element_by_text(driver, tag="button", text="Mark Complete", timeout=timeout):
             return False
     time.sleep(0.2)
     # 2) Fill correction textarea and click 'Complete Work Item'
@@ -772,8 +807,8 @@ def process_pm_workitem_flow(driver, sleeps=(0.5, 0.5, 0.5)) -> dict:
     from selenium.common.exceptions import TimeoutException
 
     # 1) Click "Add Work Item" (text preferred; class fallback)
-    if not click_button(driver, text="Add Work Item", timeout=8):
-        if not click_button(driver, css_class="fleet-operations-pwa__create-item-button__1gmnvu9", timeout=8):
+    if not click_element_by_text(driver, tag="button", text="Add Work Item", timeout=8):
+        if not click_element_by_text(driver, tag="button", css_class="fleet-operations-pwa__create-item-button__1gmnvu9", timeout=8):
             try:
                 btn = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((
                     By.XPATH, "//button[normalize-space()='Add Work Item' or .//span[normalize-space()='Add Work Item'] or .//p[normalize-space()='Add Work Item']]"

@@ -184,3 +184,29 @@ _Last updated: 2025-08-18_
 - **Indentation = control flow:** dimmed code in VS Code usually meant an **unreachable success path** (fix indent so step 8 returns on success).
 - **Nil-safe call site:** `res = create_pm_workitem(...) or {"status":"failed","reason":"helper_returned_none"}` to avoid `NoneType.get` crashes.
 - **Commit hygiene:** Use messages that describe the **exact flow** fixed and the **return-path** correction.
+
+## Completed PM Work Item — 30 Day Rule
+
+- **New rule:** Completed PM Work Items are valid for 30 days only.  
+  - If the `Created At` date is ≤ 30 days → skip creating a new PM.  
+  - If the `Created At` date is > 30 days (or parsing fails) → treat as expired → create a new PM.
+- **Helper support:**  
+  - Added `get_text(driver, xpath)` as a generic primitive.  
+  - Added `get_create_date_workitem(driver, complaint="PM")` wrapper to extract `Created At` for Work Items.
+- **Test flow update:** Old “skip immediately if completed PM exists” logic was replaced with date-based check.  
+- **Logging conventions:**  
+  - `[WORKITEM] … PM completed ≤30d; skipping`  
+  - `[WORKITEM] … PM >30d; creating new PM`  
+  - `[WORKITEM][WARN] … Created At parse failed; treating as expired → …`
+- **Imports required:** `from datetime import datetime, timedelta` where the comparison is done.
+
+
+## 🔑 Sniff Test for Test Imports
+
+- **Goal**: Tests should stay high-level and storyboard-like.  
+- **Rule of Thumb**:  
+  - ✅ If a test imports only a handful of flows, pages, and maybe one util (≈5–10 imports) → design is healthy.  
+  - ❌ If a test imports 15+ things, especially Selenium primitives or many `ui_helpers`, → it’s doing too much low-level work.  
+- **Takeaway**: A cluttered import block is a signal to **push logic down** into flows/pages.
+
+

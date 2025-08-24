@@ -159,7 +159,7 @@ class LoginPage:
         self.driver.find_element(By.ID, "idSIButton9").click()
 
         print("Waiting for password page...")
-        password_field = WebDriverWait(self.driver, 10).until(
+        password_field = WebDriverWait(self.driver, 15).until(
             EC.element_to_be_clickable((By.NAME, "passwd"))
         )
         print("Typing password.")

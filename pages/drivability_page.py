@@ -35,3 +35,7 @@ class DrivabilityPage(BasePage):
     def click_next(self) -> None:
         self.find(*self.S.NEXT_BTN).click()
         time.sleep(0.5)
+
+def has_next_button(self) -> bool:
+    """Return True if the Next button is visible on the drivability page."""
+    return bool(self.driver.find_elements(*self.S.NEXT_BTN))
