@@ -16,6 +16,5 @@ from core import driver_manager  # now this will resolve
 @pytest.fixture(scope="session", autouse=True)
 def _quit_browser_after_session():
     yield
-    print("[FIXTURE] All tests complete — quitting singleton driver...")
+    print("[FIXTURE] All tests complete -- quitting singleton driver...")
     driver_manager.quit_driver()
-
