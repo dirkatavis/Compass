@@ -210,3 +210,31 @@ _Last updated: 2025-08-18_
 - **Takeaway**: A cluttered import block is a signal to **push logic down** into flows/pages.
 
 
+## 📌 Learnings from Session (Sept 2025)
+
+1. **Flow clarity matters**  
+   - Iterated several times on complaint/Work Item flow until the diagram was stable.  
+   - Keeping requirements updated in one place (diagram/MD) avoids confusion later.  
+
+2. **Locator fragility**  
+   - Hard-coded class suffixes (e.g., `__153vo4c`, `__18g8hx`) broke when Compass updated.  
+   - Solution: use resilient locators (`contains(@class, ...)`) instead of exact matches.  
+
+3. **Timing vs state**  
+   - Many “missing element” errors were really UI rendering too fast.  
+   - Short-term fix: `time.sleep`; long-term: `safe_wait` for stable states.  
+
+4. **Return values & test loop control**  
+   - Structured dict returns (`status`, `reason`, `mva`) make the test loop smarter.  
+   - The test loop should decide how to handle skips vs failures (e.g., back-home navigation).  
+
+5. **Logs vs reality**  
+   - Log messages like “complaint associated” didn’t guarantee Compass advanced.  
+   - Must verify state changes after clicks (Next button visible, dialog advances, etc.).  
+
+6. **Context handoff issues**  
+   - Each new session risked duplicate code because helpers weren’t “remembered.”  
+   - Fix: maintain `project_index.txt` and supporting MD docs to provide continuity.  
+
+
+
