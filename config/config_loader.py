@@ -14,6 +14,7 @@ except FileNotFoundError:
 except json.JSONDecodeError as e:
     raise RuntimeError(f"[CONFIG] Invalid JSON format in {CONFIG_PATH}: {e}")
 
+
 def get_config(key: str, default: Any = None) -> Any:
     """
     Retrieve a config value by key.
@@ -28,3 +29,5 @@ def get_config(key: str, default: Any = None) -> Any:
     if key not in _CONFIG and default is None:
         raise KeyError(f"[CONFIG] Missing key: '{key}' in {CONFIG_PATH}")
     return _CONFIG.get(key, default)
+
+DEFAULT_TIMEOUT = _CONFIG.get("delay_seconds", 8)
