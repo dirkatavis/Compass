@@ -1,0 +1,9 @@
+[flake8]
+# Only show serious issues
+select = F401,F811,E9
+# F401 = unused imports
+# F811 = redefinition of function (duplicates)
+# E9   = syntax errors
+
+# Ignore style (whitespace, line length, naming, etc.)
+ignore = E,W
