@@ -2,15 +2,18 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
+
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional, Literal
+from typing import Literal, Optional
 
 Status = Literal["Open", "Complete"]
+
 
 @dataclass(slots=True)
 class WorkItem:
     """Generic domain object for a single Work Item."""
+
     id: str
     type: str
     status: Status

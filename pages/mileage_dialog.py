@@ -2,18 +2,23 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
+
 from typing import Tuple
-from .base_page import BasePage
+
 from utils.ui_helpers import click_element_by_text
+
+from .base_page import BasePage
 
 try:
     from selenium.webdriver.common.by import By
 except Exception:
+
     class _By:
         CSS_SELECTOR = "css selector"
         XPATH = "xpath"
         ID = "id"
         NAME = "name"
+
     By = _By()  # type: ignore
 
 
@@ -47,11 +52,7 @@ class MileageDialog(BasePage):
     def click_next(self) -> bool:
         """Click the 'Next' button to advance from the mileage dialog."""
         return click_element_by_text(self.driver, tag="button", text="Next")
-    
+
     def has_next_button(self) -> bool:
         """Return True if the Next button is visible on the mileage dialog."""
         return bool(self.driver.find_elements(*self.S.NEXT_BTN))
-
-
-
-

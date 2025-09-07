@@ -2,18 +2,22 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
-from typing import List, Tuple, Optional, Dict
+
+from typing import Dict, List, Optional, Tuple
+
 from .base_page import BasePage
 from .complaint import Complaint
 
 try:
     from selenium.webdriver.common.by import By
 except Exception:
+
     class _By:
         CSS_SELECTOR = "css selector"
         XPATH = "xpath"
         ID = "id"
         NAME = "name"
+
     By = _By()  # type: ignore
 
 
@@ -23,7 +27,10 @@ class ComplaintItemsTab(BasePage):
     # ---- Selector constants -------------------------------------------------
     class S:
         # Tab header (activate if needed)
-        TAB_HEADER: Tuple[str, str] = (By.XPATH, "//span[normalize-space()='Complaints']")
+        TAB_HEADER: Tuple[str, str] = (
+            By.XPATH,
+            "//span[normalize-space()='Complaints']",
+        )
 
         # Add Complaint button
         ADD_COMPLAINT_BTN: Tuple[str, str] = (
@@ -74,7 +81,7 @@ class ComplaintItemsTab(BasePage):
         return {"id": None, "type": None, "status": None, "created_at": None}
 
     def _to_complaint(self, raw: Dict[str, Optional[str]]) -> Complaint:
-        """Map raw strings → Complaint (no parsing yet)."""
+        """Map raw strings -> Complaint (no parsing yet)."""
         return Complaint(
             id=raw.get("id") or "",
             type=(raw.get("type") or "").strip(),

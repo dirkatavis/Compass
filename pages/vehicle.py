@@ -2,13 +2,16 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
+
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
 
+
 @dataclass(slots=True)
 class Vehicle:
     """Generic domain object for a vehicle record (from MVA lookup)."""
+
     mva: str
     plate: Optional[str] = None
     purchase_date: Optional[datetime] = None

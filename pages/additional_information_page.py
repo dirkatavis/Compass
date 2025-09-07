@@ -2,19 +2,23 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
+
 from typing import Tuple
-from .base_page import BasePage
-from .base_page import BasePage
+
 from utils.ui_helpers import click_element_by_text
+
+from .base_page import BasePage
 
 try:
     from selenium.webdriver.common.by import By
 except Exception:
+
     class _By:
         CSS_SELECTOR = "css selector"
         XPATH = "xpath"
         ID = "id"
         NAME = "name"
+
     By = _By()  # type: ignore
 
 
@@ -64,8 +68,6 @@ class AdditionalInfoPage(BasePage):
         """Stub: advance to the Mileage step."""
         pass
 
-
-
     def click_submit(self) -> bool:
         """
         Minimal: click the Submit button on this page.
@@ -74,7 +76,9 @@ class AdditionalInfoPage(BasePage):
         if click_element_by_text(self.driver, tag="button", text="Submit", timeout=6):
             print("[COMPLAINT] Submit clicked")
             return True
-        if click_element_by_text(self.driver, tag="button", text="Submit Complaint", timeout=4):
+        if click_element_by_text(
+            self.driver, tag="button", text="Submit Complaint", timeout=4
+        ):
             print("[COMPLAINT] 'Submit Complaint' clicked")
             return True
         print("[COMPLAINT][WARN] Submit button not found")

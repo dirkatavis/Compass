@@ -2,22 +2,26 @@
 # PASTE THIS FULL FILE
 
 from __future__ import annotations
+
 from typing import Tuple
+
 from .base_page import BasePage
 
 try:
     from selenium.webdriver.common.by import By
 except Exception:
+
     class _By:
         CSS_SELECTOR = "css selector"
         XPATH = "xpath"
         ID = "id"
         NAME = "name"
+
     By = _By()  # type: ignore
 
 
 class OpcodeDialog(BasePage):
-    """Represents the Opcode selection dialog (≈20 options, incl. PM Gas)."""
+    """Represents the Opcode selection dialog (â‰ˆ20 options, incl. PM Gas)."""
 
     # ---- Selector constants -------------------------------------------------
     class S:
@@ -44,7 +48,7 @@ class OpcodeDialog(BasePage):
         pass
 
     def select_opcode(self, name: str) -> bool:
-	# Try clicking an opcode item whose visible text (or child label) matches `name`.
+        # Try clicking an opcode item whose visible text (or child label) matches `name`.
         items = self.driver.find_elements(*self.S.OPCODE_ITEM)
         target = name.strip()
         for el in items:
@@ -65,7 +69,6 @@ class OpcodeDialog(BasePage):
                 return True
         return False
 
-
     def click_create(self) -> bool:
         try:
             self.driver.find_element(*self.S.CREATE_BTN).click()
@@ -75,4 +78,3 @@ class OpcodeDialog(BasePage):
 
     def click_create_button(self) -> bool:
         return self.click_create()
-

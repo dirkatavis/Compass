@@ -1,5 +1,8 @@
 from selenium.webdriver.common.by import By
+
+from utils.logger import log
 from utils.ui_helpers import find_element
+
 
 class VehiclePropertiesPage:
     def __init__(self, driver):
@@ -21,7 +24,11 @@ class VehiclePropertiesPage:
                     "//div[contains(@class,'vehicle-properties-container')]"
                     f"//div[contains(@class,'vehicle-property-value')][contains(normalize-space(), '{last8}')]"
                 )
-                return find_element(self.driver, (By.XPATH, xp_any_value_contains), timeout=3)
+                return find_element(
+                    self.driver, (By.XPATH, xp_any_value_contains), timeout=3
+                )
             except Exception:
-                print(f"[MVA][ERROR] echoed value not found (looked for last8='{last8}')")
+                log.error(
+                    "[MVA][ERROR] echoed value not found (looked for last8='{last8}')"
+                )
                 return None

@@ -1,5 +1,5 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from logging import log
+
 from selenium.webdriver.support.ui import WebDriverWait
 
 
@@ -18,6 +18,4 @@ class HomePage:
 
     def print_page_title(self):
         """Prints the title of the current page."""
-        print(f"Current Page Title: {self.driver.title}")
-
-
+        log.info(f"Current Page Title: {self.driver.title}")
