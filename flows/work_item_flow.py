@@ -10,22 +10,38 @@ from utils.logger import log
 from utils.ui_helpers import click_element, safe_wait
 
 def get_work_items(driver, mva: str):
-    """Collect all open PM work items for the given MVA."""
-    log.info(f"[WORKITEM] {mva} - pausing to let Work Items render...")
-    time.sleep(9)  # wait for UI to render
+    """Collect all open PM work items for the given MVA.
+    
+    Args:
+        driver: Selenium WebDriver instance
+        mva: MVA identifier string
+        
+    Returns:
+        list: Collection of WebElements representing open PM work item tiles
+    """
+    log.info(f"[WORKITEM] {mva} - waiting for Work Items to render...")
+    
     try:
+        # Wait for at least one matching tile to be present
+        base_xpath = "//div[contains(@class,'scan-record-header')]"
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, base_xpath))
+        )
+        
+        # Then collect all tiles matching our criteria
         tiles = driver.find_elements(
             By.XPATH,
-            "//div[contains(@class,'scan-record-header') "
-            "and .//div[contains(@class,'scan-record-header-title')][contains(normalize-space(),'PM')] "
-            "and .//div[contains(@class,'scan-record-header-title-right__')][normalize-space()='Open']]"
+            base_xpath + 
+            " and .//div[contains(@class,'scan-record-header-title')][contains(normalize-space(),'PM')]" +
+            " and .//div[contains(@class,'scan-record-header-title-right__')][normalize-space()='Open']"
         )
+        
         log.info(f"[WORKITEMS] {mva} - collected {len(tiles)} open PM item(s)")
         for t in tiles:
             log.debug(f"[DBG] {mva} - tile text = {t.text!r}")
-        input("Press Enter to continue...")  # debug pause
         return tiles
-    except NoSuchElementException as e:
+        
+    except Exception as e:
         log.warning(f"[WORKITEM][WARN] {mva} - could not collect work items -> {e}")
         return []
 
