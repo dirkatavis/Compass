@@ -2,7 +2,7 @@
 import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from flows.complaints_flows import associate_existing_complaint
 from flows.finalize_flow import finalize_workitem
@@ -49,22 +49,52 @@ def get_work_items(driver, mva: str):
 
 
 
-def create_new_workitem(driver, mva: str):
-    """Create a new Work Item for the given MVA."""
+def create_new_workitem(driver, mva: str) -> dict:
+    """Create a new Work Item for the given MVA.
+    
+    Args:
+        driver: Selenium WebDriver instance
+        mva: MVA identifier string
+        
+    Returns:
+        dict: Status object containing result of operation
+            {
+                'status': 'failed'|'success',
+                'reason': str,
+                'mva': str
+            }
+    """
     log.info(f"[WORKITEM] {mva} - starting CREATE NEW WORK ITEM workflow")
 
-    # Step 1: Click Add Work Item
     try:
-        time.sleep(5)  # wait for button to appear
-        if not click_element(driver, (By.XPATH, "//button[normalize-space()='Add Work Item']")):
-            log.warning(f"[WORKITEM][WARN] {mva} - add_btn not found")
-            return {"status": "failed", "reason": "add_btn", "mva": mva}
-        log.info(f"[WORKITEM] {mva} - Add Work Item clicked")
-        time.sleep(5)
+        # Wait for and click Add Work Item button
+        add_btn_locator = (By.XPATH, "//button[normalize-space()='Add Work Item']")
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable(add_btn_locator)
+            )
+        except TimeoutException:
+            log.warning(f"[WORKITEM][WARN] {mva} - Add Work Item button not clickable after 10s")
+            return {"status": "failed", "reason": "add_btn_not_clickable", "mva": mva}
+            
+        if not click_element(driver, add_btn_locator):
+            log.warning(f"[WORKITEM][WARN] {mva} - Failed to click Add Work Item button")
+            return {"status": "failed", "reason": "add_btn_click_failed", "mva": mva}
+            
+        log.info(f"[WORKITEM] {mva} - Add Work Item clicked successfully")
+        
+        # Wait for modal dialog to appear after click
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "div.bp6-dialog"))
+            )
+        except TimeoutException:
+            log.warning(f"[WORKITEM][WARN] {mva} - Work Item dialog did not appear after click")
+            return {"status": "failed", "reason": "dialog_not_shown", "mva": mva}
 
-    except NoSuchElementException:
-        log.warning(f"[WORKITEM][WARN] {mva} - add_btn failed -> {e}")
-        return {"status": "failed", "reason": "add_btn", "mva": mva}
+    except Exception as e:
+        log.error(f"[WORKITEM][ERROR] {mva} - Unexpected error creating work item: {str(e)}")
+        return {"status": "failed", "reason": f"unexpected_error: {str(e)}", "mva": mva}
 
     # Step 2: Complaint handling
     try:
