@@ -204,50 +204,97 @@ def open_pm_workitem_card(driver, mva: str, timeout: int = 8) -> dict:
         log.warning(f"[WORKITEM][WARN] {mva} - could not open Open PM Work Item card -> {e}")
         return {"status": "failed", "reason": "open_pm_card", "mva": mva}
 
-def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, observe: int = 0) -> dict:
-    """Fill the correction dialog with note and click 'Complete Work Item'."""
+def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10) -> dict:
+    """Fill the work item completion dialog with a note and submit it.
+    
+    Args:
+        driver: Selenium WebDriver instance
+        note: Text to enter in the completion note field
+        timeout: Maximum seconds to wait for each element
+        
+    Returns:
+        dict: Status object containing result of operation
+            {
+                'status': 'ok'|'failed',
+                'reason': str,
+                'details': Optional[str]
+            }
+    
+    Raises:
+        AssertionError: If any required element is not found within timeout
+    """
     try:
         # 1) Wait for visible dialog root
-        dialog = safe_wait(
-            driver,
-            timeout,
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "div.bp6-dialog")),
-            desc="Work Item dialog"
-        )
+        try:
+            dialog = safe_wait(
+                driver,
+                timeout,
+                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.bp6-dialog")),
+                desc="Work Item dialog"
+            )
+            log.info("[DIALOG] Work item completion dialog detected")
+        except AssertionError:
+            log.error("[DIALOG] Work item dialog not found or not visible")
+            return {"status": "failed", "reason": "dialog_not_found"}
 
-        log.info("[DIALOG] Correction dialog opened")
+        # 2) Find and interact with textarea
+        try:
+            textarea = safe_wait(
+                driver,
+                timeout,
+                EC.visibility_of_element_located((By.CSS_SELECTOR, "textarea.bp6-text-area")),
+                desc="Correction textarea"
+            )
+            
+            # Wait for textarea to be interactive
+            WebDriverWait(driver, timeout).until(
+                lambda d: textarea.is_enabled() and textarea.is_displayed()
+            )
+            
+            textarea.click()
+            textarea.clear()
+            textarea.send_keys(note)
+            log.info(f"[DIALOG] Entered completion note: {note!r}")
+            
+        except (AssertionError, TimeoutException) as e:
+            log.error(f"[DIALOG] Failed to interact with textarea: {str(e)}")
+            return {"status": "failed", "reason": "textarea_interaction_failed"}
 
-        # 2) Find textarea (scoped to dialog)
-        textarea = safe_wait(
-            driver,
-            timeout,
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "textarea.bp6-text-area")),
-            desc="Correction textarea"
-        )
-        time.sleep(5)
-        textarea.click()        
-        time.sleep(5)
-        textarea.clear()
-        time.sleep(5)
-        textarea.send_keys(note)
-        time.sleep(5)
-        log.info(f"[DIALOG] Entered note text: {note!r}")
-        time.sleep(5)
-
-        # 3) Click 'Complete Work Item'
-        complete_btn = safe_wait(
-            driver,
-            timeout,
-            EC.element_to_be_clickable((By.XPATH, ".//button[normalize-space()='Complete Work Item']")),
-            desc="Complete Work Item button"
-        )
-        time.sleep(5)
-
-        complete_btn.click()
-        log.info("[DIALOG] 'Complete Work Item' button clicked")
-
+        # 3) Find and click 'Complete Work Item' button
+        try:
+            complete_btn = safe_wait(
+                driver,
+                timeout,
+                EC.element_to_be_clickable((By.XPATH, "//div[contains(@class,'bp6-dialog')]//button[normalize-space()='Complete Work Item']")),
+                desc="Complete Work Item button"
+            )
+            
+            complete_btn.click()
+            log.info("[DIALOG] Clicked 'Complete Work Item' button")
+            
+        except AssertionError:
+            log.error("[DIALOG] Complete button not found or not clickable")
+            return {"status": "failed", "reason": "complete_button_failed"}
+        
         # 4) Wait for dialog to close
-        safe_wait(driver ,timeout, EC.invisibility_of_element(dialog), desc="Dialog to close")
+        try:
+            WebDriverWait(driver, timeout).until(
+                EC.invisibility_of_element(dialog)
+            )
+            log.info("[DIALOG] Work item completion dialog closed successfully")
+            return {"status": "ok"}
+            
+        except TimeoutException:
+            log.error("[DIALOG] Dialog did not close after completion")
+            return {"status": "failed", "reason": "dialog_not_closed"}
+            
+    except Exception as e:
+        log.error(f"[DIALOG][ERROR] Unexpected error in work item completion: {str(e)}")
+        return {
+            "status": "failed", 
+            "reason": "unexpected_error",
+            "details": str(e)
+        }
 
         log.info("[DIALOG] Correction dialog closed")
 
