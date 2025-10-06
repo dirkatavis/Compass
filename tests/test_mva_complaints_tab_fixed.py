@@ -60,6 +60,13 @@ def test_mva_complaints_tab():
 
         if res.get("status") in ("ok", "closed"):
             log.info(f"[WORKITEM] {mva} — flow completed successfully")
+        elif res.get("status") == "skipped":
+            reason = res.get("reason", "unknown")
+            if reason == "vehicle_rentable":
+                log.info(f"[WORKITEM] {mva} — skipping rentable vehicle")
+            else:
+                log.info(f"[WORKITEM] {mva} — skipped: {reason}")
+            continue
         elif res.get("status") == "skipped_no_complaint":
             log.info(f"[WORKITEM] {mva} — navigating back home after skip")
             navigate_back_to_home(driver)

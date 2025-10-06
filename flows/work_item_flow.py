@@ -18,7 +18,34 @@ def get_work_items(driver, mva: str):
         
     Returns:
         list: Collection of WebElements representing open PM work item tiles
+        empty list: If MVA is rentable or no work items found
     """
+    log.info(f"[WORKITEM] {mva} - checking Lighthouse status...")
+    
+    try:
+        # First check Lighthouse status
+        lighthouse_label = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((
+                By.XPATH, 
+                "//div[contains(@class, 'vehicle-property-name') and normalize-space()='Lighthouse']"
+            ))
+        )
+        lighthouse_value = lighthouse_label.find_element(
+            By.XPATH, 
+            "../div[contains(@class, 'vehicle-property-value')]"
+        )
+        status_text = lighthouse_value.text.strip()
+        
+        if status_text.lower() == "rentable":
+            log.info(f"[WORKITEM] {mva} - Lighthouse status is 'Rentable', skipping review")
+            return []
+            
+        log.info(f"[WORKITEM] {mva} - Lighthouse status: {status_text}, proceeding with review")
+    except TimeoutException:
+        log.warning(f"[WORKITEM][WARN] {mva} - Lighthouse status not found, continuing with normal flow")
+    except Exception as e:
+        log.warning(f"[WORKITEM][WARN] {mva} - Error checking Lighthouse status: {str(e)}")
+    
     log.info(f"[WORKITEM] {mva} - waiting for Work Items to render...")
     
     try:
@@ -120,12 +147,49 @@ def create_new_workitem(driver, mva: str) -> dict:
 def handle_pm_workitems(driver, mva: str) -> dict:
     """
     Handle PM Work Items for a given MVA:
-      1. If an open PM Work Item exists, complete it.
-      2. Otherwise, start a new Work Item.
+      1. Check if MVA is rentable (skip if true)
+      2. If an open PM Work Item exists, complete it.
+      3. Otherwise, start a new Work Item.
          - Try to associate an existing complaint.
          - If none, skip and return control to the test loop.
+    
+    Args:
+        driver: Selenium WebDriver instance
+        mva: MVA identifier string
+        
+    Returns:
+        dict: Status object containing result of operation
     """
-    log.info(f"[WORKITEM] {mva} — handling PM work items")
+    from selenium.webdriver.common.by import By  # Ensure By is in scope
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+    
+    log.info(f"[WORKITEM] {mva} — checking vehicle status")
+
+    try:
+        # Check Lighthouse status first
+        try:
+            # Wait for Lighthouse status value to be visible (10 second timeout)
+            lighthouse_element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'vehicle-property-name') and normalize-space()='Lighthouse']/following-sibling::div[contains(@class, 'vehicle-property-value')]"))
+            )
+            lighthouse_status = lighthouse_element.text.strip()
+            log.info(f"[LIGHTHOUSE] {mva} — Vehicle Lighthouse status: {lighthouse_status}")
+            
+            # Skip rentable vehicles - move to next MVA in list
+            if lighthouse_status.lower() == "rentable":
+                log.info(f"[LIGHTHOUSE] {mva} — Vehicle is rentable, skipping to next MVA")
+                return {"status": "skipped", "reason": "vehicle_rentable", "mva": mva}
+            
+            log.info(f"[WORKITEM] {mva} - Vehicle status: {lighthouse_status}, proceeding with work items")
+                
+        except TimeoutException:
+            log.warning(f"[LIGHTHOUSE] {mva} — Could not find Lighthouse status element, proceeding with caution")
+    except TimeoutException:
+        log.warning(f"[WORKITEM][WARN] {mva} - Lighthouse status not found, continuing with normal flow")
+    except Exception as e:
+        log.warning(f"[WORKITEM][WARN] {mva} - Error checking Lighthouse status: {str(e)}")
 
     # Step 1: check for open PM Work Items
     items = get_work_items(driver, mva)
