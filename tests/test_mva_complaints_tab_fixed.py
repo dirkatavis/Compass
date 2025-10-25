@@ -39,11 +39,13 @@ def test_mva_complaints_tab():
 
     # Loop through MVAs
     for mva in mvas:
-        log.info("=" * 80)
-        log.info(f">>> Starting MVA {mva}")
-        log.info("=" * 80)
+        log.critical("")
+        log.critical("")
+        log.critical("=" * 80)
+        log.critical(f">>> Starting MVA {mva}")
+        log.critical("=" * 80)
 
-              # Enter the MVA into the input field
+        # Enter the MVA into the input field
         mva_page = MVAInputPage(driver)
         field = mva_page.find_input()
         if not field:
@@ -59,15 +61,13 @@ def test_mva_complaints_tab():
         res = handle_pm_workitems(driver, mva)
 
         if res.get("status") in ("ok", "closed"):
-            log.info(f"[WORKITEM] {mva} — flow completed successfully")
+            log.critical(f"[WORKITEM] {mva} — flow completed successfully")
         elif res.get("status") == "skipped_no_complaint":
-            log.info(f"[WORKITEM] {mva} — navigating back home after skip")
+            log.critical(f"[WORKITEM] {mva} — navigating back home after skip")
             navigate_back_to_home(driver)
             time.sleep(5)
         else:
-            log.warning(f"[WORKITEM] {mva} — failed flow: {res}")
-
-        continue
+            log.critical(f"[WORKITEM] {mva} — failed flow: {res}")
     print("[FIXTURE] All tests complete - quitting singleton driver...")
 
 

@@ -25,6 +25,7 @@ def finalize_workitem(driver, mva: str) -> dict:
 
         # Step 2: Verify Work Item exists
         tiles = driver.find_elements(By.XPATH, "//div[contains(@class,'scan-record-header')]")
+        input(f"Found {len(tiles)} tiles. Press Enter to continue..." )
         if not tiles:
             log.warning(f"[WORKITEM][WARN] {mva} - no Work Item tiles found after creation")
             return {"status": "failed", "reason": "no_tiles", "mva": mva}

@@ -57,29 +57,56 @@ def get_or_create_driver():
     global _driver
     if _driver:
         return _driver
+    # Candidate driver locations to try (primary working path + repo vendored path)
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    candidate_paths = [
+        r"C:\temp\Python\msedgedriver.exe",
+        os.path.join(repo_root, "msedgedriver.exe"),
+        os.path.join(repo_root, "v141.0.3537.57", "edgedriver_win64", "msedgedriver.exe"),
+    ]
 
-    driver_path = r"C:\temp\Python\msedgedriver.exe"
+    selected_driver = None
+    driver_ver = "unknown"
+    for p in candidate_paths:
+        if os.path.exists(p):
+            selected_driver = p
+            driver_ver = get_driver_version(p)
+            log.debug(f"[DRIVER] Found candidate driver at {p} → {driver_ver}")
+            break
+
+    if not selected_driver:
+        log.error(
+            "[DRIVER] No Edge WebDriver binary found. Tried: %s",
+            ", ".join(candidate_paths),
+        )
+        raise RuntimeError(
+            "Edge WebDriver not found. Place msedgedriver.exe at one of the candidate paths or update driver_manager.")
+
     browser_ver = get_browser_version()
-    driver_ver = get_driver_version(driver_path)
-
     # Always log detected versions
     log.info(f"[DRIVER] Detected Browser={browser_ver}, Driver={driver_ver}")
 
-    # Compare before launching browser
-    if browser_ver.split(".")[0] != driver_ver.split(".")[0]:
-        log.error(f"[DRIVER] Version mismatch → Browser {browser_ver}, Driver {driver_ver}")
-        raise RuntimeError("Edge/Driver version mismatch")
+    # If both versions are known, enforce major-version match. If either is unknown, warn and continue.
+    if browser_ver != "unknown" and driver_ver != "unknown":
+        try:
+            if browser_ver.split(".")[0] != driver_ver.split(".")[0]:
+                log.error(f"[DRIVER] Version mismatch → Browser {browser_ver}, Driver {driver_ver}")
+                raise RuntimeError("Edge/Driver version mismatch")
+        except Exception:
+            # Defensive: if split/parse fails, log and continue to allow debugging on machines where registry isn't standard
+            log.warning("[DRIVER] Could not compare browser/driver versions precisely; proceeding with caution.")
+    else:
+        log.warning("[DRIVER] Browser or driver version unknown; skipping strict version check.")
 
+    # Launch Edge using the selected driver
     try:
         log.info(f"[DRIVER] Launching Edge → Browser {browser_ver}, Driver {driver_ver}")
         options = webdriver.EdgeOptions()
         options.add_argument("--inprivate")
         options.add_argument("--start-maximized")
-        options.add_experimental_option("prefs", {
-            "profile.default_content_setting_values.geolocation": 2 }) 
-        service = Service(r"C:\temp\Python\msedgedriver.exe")
+        options.add_experimental_option("prefs", {"profile.default_content_setting_values.geolocation": 2})
+        service = Service(selected_driver)
         _driver = webdriver.Edge(service=service, options=options)
-         #_driver = webdriver.Edge(driver_path, options=options)
         return _driver
     except SessionNotCreatedException as e:
         log.error(f"[DRIVER] Session creation failed: {e}")

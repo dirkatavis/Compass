@@ -7,23 +7,23 @@ from selenium.webdriver.common.by import By
 from flows.complaints_flows import associate_existing_complaint
 from flows.finalize_flow import finalize_workitem
 from utils.logger import log
-from utils.ui_helpers import click_element, safe_wait
+from utils.ui_helpers import click_element, safe_wait, debug_list_work_items, _dump_artifacts
 
 def get_work_items(driver, mva: str):
     """Collect all open PM work items for the given MVA."""
     log.info(f"[WORKITEM] {mva} - pausing to let Work Items render...")
+    log.critical(f"[WORKITEM] {mva} - Checking for open PM work items...")
     time.sleep(9)  # wait for UI to render
     try:
         tiles = driver.find_elements(
             By.XPATH,
-            "//div[contains(@class,'scan-record-header') "
-            "and .//div[contains(@class,'scan-record-header-title')][contains(normalize-space(),'PM')] "
-            "and .//div[contains(@class,'scan-record-header-title-right__')][normalize-space()='Open']]"
-        )
+            "(//div[contains(@class,'scan-record')    and .//div[contains(@class,'scan-record-header-title-right')    and normalize-space(.)='Open']    and contains(., 'PM')]  )/*[1]"
+            )
         log.info(f"[WORKITEMS] {mva} - collected {len(tiles)} open PM item(s)")
+        # input(f"Found {len(tiles)} open PM work items. Press Enter to continue..." )
         for t in tiles:
             log.debug(f"[DBG] {mva} - tile text = {t.text!r}")
-        input("Press Enter to continue...")  # debug pause
+        log.info(f"[WORKITEM] {mva} - get_work_items() found {len(tiles)} items")
         return tiles
     except NoSuchElementException as e:
         log.warning(f"[WORKITEM][WARN] {mva} - could not collect work items -> {e}")
@@ -36,6 +36,7 @@ def get_work_items(driver, mva: str):
 def create_new_workitem(driver, mva: str):
     """Create a new Work Item for the given MVA."""
     log.info(f"[WORKITEM] {mva} - starting CREATE NEW WORK ITEM workflow")
+    log.debug(f"[WORKITEM] {mva} - create_new_workitem() entry")
 
     # Step 1: Click Add Work Item
     try:
@@ -46,13 +47,14 @@ def create_new_workitem(driver, mva: str):
         log.info(f"[WORKITEM] {mva} - Add Work Item clicked")
         time.sleep(5)
 
-    except NoSuchElementException:
+    except NoSuchElementException as e:
         log.warning(f"[WORKITEM][WARN] {mva} - add_btn failed -> {e}")
         return {"status": "failed", "reason": "add_btn", "mva": mva}
 
     # Step 2: Complaint handling
     try:
         res = associate_existing_complaint(driver, mva)
+        log.debug(f"[WORKITEM] {mva} - associate_existing_complaint -> {res}")
         if res["status"] == "associated":
             log.info(
                 "[COMPLAINT][ASSOCIATED] {mva} - existing PM complaint linked to Work Item"
@@ -80,15 +82,19 @@ def handle_pm_workitems(driver, mva: str) -> dict:
          - If none, skip and return control to the test loop.
     """
     log.info(f"[WORKITEM] {mva} — handling PM work items")
+    time.sleep(15)  # wait for UI to stabilize
 
     # Step 1: check for open PM Work Items
     items = get_work_items(driver, mva)
     if items:
-        log.info(f"[WORKITEM] {mva} - open PM Work Item found, completing it")
+        log.critical(f"[WORKITEM] {mva} - open PM Work Item found, completing it")
         from flows.work_item_flow import complete_pm_workitem
         return complete_pm_workitem(driver, mva)
+    else:
+        log.critical(f"[WORKITEM] {mva} - no open PM Work Item found.")
 
     # Step 2: no open WI → start a new one
+
     from selenium.webdriver.common.by import By
     if click_element(driver, (By.XPATH, "//button[normalize-space()='Add Work Item']"),
                      desc="Add Work Item", timeout=8):
@@ -142,20 +148,79 @@ def process_workitem(driver, mva: str):
 def open_pm_workitem_card(driver, mva: str, timeout: int = 8) -> dict:
     """Find and open the first Open PM Work Item card."""
     try:
-        tile = driver.find_element(
-            By.XPATH,
-            (
-                "//div[contains(@class,'scan-record-header') "
-                "and .//div[contains(@class,'scan-record-header-title')]"
-                "[normalize-space()='PM' or normalize-space()='PM Hard Hold - PM'] "
-                "and .//div[contains(@class,'scan-record-header-title-right')][normalize-space()='Open']]"
-            )
-        )
-        tile.click()
-        log.info(f"[WORKITEM] {mva} - Open PM Work Item card clicked")
-        return {"status": "ok", "reason": "card_opened", "mva": mva}
+        # Primary XPath strategy (confirmed by user) — select first child element of the matching scan-record
+        xp = "(//div[contains(@class,'scan-record') and .//div[contains(@class,'scan-record-header-title-right') and normalize-space(.)='Open'] and contains(., 'PM')])/*[1]"
+        try:
+            log.debug(f"[WORKITEM][DBG] {mva} - trying primary XPath: {xp}")
+            if click_element(driver, (By.XPATH, xp), desc="Open PM Work Item card", timeout=timeout):
+                log.info(f"[WORKITEM] {mva} - Open PM Work Item card clicked (primary xpath)")
+                return {"status": "ok", "reason": "card_opened", "mva": mva}
+            else:
+                log.warning(f"[WORKITEM][DBG] {mva} - primary XPath present but click attempt failed; attempting fallback scan")
+        except Exception as e:
+            log.warning(f"[WORKITEM][DBG] {mva} - primary XPath did not match any tile or raised: {e}; attempting fallback scan")
+
+        # Fallback: list visible work item tiles and inspect their header text and state
+        try:
+            debug_list_work_items(driver, timeout=timeout)
+        except Exception:
+            log.debug(f"[WORKITEM][DBG] {mva} - debug_list_work_items failed")
+
+        # Broad candidate selector for workitem cards (less brittle to hashed classnames)
+        candidates = driver.find_elements(By.CSS_SELECTOR, "div[class*='scan-record']")
+        for t in candidates:
+            try:
+                header = t.find_element(By.CSS_SELECTOR, "div[class*='scan-record-header']")
+                title_el = header.find_element(By.CSS_SELECTOR, "div[class*='scan-record-header-title']")
+                state_el = header.find_element(By.CSS_SELECTOR, "div[class*='scan-record-header-title-right']")
+                title = title_el.text.strip()
+                state = state_el.text.strip()
+                # Also grab the entire tile text as a fallback when titles are generic like 'Unknown'
+                try:
+                    full_text = t.text or ""
+                except Exception:
+                    full_text = ""
+                log.debug(f"[WORKITEM][FALLBACK] candidate title='{title}' state='{state}' full_text='{full_text[:160]}'")
+
+                # Match strategies:
+                # - Prefer explicit title match (PM or PM Hard Hold)
+                # - Fallback: if tile text contains 'PM' token or 'PM Hard Hold', treat as match
+                matched = False
+                if title and (title.strip() == 'PM' or 'PM Hard Hold' in title):
+                    matched = True
+                else:
+                    txt_lower = full_text.lower()
+                    if 'pm hard hold' in txt_lower or '\npm\b' in full_text.lower() or ' pm ' in (' ' + txt_lower + ' '):
+                        matched = True
+
+                if matched and state == 'Open':
+                    try:
+                        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", t)
+                    except Exception:
+                        pass
+                    try:
+                        t.click()
+                    except Exception:
+                        # JS click fallback
+                        try:
+                            driver.execute_script('arguments[0].click();', t)
+                        except Exception as e:
+                            log.exception(f"[WORKITEM][ERR] fallback click failed: {e}")
+                            continue
+                    log.info(f"[WORKITEM] {mva} - Open PM Work Item card clicked (fallback)")
+                    return {"status": "ok", "reason": "card_opened", "mva": mva}
+            except Exception:
+                continue
+        # If we get here, no candidate matched — dump artifacts for debugging
+        try:
+            _dump_artifacts(driver, f"no_open_pm_card_{mva}")
+        except Exception:
+            log.debug(f"[WORKITEM][DBG] {mva} - failed to dump artifacts")
+        log.warning(f"[WORKITEM][WARN] {mva} - no Open PM Work Item card found after fallback scan")
+        return {"status": "failed", "reason": "open_pm_card", "mva": mva}
     except Exception as e:
-        log.warning(f"[WORKITEM][WARN] {mva} - could not open Open PM Work Item card -> {e}")
+        # Log full exception details so we can see stack traces in the file log
+        log.exception(f"[WORKITEM][ERR] {mva} - unexpected error opening PM Work Item card: {e}")
         return {"status": "failed", "reason": "open_pm_card", "mva": mva}
 
 def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, observe: int = 0) -> dict:
@@ -214,7 +279,9 @@ def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, obs
 
 def mark_complete_pm_workitem(driver, mva: str, note: str = "Done", timeout: int = 8) -> dict:
     """Click 'Mark Complete', then complete the dialog with the given note."""
-    if not click_element(driver, (By.CSS_SELECTOR, "button.fleet-operations-pwa__mark-complete-button__spuz8c")):
+    # Prefer class-contains selector to avoid brittle hashed suffixes
+    if not click_element(driver, (By.CSS_SELECTOR, "button[class*='mark-complete-button']")):
+        # Fallback to visible text if class-based selector fails
         if not click_element(driver, (By.XPATH, "//button[normalize-space()='Mark Complete']")):
             return {"status": "failed", "reason": "mark_complete_button", "mva": mva}
 
@@ -232,14 +299,18 @@ def mark_complete_pm_workitem(driver, mva: str, note: str = "Done", timeout: int
 
 def complete_pm_workitem(driver, mva: str, timeout: int = 8) -> dict:
     """Open the PM Work Item card and mark it complete with note='Done'."""
+    log.debug(f"[WORKITEM] {mva} - complete_pm_workitem() start; waiting for UI to stabilize")
     time.sleep(9)  # wait for UI to stabilize
     res = open_pm_workitem_card(driver, mva, timeout=timeout)
     if res.get("status") != "ok":
+        log.warning(f"[WORKITEM] {mva} - open_pm_workitem_card returned -> {res}")
         return res  # pass through failure dict
     time.sleep(9)  # wait for card to open
+    log.debug(f"[WORKITEM] {mva} - work item card should be open; proceeding to mark complete")
     res = mark_complete_pm_workitem(driver, mva, note="Done", timeout=timeout)
     time.sleep(9)  # wait for completion to process
     if res.get("status") == "ok":
         return {"status": "ok", "reason": "completed_open_pm", "mva": mva}
     else:
+        log.warning(f"[WORKITEM] {mva} - mark_complete_pm_workitem failed -> {res}")
         return {"status": "failed", "reason": res.get("reason", "mark_complete"), "mva": mva}

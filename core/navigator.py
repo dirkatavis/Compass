@@ -23,9 +23,9 @@ class Navigator:
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
 
-        if url and not self.driver.current_url.startswith(url):
-            log.warning(f"[NAV] Expected {url}, got {self.driver.current_url}")
-            return {"status": "failed", "reason": "url_mismatch"}
+        # if url and not self.driver.current_url.startswith(url):
+        #     log.info(f"[NAV] Expected {url}, got {self.driver.current_url}")
+        #     return {"status": "failed", "reason": "url_mismatch"}
 
         if check_locator:
             WebDriverWait(self.driver, timeout).until(

@@ -27,4 +27,5 @@ class MVAInputPage:
                 continue
 
         log.info(f"[MVA_INPUT] No candidate locator matched — input field not found")
+
         return None  # swallow instead of raising

@@ -141,11 +141,24 @@ class LoginPage:
             log.warning(f"[LOGIN] Next button not found after password")
             return {"status": "failed", "reason": "timeout_password_next"}
         log.info("[LOGIN] Clicking Sign in after password")
-        if not click_element(self.driver, (By.ID, "idSIButton9"), desc="Sign in button"):
-            return {"status": "failed", "reason": "click_password_next"}
+        time.sleep(5)
 
-        log.info(f"[LOGIN] Clicked Sign in appears to have worked")
-        time.sleep(2)
+        # Check if the button is enabled and displayed before clicking
+        for attempt in range(3):
+            try:
+                btn = self.driver.find_element(By.ID, "idSIButton9")
+                if btn.is_enabled() and btn.is_displayed():
+                    if click_element(self.driver, (By.ID, "idSIButton9"), desc="Sign in button"):
+                        log.info(f"[LOGIN] Clicked Sign in appears to have worked")
+                        break
+                else:
+                    log.warning(f"[LOGIN] Sign in button not clickable (enabled={btn.is_enabled()}, displayed={btn.is_displayed()})")
+            except Exception as e:
+                log.warning(f"[LOGIN] Attempt {attempt+1}: Exception clicking Sign in: {e}")
+                if attempt < 2:
+                    time.sleep(1)
+        else:
+            return {"status": "failed", "reason": "click_password_next"}
 
         # --- Stay signed in? ---
         no_btn = safe_wait(
