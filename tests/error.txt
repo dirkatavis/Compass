@@ -1,0 +1,26 @@
+(.venv) PS C:\Temp\Code\Scripts\Py\CompassAutomation\tests> python -m pytest -v -s test_mva_complaints_tab_fixed.py
+sys.path in conftest.py: ['C:\\Temp\\Code\\Scripts\\Py\\CompassAutomation', 'C:\\Temp\\Code\\Scripts\\Py\\CompassAutomation\\tests', 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\python313.zip', 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\DLLs', 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\\Lib', 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0', 'C:\\Temp\\Code\\Scripts\\Py\\CompassAutomation\\.venv', 'C:\\Temp\\Code\\Scripts\\Py\\CompassAutomation\\.venv\\Lib\\site-packages']
+================================================================================================ test session starts =================================================================================================
+platform win32 -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0 -- C:\Temp\Code\Scripts\Py\CompassAutomation\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Temp\Code\Scripts\Py\CompassAutomation
+configfile: pytest.ini
+collecting ... <<<<< LOADING LOCAL CONFIG LOADER >>>>>
+collected 0 items / 1 error
+
+======================================================================================================= ERRORS =======================================================================================================
+______________________________________________________________________________ ERROR collecting tests/test_mva_complaints_tab_fixed.py _______________________________________________________________________________ 
+ImportError while importing test module 'C:\Temp\Code\Scripts\Py\CompassAutomation\tests\test_mva_complaints_tab_fixed.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_mva_complaints_tab_fixed.py:9: in <module>
+    from pages.mva_input_page import MVAInputPage
+E   ModuleNotFoundError: No module named 'pages.mva_input_page'
+============================================================================================== short test summary info =============================================================================================== 
+ERROR test_mva_complaints_tab_fixed.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+================================================================================================== 1 error in 0.54s ================================================================================================== 
+(.venv) PS C:\Temp\Code\Scripts\Py\CompassAutomation\tests> 

@@ -1,0 +1,1438 @@
+[INFO] [mc.automation] [11:58:47] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [11:58:47] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [11:58:53] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="eb6c7c9aa29ba0784ec7d71123450b1c")>
+[INFO] [mc.automation] [11:58:53] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [11:58:53] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [11:58:54] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [11:58:59] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:59:26] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [11:59:26] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [11:59:30] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="708c98aeeec9c372b137265155f867cd")>
+[INFO] [mc.automation] [11:59:30] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [11:59:30] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [11:59:32] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[ERROR] [mc.automation] [11:59:39] [LOGIN] Neither workspace nor login form detected after navigation. Unexpected state.
+[INFO] [mc.automation] [11:59:39] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:59:57] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [11:59:57] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [12:00:01] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="51dd3d8b260a5b0618407875b7a4e977")>
+[INFO] [mc.automation] [12:00:01] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:00:01] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:00:16] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/workspace/module/view/latest/ri.workshop.main.module.d62ba12c-018c-41c1-8214-0749f6591b30
+[INFO] [mc.automation] [12:00:16] [LOGIN] Already on workspace page after redirection. Considering logged in.
+[INFO] [mc.automation] [12:00:17] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [12:08:53] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [12:08:53] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [12:08:58] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="e094ebeea78dba4ab7f60c8fcf2ec06c")>
+[INFO] [mc.automation] [12:08:58] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:08:58] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:09:08] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/workspace/module/view/latest/ri.workshop.main.module.d62ba12c-018c-41c1-8214-0749f6591b30
+[INFO] [mc.automation] [12:09:08] [LOGIN] Already on workspace page after redirection. Considering logged in.
+[INFO] [mc.automation] [12:09:09] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [12:28:55] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [12:28:55] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [12:29:00] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="f999986f1fac031f22d98d703f832ce0")>
+[INFO] [mc.automation] [12:29:00] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:29:00] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:29:04] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[ERROR] [mc.automation] [12:29:12] [LOGIN] Neither workspace nor login form detected after navigation. Unexpected state.
+[INFO] [mc.automation] [12:29:12] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [12:34:11] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [12:34:11] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [12:34:15] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="2e269c3c56a03a43d0425d36551ac9fc")>
+[INFO] [mc.automation] [12:34:15] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:34:15] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:34:17] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [12:34:17] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [12:34:17] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [12:34:27] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [12:34:28] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [12:34:28] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [12:34:31] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [12:34:31] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [12:34:31] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [12:34:31] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:34:32] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [12:34:32] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [12:34:41] ================================================================================
+[INFO] [mc.automation] [12:34:41] >>> Starting MVA 57704080
+[INFO] [mc.automation] [12:34:41] ================================================================================
+[DEBUG] [mc.automation] [12:34:41] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:34:46] [MVA] 57704080 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:34:46] [MVA] 57704080 — vehicle properties container detected
+[INFO] [mc.automation] [12:34:46] [WORKITEM] 57704080 - handling PM work items
+[DEBUG] [mc.automation] [12:34:46] [LIGHTHOUSE] 57704080 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:34:46] [LIGHTHOUSE] 57704080 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:34:46] [LIGHTHOUSE] 57704080 - Found status: Rentable
+[INFO] [mc.automation] [12:34:46] [LIGHTHOUSE] 57704080 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:34:46] [WORKITEM] 57704080 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57704080'}
+[INFO] [mc.automation] [12:34:46] ================================================================================
+[INFO] [mc.automation] [12:34:46] >>> Starting MVA 56390305
+[INFO] [mc.automation] [12:34:46] ================================================================================
+[DEBUG] [mc.automation] [12:34:46] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:34:51] [MVA] 56390305 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:34:51] [MVA] 56390305 — vehicle properties container detected
+[INFO] [mc.automation] [12:34:51] [WORKITEM] 56390305 - handling PM work items
+[DEBUG] [mc.automation] [12:34:51] [LIGHTHOUSE] 56390305 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:34:51] [LIGHTHOUSE] 56390305 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:34:51] [LIGHTHOUSE] 56390305 - Lighthouse field not found or not visible.
+[DEBUG] [mc.automation] [12:34:51] [WORKITEM] 56390305 - Getting work items.
+[INFO] [mc.automation] [12:34:51] [WORKITEM] 56390305 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:35:00] [WORKITEMS] 56390305 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:35:00] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:35:00] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:35:00] [WORKITEM] 56390305 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:35:00] [COMPLAINT] 56390305 - Associating existing complaint.
+[INFO] [mc.automation] [12:35:04] [COMPLAINT][ASSOCIATED] 56390305 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [12:35:04] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [12:35:14] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [12:35:14] [MILEAGE] 56390305 - Completing mileage dialog.
+[DEBUG] [mc.automation] [12:35:14] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:35:14] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [12:35:14] [MILEAGE] 56390305 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [12:35:14] [OPCODE] 56390305 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [12:35:14]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [12:35:14]  found 1 matching opcode tiles
+[INFO] [mc.automation] [12:35:15] [COMPLAINT] 56390305 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [12:35:15] [FINALIZE] 56390305 - Finalizing work item.
+[DEBUG] [mc.automation] [12:35:15] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:35:16] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [12:35:16] [WORKITEM] 56390305 - 'Create Work Item' clicked
+[INFO] [mc.automation] [12:35:18] [WORKITEM] 56390305 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [12:35:23] [WORKITEM] 56390305 - Searching for the PM work item card...
+[INFO] [mc.automation] [12:35:23] [WORKITEM] 56390305 - Found the parent card.
+[INFO] [mc.automation] [12:35:23] [WORKITEM] 56390305 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [12:35:23] [WORKITEM] 56390305 - Found the title bar.
+[INFO] [mc.automation] [12:35:23] [WORKITEM] 56390305 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [12:35:28] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:35:28] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [12:35:28] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [12:35:48] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [12:41:11] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [12:41:11] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [12:41:15] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="bd0fc230694c8182fe418970a7f82bc5")>
+[INFO] [mc.automation] [12:41:15] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:41:15] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:41:26] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/workspace/module/view/latest/ri.workshop.main.module.d62ba12c-018c-41c1-8214-0749f6591b30
+[INFO] [mc.automation] [12:41:26] [LOGIN] Already on workspace page after redirection. Considering logged in.
+[DEBUG] [mc.automation] [12:41:26] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [12:41:37] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [12:41:37] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [12:41:37] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [12:41:40] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [12:41:40] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [12:41:41] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [12:41:41] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:41:41] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [12:41:41] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [12:41:50] ================================================================================
+[INFO] [mc.automation] [12:41:50] >>> Starting MVA 57704080
+[INFO] [mc.automation] [12:41:51] ================================================================================
+[DEBUG] [mc.automation] [12:41:51] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:41:56] [MVA] 57704080 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:42:00] [MVA] 57704080 — vehicle properties container detected
+[INFO] [mc.automation] [12:42:00] [WORKITEM] 57704080 - handling PM work items
+[DEBUG] [mc.automation] [12:42:00] [LIGHTHOUSE] 57704080 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:42:00] [LIGHTHOUSE] 57704080 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:42:00] [LIGHTHOUSE] 57704080 - Found status: Rentable
+[INFO] [mc.automation] [12:42:00] [LIGHTHOUSE] 57704080 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:42:00] [WORKITEM] 57704080 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57704080'}
+[INFO] [mc.automation] [12:42:00] ================================================================================
+[INFO] [mc.automation] [12:42:00] >>> Starting MVA 56390305
+[INFO] [mc.automation] [12:42:00] ================================================================================
+[DEBUG] [mc.automation] [12:42:00] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:42:05] [MVA] 56390305 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:42:05] [MVA] 56390305 — vehicle properties container detected
+[INFO] [mc.automation] [12:42:05] [WORKITEM] 56390305 - handling PM work items
+[DEBUG] [mc.automation] [12:42:05] [LIGHTHOUSE] 56390305 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:42:05] [LIGHTHOUSE] 56390305 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:42:05] [LIGHTHOUSE] 56390305 - Found status: Rentable
+[INFO] [mc.automation] [12:42:05] [LIGHTHOUSE] 56390305 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:42:05] [WORKITEM] 56390305 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '56390305'}
+[INFO] [mc.automation] [12:42:05] ================================================================================
+[INFO] [mc.automation] [12:42:05] >>> Starting MVA 15985804
+[INFO] [mc.automation] [12:42:05] ================================================================================
+[DEBUG] [mc.automation] [12:42:05] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:42:11] [MVA] 15985804 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:42:11] [MVA] 15985804 — vehicle properties container detected
+[INFO] [mc.automation] [12:42:11] [WORKITEM] 15985804 - handling PM work items
+[DEBUG] [mc.automation] [12:42:11] [LIGHTHOUSE] 15985804 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:42:11] [LIGHTHOUSE] 15985804 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:42:11] [LIGHTHOUSE] 15985804 - Found status: PM
+[DEBUG] [mc.automation] [12:42:11] [WORKITEM] 15985804 - Getting work items.
+[INFO] [mc.automation] [12:42:11] [WORKITEM] 15985804 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:42:20] [WORKITEMS] 15985804 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:42:20] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:42:20] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:42:20] [WORKITEM] 15985804 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:42:20] [COMPLAINT] 15985804 - Associating existing complaint.
+[INFO] [mc.automation] [12:42:23] [COMPLAINT][ASSOCIATED] 15985804 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [12:42:23] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [12:42:33] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [12:42:34] [MILEAGE] 15985804 - Completing mileage dialog.
+[DEBUG] [mc.automation] [12:42:34] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:42:34] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [12:42:34] [MILEAGE] 15985804 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [12:42:34] [OPCODE] 15985804 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [12:42:34]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [12:42:34]  found 1 matching opcode tiles
+[INFO] [mc.automation] [12:42:35] [COMPLAINT] 15985804 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [12:42:35] [FINALIZE] 15985804 - Finalizing work item.
+[DEBUG] [mc.automation] [12:42:35] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:42:35] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [12:42:35] [WORKITEM] 15985804 - 'Create Work Item' clicked
+[INFO] [mc.automation] [12:42:37] [WORKITEM] 15985804 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [12:42:42] [WORKITEM] 15985804 - Searching for the PM work item card...
+[INFO] [mc.automation] [12:42:42] [WORKITEM] 15985804 - Found the parent card.
+[INFO] [mc.automation] [12:42:42] [WORKITEM] 15985804 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [12:42:42] [WORKITEM] 15985804 - Found the title bar.
+[INFO] [mc.automation] [12:42:42] [WORKITEM] 15985804 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [12:42:47] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:42:47] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [12:42:48] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [12:43:08] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [12:43:18] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [12:43:18] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [12:43:28] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [12:43:33] [WORKITEM] 15985804 - Work Item finalized and closed
+[INFO] [mc.automation] [12:43:33] [WORKITEM] 15985804 — flow completed successfully
+[INFO] [mc.automation] [12:43:33] ================================================================================
+[INFO] [mc.automation] [12:43:33] >>> Starting MVA 56616471
+[INFO] [mc.automation] [12:43:33] ================================================================================
+[DEBUG] [mc.automation] [12:43:33] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:43:38] [MVA] 56616471 — checking if vehicle loads...
+[WARNING] [mc.automation] [12:43:46] [MVA][WARN] 56616471 — vehicle properties container not found (likely unknown MVA)
+[WARNING] [mc.automation] [12:43:46] [MVA] 56616471 — invalid/unknown MVA, skipping
+[INFO] [mc.automation] [12:43:46] ================================================================================
+[INFO] [mc.automation] [12:43:46] >>> Starting MVA 16439581
+[INFO] [mc.automation] [12:43:46] ================================================================================
+[DEBUG] [mc.automation] [12:43:46] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:43:52] [MVA] 16439581 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:43:52] [MVA] 16439581 — vehicle properties container detected
+[INFO] [mc.automation] [12:43:52] [WORKITEM] 16439581 - handling PM work items
+[DEBUG] [mc.automation] [12:43:52] [LIGHTHOUSE] 16439581 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:43:52] [LIGHTHOUSE] 16439581 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:43:52] [LIGHTHOUSE] 16439581 - Found status: PM Hard Hold
+[DEBUG] [mc.automation] [12:43:52] [WORKITEM] 16439581 - Getting work items.
+[INFO] [mc.automation] [12:43:52] [WORKITEM] 16439581 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:44:01] [WORKITEMS] 16439581 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:44:01] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:44:01] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:44:01] [WORKITEM] 16439581 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:44:01] [COMPLAINT] 16439581 - Associating existing complaint.
+[INFO] [mc.automation] [12:44:04] [COMPLAINT][EXISTING] 16439581 - no complaint tiles found
+[INFO] [mc.automation] [12:44:04] [WORKITEM] 16439581 - navigating back home after skip
+[DEBUG] [mc.automation] [12:44:04] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:44:07] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [12:44:09] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:44:09] [WORKITEM] 16439581 — navigating back home after skip
+[DEBUG] [mc.automation] [12:44:09] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:44:09] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:44:14] ================================================================================
+[INFO] [mc.automation] [12:44:14] >>> Starting MVA 55954264
+[INFO] [mc.automation] [12:44:14] ================================================================================
+[DEBUG] [mc.automation] [12:44:14] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:44:19] [MVA] 55954264 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:44:19] [MVA] 55954264 — vehicle properties container detected
+[INFO] [mc.automation] [12:44:19] [WORKITEM] 55954264 - handling PM work items
+[DEBUG] [mc.automation] [12:44:19] [LIGHTHOUSE] 55954264 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:44:19] [LIGHTHOUSE] 55954264 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:44:19] [LIGHTHOUSE] 55954264 - Found status: Tire Damage
+[DEBUG] [mc.automation] [12:44:19] [WORKITEM] 55954264 - Getting work items.
+[INFO] [mc.automation] [12:44:19] [WORKITEM] 55954264 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:44:28] [WORKITEMS] 55954264 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:44:28] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:44:28] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:44:28] [WORKITEM] 55954264 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:44:28] [COMPLAINT] 55954264 - Associating existing complaint.
+[INFO] [mc.automation] [12:44:31] [COMPLAINT][ASSOCIATED] 55954264 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [12:44:31] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [12:44:41] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [12:44:42] [MILEAGE] 55954264 - Completing mileage dialog.
+[DEBUG] [mc.automation] [12:44:42] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:44:42] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [12:44:42] [MILEAGE] 55954264 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [12:44:42] [OPCODE] 55954264 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [12:44:42]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [12:44:42]  found 1 matching opcode tiles
+[INFO] [mc.automation] [12:44:43] [COMPLAINT] 55954264 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [12:44:43] [FINALIZE] 55954264 - Finalizing work item.
+[DEBUG] [mc.automation] [12:44:43] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:44:43] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [12:44:43] [WORKITEM] 55954264 - 'Create Work Item' clicked
+[INFO] [mc.automation] [12:44:45] [WORKITEM] 55954264 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [12:44:50] [WORKITEM] 55954264 - Searching for the PM work item card...
+[INFO] [mc.automation] [12:44:50] [WORKITEM] 55954264 - Found the parent card.
+[INFO] [mc.automation] [12:44:50] [WORKITEM] 55954264 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [12:44:50] [WORKITEM] 55954264 - Found the title bar.
+[INFO] [mc.automation] [12:44:50] [WORKITEM] 55954264 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [12:44:55] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:44:55] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [12:44:56] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [12:45:16] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [12:45:26] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [12:45:26] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [12:45:36] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [12:45:41] [WORKITEM] 55954264 - Work Item finalized and closed
+[INFO] [mc.automation] [12:45:41] [WORKITEM] 55954264 — flow completed successfully
+[INFO] [mc.automation] [12:45:41] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [13:12:29] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [13:12:29] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [13:12:33] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="f0ede7e000a9536542aa39d6ec857c24")>
+[INFO] [mc.automation] [13:12:34] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [13:12:34] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [13:12:35] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [13:12:35] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [13:12:35] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [13:12:46] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [13:12:47] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [13:12:47] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [13:12:51] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [13:12:51] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [13:12:52] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [13:12:52] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:12:52] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [13:12:52] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [13:13:01] ================================================================================
+[INFO] [mc.automation] [13:13:01] >>> Starting MVA 57704080
+[INFO] [mc.automation] [13:13:01] ================================================================================
+[DEBUG] [mc.automation] [13:13:01] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:13:31] [MVA] 57704080 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:13:31] [MVA] 57704080 — vehicle properties container detected
+[INFO] [mc.automation] [13:13:31] [WORKITEM] 57704080 - handling PM work items
+[DEBUG] [mc.automation] [13:13:31] [LIGHTHOUSE] 57704080 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:13:31] [LIGHTHOUSE] 57704080 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:13:31] [LIGHTHOUSE] 57704080 - Found status: Rentable
+[INFO] [mc.automation] [13:13:31] [LIGHTHOUSE] 57704080 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:13:31] [WORKITEM] 57704080 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57704080'}
+[INFO] [mc.automation] [13:13:31] ================================================================================
+[INFO] [mc.automation] [13:13:31] >>> Starting MVA 56390305
+[INFO] [mc.automation] [13:13:31] ================================================================================
+[DEBUG] [mc.automation] [13:13:31] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:14:01] [MVA] 56390305 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:14:01] [MVA] 56390305 — vehicle properties container detected
+[INFO] [mc.automation] [13:14:01] [WORKITEM] 56390305 - handling PM work items
+[DEBUG] [mc.automation] [13:14:01] [LIGHTHOUSE] 56390305 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:14:01] [LIGHTHOUSE] 56390305 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:14:01] [LIGHTHOUSE] 56390305 - Found status: Rentable
+[INFO] [mc.automation] [13:14:01] [LIGHTHOUSE] 56390305 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:14:01] [WORKITEM] 56390305 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '56390305'}
+[INFO] [mc.automation] [13:14:01] ================================================================================
+[INFO] [mc.automation] [13:14:01] >>> Starting MVA 15985804
+[INFO] [mc.automation] [13:14:01] ================================================================================
+[DEBUG] [mc.automation] [13:14:01] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:14:31] [MVA] 15985804 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:14:32] [MVA] 15985804 — vehicle properties container detected
+[INFO] [mc.automation] [13:14:32] [WORKITEM] 15985804 - handling PM work items
+[DEBUG] [mc.automation] [13:14:32] [LIGHTHOUSE] 15985804 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:14:32] [LIGHTHOUSE] 15985804 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:14:32] [LIGHTHOUSE] 15985804 - Found status: PM
+[DEBUG] [mc.automation] [13:14:32] [WORKITEM] 15985804 - Getting work items.
+[INFO] [mc.automation] [13:14:32] [WORKITEM] 15985804 - pausing to let Work Items render...
+[INFO] [mc.automation] [13:14:41] [WORKITEMS] 15985804 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [13:14:41] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [13:14:41] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [13:14:41] [WORKITEM] 15985804 - Add Work Item clicked
+[DEBUG] [mc.automation] [13:14:41] [COMPLAINT] 15985804 - Associating existing complaint.
+[INFO] [mc.automation] [13:14:44] [COMPLAINT][ASSOCIATED] 15985804 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [13:14:44] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [13:14:54] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [13:14:54] [MILEAGE] 15985804 - Completing mileage dialog.
+[DEBUG] [mc.automation] [13:14:54] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:14:55] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [13:14:55] [MILEAGE] 15985804 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [13:14:55] [OPCODE] 15985804 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [13:14:55]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [13:14:55]  found 1 matching opcode tiles
+[INFO] [mc.automation] [13:14:56] [COMPLAINT] 15985804 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [13:14:56] [FINALIZE] 15985804 - Finalizing work item.
+[DEBUG] [mc.automation] [13:14:56] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:14:56] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [13:14:56] [WORKITEM] 15985804 - 'Create Work Item' clicked
+[INFO] [mc.automation] [13:14:58] [WORKITEM] 15985804 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [13:15:03] [WORKITEM] 15985804 - Searching for the PM work item card...
+[INFO] [mc.automation] [13:15:03] [WORKITEM] 15985804 - Found the parent card.
+[INFO] [mc.automation] [13:15:03] [WORKITEM] 15985804 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [13:15:03] [WORKITEM] 15985804 - Found the title bar.
+[INFO] [mc.automation] [13:15:03] [WORKITEM] 15985804 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [13:15:08] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:15:08] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [13:15:08] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [13:15:29] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [13:15:39] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [13:15:39] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [13:15:49] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [13:15:54] [WORKITEM] 15985804 - Work Item finalized and closed
+[INFO] [mc.automation] [13:15:54] [WORKITEM] 15985804 — flow completed successfully
+[INFO] [mc.automation] [13:15:54] ================================================================================
+[INFO] [mc.automation] [13:15:54] >>> Starting MVA 56616471
+[INFO] [mc.automation] [13:15:54] ================================================================================
+[DEBUG] [mc.automation] [13:15:54] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:16:24] [MVA] 56616471 — checking if vehicle loads...
+[WARNING] [mc.automation] [13:16:32] [MVA][WARN] 56616471 — vehicle properties container not found (likely unknown MVA)
+[WARNING] [mc.automation] [13:16:32] [MVA] 56616471 — invalid/unknown MVA, skipping
+[INFO] [mc.automation] [13:16:32] ================================================================================
+[INFO] [mc.automation] [13:16:32] >>> Starting MVA 16439581
+[INFO] [mc.automation] [13:16:32] ================================================================================
+[DEBUG] [mc.automation] [13:16:32] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:17:02] [MVA] 16439581 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:17:02] [MVA] 16439581 — vehicle properties container detected
+[INFO] [mc.automation] [13:17:02] [WORKITEM] 16439581 - handling PM work items
+[DEBUG] [mc.automation] [13:17:02] [LIGHTHOUSE] 16439581 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:17:02] [LIGHTHOUSE] 16439581 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:17:02] [LIGHTHOUSE] 16439581 - Found status: PM Hard Hold
+[DEBUG] [mc.automation] [13:17:02] [WORKITEM] 16439581 - Getting work items.
+[INFO] [mc.automation] [13:17:02] [WORKITEM] 16439581 - pausing to let Work Items render...
+[INFO] [mc.automation] [13:17:12] [WORKITEMS] 16439581 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [13:17:12] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [13:17:12] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [13:17:12] [WORKITEM] 16439581 - Add Work Item clicked
+[DEBUG] [mc.automation] [13:17:12] [COMPLAINT] 16439581 - Associating existing complaint.
+[INFO] [mc.automation] [13:17:16] [COMPLAINT][EXISTING] 16439581 - no complaint tiles found
+[INFO] [mc.automation] [13:17:16] [WORKITEM] 16439581 - navigating back home after skip
+[DEBUG] [mc.automation] [13:17:16] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:17:19] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [13:17:21] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:17:21] [WORKITEM] 16439581 — navigating back home after skip
+[DEBUG] [mc.automation] [13:17:21] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:17:22] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:17:27] ================================================================================
+[INFO] [mc.automation] [13:17:27] >>> Starting MVA 55954264
+[INFO] [mc.automation] [13:17:27] ================================================================================
+[DEBUG] [mc.automation] [13:17:27] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:17:57] [MVA] 55954264 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:17:57] [MVA] 55954264 — vehicle properties container detected
+[INFO] [mc.automation] [13:17:57] [WORKITEM] 55954264 - handling PM work items
+[DEBUG] [mc.automation] [13:17:57] [LIGHTHOUSE] 55954264 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:17:57] [LIGHTHOUSE] 55954264 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:17:57] [LIGHTHOUSE] 55954264 - Found status: Tire Damage
+[DEBUG] [mc.automation] [13:17:57] [WORKITEM] 55954264 - Getting work items.
+[INFO] [mc.automation] [13:17:57] [WORKITEM] 55954264 - pausing to let Work Items render...
+[INFO] [mc.automation] [13:18:06] [WORKITEMS] 55954264 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [13:18:06] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [13:18:07] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [13:18:07] [WORKITEM] 55954264 - Add Work Item clicked
+[DEBUG] [mc.automation] [13:18:07] [COMPLAINT] 55954264 - Associating existing complaint.
+[INFO] [mc.automation] [13:18:12] [COMPLAINT][ASSOCIATED] 55954264 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [13:18:12] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [13:18:23] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [13:18:25] [MILEAGE] 55954264 - Completing mileage dialog.
+[DEBUG] [mc.automation] [13:18:25] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:18:27] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [13:18:27] [MILEAGE] 55954264 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [13:18:27] [OPCODE] 55954264 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [13:18:27]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [13:18:27]  found 1 matching opcode tiles
+[INFO] [mc.automation] [13:18:30] [COMPLAINT] 55954264 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [13:18:30] [FINALIZE] 55954264 - Finalizing work item.
+[DEBUG] [mc.automation] [13:18:30] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:18:32] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [13:18:32] [WORKITEM] 55954264 - 'Create Work Item' clicked
+[INFO] [mc.automation] [13:18:35] [WORKITEM] 55954264 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [13:18:40] [WORKITEM] 55954264 - Searching for the PM work item card...
+[INFO] [mc.automation] [13:18:40] [WORKITEM] 55954264 - Found the parent card.
+[INFO] [mc.automation] [13:18:40] [WORKITEM] 55954264 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [13:18:40] [WORKITEM] 55954264 - Found the title bar.
+[INFO] [mc.automation] [13:18:40] [WORKITEM] 55954264 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [13:18:45] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:18:45] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [13:18:46] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [13:19:06] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [13:19:17] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [13:19:17] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [13:19:27] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [13:19:32] [WORKITEM] 55954264 - Work Item finalized and closed
+[INFO] [mc.automation] [13:19:32] [WORKITEM] 55954264 — flow completed successfully
+[INFO] [mc.automation] [13:19:32] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [10:22:54] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [10:22:54] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [10:22:58] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="38f968a6a9faf4e72324b9e0ffd42215")>
+[INFO] [mc.automation] [10:22:58] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [10:22:58] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [10:22:59] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [10:22:59] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [10:22:59] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [10:23:09] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [10:23:09] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [10:23:09] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [10:23:12] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [10:23:12] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [10:23:13] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [10:23:13] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:23:13] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [10:23:13] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [10:23:22] ================================================================================
+[INFO] [mc.automation] [10:23:22] >>> Starting MVA 50195390
+[INFO] [mc.automation] [10:23:22] ================================================================================
+[DEBUG] [mc.automation] [10:23:22] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:23:53] [MVA] 50195390 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:23:53] [MVA] 50195390 — vehicle properties container detected
+[INFO] [mc.automation] [10:23:53] [WORKITEM] 50195390 - handling PM work items
+[DEBUG] [mc.automation] [10:23:53] [LIGHTHOUSE] 50195390 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:23:53] [LIGHTHOUSE] 50195390 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:23:53] [LIGHTHOUSE] 50195390 - Found status: PM
+[DEBUG] [mc.automation] [10:23:53] [WORKITEM] 50195390 - Getting work items.
+[INFO] [mc.automation] [10:23:53] [WORKITEM] 50195390 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:24:02] [WORKITEMS] 50195390 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:24:02] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:24:02] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:24:02] [WORKITEM] 50195390 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:24:02] [COMPLAINT] 50195390 - Associating existing complaint.
+[INFO] [mc.automation] [10:24:05] [COMPLAINT][ASSOCIATED] 50195390 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [10:24:05] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:24:15] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:24:16] [MILEAGE] 50195390 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:24:16] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:24:16] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:24:16] [MILEAGE] 50195390 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:24:16] [OPCODE] 50195390 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:24:16]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:24:16]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:24:17] [COMPLAINT] 50195390 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:24:17] [FINALIZE] 50195390 - Finalizing work item.
+[DEBUG] [mc.automation] [10:24:17] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:24:17] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:24:17] [WORKITEM] 50195390 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:24:19] [WORKITEM] 50195390 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:24:24] [WORKITEM] 50195390 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:24:24] [WORKITEM] 50195390 - Found the parent card.
+[INFO] [mc.automation] [10:24:24] [WORKITEM] 50195390 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:24:24] [WORKITEM] 50195390 - Found the title bar.
+[INFO] [mc.automation] [10:24:24] [WORKITEM] 50195390 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:24:29] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:24:29] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:24:29] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:24:50] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:25:00] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:25:00] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:25:10] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:25:15] [WORKITEM] 50195390 - Work Item finalized and closed
+[INFO] [mc.automation] [10:25:15] [WORKITEM] 50195390 — flow completed successfully
+[INFO] [mc.automation] [10:25:15] ================================================================================
+[INFO] [mc.automation] [10:25:15] >>> Starting MVA 52320015
+[INFO] [mc.automation] [10:25:15] ================================================================================
+[DEBUG] [mc.automation] [10:25:15] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:25:45] [MVA] 52320015 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:25:45] [MVA] 52320015 — vehicle properties container detected
+[INFO] [mc.automation] [10:25:45] [WORKITEM] 52320015 - handling PM work items
+[DEBUG] [mc.automation] [10:25:45] [LIGHTHOUSE] 52320015 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:25:45] [LIGHTHOUSE] 52320015 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:25:45] [LIGHTHOUSE] 52320015 - Found status: PM
+[DEBUG] [mc.automation] [10:25:45] [WORKITEM] 52320015 - Getting work items.
+[INFO] [mc.automation] [10:25:45] [WORKITEM] 52320015 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:25:54] [WORKITEMS] 52320015 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:25:54] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:25:54] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:25:54] [WORKITEM] 52320015 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:25:54] [COMPLAINT] 52320015 - Associating existing complaint.
+[INFO] [mc.automation] [10:25:57] [COMPLAINT][ASSOCIATED] 52320015 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [10:25:57] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:26:07] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:26:08] [MILEAGE] 52320015 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:26:08] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:26:08] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:26:08] [MILEAGE] 52320015 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:26:08] [OPCODE] 52320015 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:26:08]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:26:08]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:26:09] [COMPLAINT] 52320015 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:26:09] [FINALIZE] 52320015 - Finalizing work item.
+[DEBUG] [mc.automation] [10:26:09] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:26:09] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:26:09] [WORKITEM] 52320015 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:26:11] [WORKITEM] 52320015 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:26:16] [WORKITEM] 52320015 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:26:16] [WORKITEM] 52320015 - Found the parent card.
+[INFO] [mc.automation] [10:26:16] [WORKITEM] 52320015 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:26:16] [WORKITEM] 52320015 - Found the title bar.
+[INFO] [mc.automation] [10:26:16] [WORKITEM] 52320015 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:26:21] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:26:21] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:26:22] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:26:42] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:26:52] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:26:52] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:27:02] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:27:07] [WORKITEM] 52320015 - Work Item finalized and closed
+[INFO] [mc.automation] [10:27:07] [WORKITEM] 52320015 — flow completed successfully
+[INFO] [mc.automation] [10:27:07] ================================================================================
+[INFO] [mc.automation] [10:27:07] >>> Starting MVA 52535770
+[INFO] [mc.automation] [10:27:07] ================================================================================
+[DEBUG] [mc.automation] [10:27:07] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:27:37] [MVA] 52535770 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:27:37] [MVA] 52535770 — vehicle properties container detected
+[INFO] [mc.automation] [10:27:37] [WORKITEM] 52535770 - handling PM work items
+[DEBUG] [mc.automation] [10:27:37] [LIGHTHOUSE] 52535770 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:27:37] [LIGHTHOUSE] 52535770 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:27:37] [LIGHTHOUSE] 52535770 - Found status: PM
+[DEBUG] [mc.automation] [10:27:37] [WORKITEM] 52535770 - Getting work items.
+[INFO] [mc.automation] [10:27:37] [WORKITEM] 52535770 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:27:46] [WORKITEMS] 52535770 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:27:46] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:27:46] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:27:46] [WORKITEM] 52535770 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:27:46] [COMPLAINT] 52535770 - Associating existing complaint.
+[INFO] [mc.automation] [10:27:50] [COMPLAINT][ASSOCIATED] 52535770 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [10:27:50] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:28:00] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:28:00] [MILEAGE] 52535770 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:28:00] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:28:00] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:28:00] [MILEAGE] 52535770 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:28:00] [OPCODE] 52535770 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:28:00]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:28:00]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:28:01] [COMPLAINT] 52535770 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:28:01] [FINALIZE] 52535770 - Finalizing work item.
+[DEBUG] [mc.automation] [10:28:01] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:28:01] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:28:01] [WORKITEM] 52535770 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:28:03] [WORKITEM] 52535770 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:28:08] [WORKITEM] 52535770 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:28:08] [WORKITEM] 52535770 - Found the parent card.
+[INFO] [mc.automation] [10:28:08] [WORKITEM] 52535770 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:28:08] [WORKITEM] 52535770 - Found the title bar.
+[INFO] [mc.automation] [10:28:09] [WORKITEM] 52535770 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:28:14] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:28:14] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:28:14] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:28:34] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:28:44] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:28:44] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:28:54] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:28:59] [WORKITEM] 52535770 - Work Item finalized and closed
+[INFO] [mc.automation] [10:28:59] [WORKITEM] 52535770 — flow completed successfully
+[INFO] [mc.automation] [10:28:59] ================================================================================
+[INFO] [mc.automation] [10:28:59] >>> Starting MVA 58273176
+[INFO] [mc.automation] [10:28:59] ================================================================================
+[DEBUG] [mc.automation] [10:28:59] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:29:29] [MVA] 58273176 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:29:29] [MVA] 58273176 — vehicle properties container detected
+[INFO] [mc.automation] [10:29:29] [WORKITEM] 58273176 - handling PM work items
+[DEBUG] [mc.automation] [10:29:29] [LIGHTHOUSE] 58273176 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:29:29] [LIGHTHOUSE] 58273176 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:29:29] [LIGHTHOUSE] 58273176 - Found status: Rentable
+[INFO] [mc.automation] [10:29:29] [LIGHTHOUSE] 58273176 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:29:29] [WORKITEM] 58273176 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '58273176'}
+[INFO] [mc.automation] [10:29:29] ================================================================================
+[INFO] [mc.automation] [10:29:29] >>> Starting MVA 57949754
+[INFO] [mc.automation] [10:29:29] ================================================================================
+[DEBUG] [mc.automation] [10:29:29] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:30:00] [MVA] 57949754 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:30:00] [MVA] 57949754 — vehicle properties container detected
+[INFO] [mc.automation] [10:30:00] [WORKITEM] 57949754 - handling PM work items
+[DEBUG] [mc.automation] [10:30:00] [LIGHTHOUSE] 57949754 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:30:00] [LIGHTHOUSE] 57949754 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:30:00] [LIGHTHOUSE] 57949754 - Found status: Rentable
+[INFO] [mc.automation] [10:30:00] [LIGHTHOUSE] 57949754 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:30:00] [WORKITEM] 57949754 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57949754'}
+[INFO] [mc.automation] [10:30:00] ================================================================================
+[INFO] [mc.automation] [10:30:00] >>> Starting MVA 52925051
+[INFO] [mc.automation] [10:30:00] ================================================================================
+[DEBUG] [mc.automation] [10:30:00] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:30:30] [MVA] 52925051 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:30:30] [MVA] 52925051 — vehicle properties container detected
+[INFO] [mc.automation] [10:30:30] [WORKITEM] 52925051 - handling PM work items
+[DEBUG] [mc.automation] [10:30:30] [LIGHTHOUSE] 52925051 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:30:30] [LIGHTHOUSE] 52925051 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:30:30] [LIGHTHOUSE] 52925051 - Found status: Tire Damage
+[DEBUG] [mc.automation] [10:30:30] [WORKITEM] 52925051 - Getting work items.
+[INFO] [mc.automation] [10:30:30] [WORKITEM] 52925051 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:30:39] [WORKITEMS] 52925051 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:30:39] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:30:39] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:30:39] [WORKITEM] 52925051 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:30:39] [COMPLAINT] 52925051 - Associating existing complaint.
+[INFO] [mc.automation] [10:30:42] [COMPLAINT][EXISTING] 52925051 - no complaint tiles found
+[INFO] [mc.automation] [10:30:42] [WORKITEM] 52925051 - navigating back home after skip
+[DEBUG] [mc.automation] [10:30:42] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [10:30:45] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [10:30:47] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [10:30:47] [WORKITEM] 52925051 — navigating back home after skip
+[DEBUG] [mc.automation] [10:30:47] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [10:30:47] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [10:30:52] ================================================================================
+[INFO] [mc.automation] [10:30:52] >>> Starting MVA 51989280
+[INFO] [mc.automation] [10:30:52] ================================================================================
+[DEBUG] [mc.automation] [10:30:52] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:31:22] [MVA] 51989280 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:31:22] [MVA] 51989280 — vehicle properties container detected
+[INFO] [mc.automation] [10:31:22] [WORKITEM] 51989280 - handling PM work items
+[DEBUG] [mc.automation] [10:31:22] [LIGHTHOUSE] 51989280 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:31:22] [LIGHTHOUSE] 51989280 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:31:22] [LIGHTHOUSE] 51989280 - Found status: PM
+[DEBUG] [mc.automation] [10:31:22] [WORKITEM] 51989280 - Getting work items.
+[INFO] [mc.automation] [10:31:22] [WORKITEM] 51989280 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:31:31] [WORKITEMS] 51989280 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:31:31] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:31:31] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:31:31] [WORKITEM] 51989280 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:31:31] [COMPLAINT] 51989280 - Associating existing complaint.
+[INFO] [mc.automation] [10:31:34] [COMPLAINT][ASSOCIATED] 51989280 - complaint 'PM - PM' selected
+[DEBUG] [mc.automation] [10:31:34] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:31:44] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:31:45] [MILEAGE] 51989280 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:31:45] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:31:45] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:31:45] [MILEAGE] 51989280 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:31:45] [OPCODE] 51989280 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:31:45]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:31:45]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:31:46] [COMPLAINT] 51989280 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:31:46] [FINALIZE] 51989280 - Finalizing work item.
+[DEBUG] [mc.automation] [10:31:46] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:31:46] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:31:46] [WORKITEM] 51989280 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:31:48] [WORKITEM] 51989280 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:31:53] [WORKITEM] 51989280 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:31:53] [WORKITEM] 51989280 - Found the parent card.
+[INFO] [mc.automation] [10:31:53] [WORKITEM] 51989280 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:31:53] [WORKITEM] 51989280 - Found the title bar.
+[INFO] [mc.automation] [10:31:53] [WORKITEM] 51989280 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:31:58] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:31:58] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:31:59] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:32:19] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:32:29] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:32:29] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:32:39] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:32:44] [WORKITEM] 51989280 - Work Item finalized and closed
+[INFO] [mc.automation] [10:32:44] [WORKITEM] 51989280 — flow completed successfully
+[INFO] [mc.automation] [10:32:44] ================================================================================
+[INFO] [mc.automation] [10:32:44] >>> Starting MVA 56470864
+[INFO] [mc.automation] [10:32:44] ================================================================================
+[DEBUG] [mc.automation] [10:32:44] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:33:14] [MVA] 56470864 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:33:14] [MVA] 56470864 — vehicle properties container detected
+[INFO] [mc.automation] [10:33:14] [WORKITEM] 56470864 - handling PM work items
+[DEBUG] [mc.automation] [10:33:14] [LIGHTHOUSE] 56470864 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:33:14] [LIGHTHOUSE] 56470864 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:33:14] [LIGHTHOUSE] 56470864 - Found status: Rentable
+[INFO] [mc.automation] [10:33:14] [LIGHTHOUSE] 56470864 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:33:14] [WORKITEM] 56470864 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '56470864'}
+[INFO] [mc.automation] [10:33:14] ================================================================================
+[INFO] [mc.automation] [10:33:14] >>> Starting MVA 57497296
+[INFO] [mc.automation] [10:33:14] ================================================================================
+[DEBUG] [mc.automation] [10:33:14] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:33:44] [MVA] 57497296 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:33:44] [MVA] 57497296 — vehicle properties container detected
+[INFO] [mc.automation] [10:33:44] [WORKITEM] 57497296 - handling PM work items
+[DEBUG] [mc.automation] [10:33:44] [LIGHTHOUSE] 57497296 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:33:44] [LIGHTHOUSE] 57497296 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:33:44] [LIGHTHOUSE] 57497296 - Found status: Rentable
+[INFO] [mc.automation] [10:33:44] [LIGHTHOUSE] 57497296 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:33:44] [WORKITEM] 57497296 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57497296'}
+[INFO] [mc.automation] [10:33:44] ================================================================================
+[INFO] [mc.automation] [10:33:44] >>> Starting MVA 58029753
+[INFO] [mc.automation] [10:33:44] ================================================================================
+[DEBUG] [mc.automation] [10:33:44] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:34:15] [MVA] 58029753 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:34:15] [MVA] 58029753 — vehicle properties container detected
+[INFO] [mc.automation] [10:34:15] [WORKITEM] 58029753 - handling PM work items
+[DEBUG] [mc.automation] [10:34:15] [LIGHTHOUSE] 58029753 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:34:15] [LIGHTHOUSE] 58029753 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:34:15] [LIGHTHOUSE] 58029753 - Found status: Rentable
+[INFO] [mc.automation] [10:34:15] [LIGHTHOUSE] 58029753 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:34:15] [WORKITEM] 58029753 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '58029753'}
+[INFO] [mc.automation] [10:34:15] ================================================================================
+[INFO] [mc.automation] [10:34:15] >>> Starting MVA 57279036
+[INFO] [mc.automation] [10:34:15] ================================================================================
+[DEBUG] [mc.automation] [10:34:15] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:34:45] [MVA] 57279036 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:34:45] [MVA] 57279036 — vehicle properties container detected
+[INFO] [mc.automation] [10:34:45] [WORKITEM] 57279036 - handling PM work items
+[DEBUG] [mc.automation] [10:34:45] [LIGHTHOUSE] 57279036 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:34:45] [LIGHTHOUSE] 57279036 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:34:45] [LIGHTHOUSE] 57279036 - Found status: Rentable
+[INFO] [mc.automation] [10:34:45] [LIGHTHOUSE] 57279036 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:34:45] [WORKITEM] 57279036 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57279036'}
+[INFO] [mc.automation] [10:34:45] ================================================================================
+[INFO] [mc.automation] [10:34:45] >>> Starting MVA 51240556
+[INFO] [mc.automation] [10:34:45] ================================================================================
+[DEBUG] [mc.automation] [10:34:45] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:35:15] [MVA] 51240556 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:35:15] [MVA] 51240556 — vehicle properties container detected
+[INFO] [mc.automation] [10:35:15] [WORKITEM] 51240556 - handling PM work items
+[DEBUG] [mc.automation] [10:35:15] [LIGHTHOUSE] 51240556 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:35:15] [LIGHTHOUSE] 51240556 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:35:15] [LIGHTHOUSE] 51240556 - Found status: Other Identified Issue
+[DEBUG] [mc.automation] [10:35:15] [WORKITEM] 51240556 - Getting work items.
+[INFO] [mc.automation] [10:35:15] [WORKITEM] 51240556 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:35:24] [WORKITEMS] 51240556 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:35:24] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:35:24] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:35:24] [WORKITEM] 51240556 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:35:24] [COMPLAINT] 51240556 - Associating existing complaint.
+[INFO] [mc.automation] [10:35:27] [COMPLAINT][EXISTING] 51240556 - no PM complaints found
+[INFO] [mc.automation] [10:35:27] [WORKITEM] 51240556 - navigating back home after skip
+[DEBUG] [mc.automation] [10:35:27] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [10:35:30] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [10:35:32] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [10:35:32] [WORKITEM] 51240556 — navigating back home after skip
+[DEBUG] [mc.automation] [10:35:32] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [10:35:32] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [10:35:37] ================================================================================
+[INFO] [mc.automation] [10:35:37] >>> Starting MVA 52001073
+[INFO] [mc.automation] [10:35:37] ================================================================================
+[DEBUG] [mc.automation] [10:35:37] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:36:07] [MVA] 52001073 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:36:07] [MVA] 52001073 — vehicle properties container detected
+[INFO] [mc.automation] [10:36:07] [WORKITEM] 52001073 - handling PM work items
+[DEBUG] [mc.automation] [10:36:07] [LIGHTHOUSE] 52001073 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:36:07] [LIGHTHOUSE] 52001073 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:36:07] [LIGHTHOUSE] 52001073 - Found status: Rentable
+[INFO] [mc.automation] [10:36:07] [LIGHTHOUSE] 52001073 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:36:07] [WORKITEM] 52001073 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '52001073'}
+[INFO] [mc.automation] [10:36:07] ================================================================================
+[INFO] [mc.automation] [10:36:07] >>> Starting MVA 51117990
+[INFO] [mc.automation] [10:36:07] ================================================================================
+[DEBUG] [mc.automation] [10:36:07] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:36:37] [MVA] 51117990 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:36:37] [MVA] 51117990 — vehicle properties container detected
+[INFO] [mc.automation] [10:36:37] [WORKITEM] 51117990 - handling PM work items
+[DEBUG] [mc.automation] [10:36:37] [LIGHTHOUSE] 51117990 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:36:37] [LIGHTHOUSE] 51117990 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:36:37] [LIGHTHOUSE] 51117990 - Found status: Rentable
+[INFO] [mc.automation] [10:36:37] [LIGHTHOUSE] 51117990 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:36:37] [WORKITEM] 51117990 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51117990'}
+[INFO] [mc.automation] [10:36:37] ================================================================================
+[INFO] [mc.automation] [10:36:37] >>> Starting MVA 51984962
+[INFO] [mc.automation] [10:36:37] ================================================================================
+[DEBUG] [mc.automation] [10:36:37] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:37:08] [MVA] 51984962 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:37:08] [MVA] 51984962 — vehicle properties container detected
+[INFO] [mc.automation] [10:37:08] [WORKITEM] 51984962 - handling PM work items
+[DEBUG] [mc.automation] [10:37:08] [LIGHTHOUSE] 51984962 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:37:08] [LIGHTHOUSE] 51984962 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:37:08] [LIGHTHOUSE] 51984962 - Found status: Rentable
+[INFO] [mc.automation] [10:37:08] [LIGHTHOUSE] 51984962 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:37:08] [WORKITEM] 51984962 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51984962'}
+[INFO] [mc.automation] [10:37:08] ================================================================================
+[INFO] [mc.automation] [10:37:08] >>> Starting MVA 53579525
+[INFO] [mc.automation] [10:37:08] ================================================================================
+[DEBUG] [mc.automation] [10:37:08] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:37:38] [MVA] 53579525 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:37:38] [MVA] 53579525 — vehicle properties container detected
+[INFO] [mc.automation] [10:37:38] [WORKITEM] 53579525 - handling PM work items
+[DEBUG] [mc.automation] [10:37:38] [LIGHTHOUSE] 53579525 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:37:38] [LIGHTHOUSE] 53579525 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:37:38] [LIGHTHOUSE] 53579525 - Found status: Rentable
+[INFO] [mc.automation] [10:37:38] [LIGHTHOUSE] 53579525 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:37:38] [WORKITEM] 53579525 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '53579525'}
+[INFO] [mc.automation] [10:37:38] ================================================================================
+[INFO] [mc.automation] [10:37:38] >>> Starting MVA 53571593
+[INFO] [mc.automation] [10:37:38] ================================================================================
+[DEBUG] [mc.automation] [10:37:38] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:38:08] [MVA] 53571593 — checking if vehicle loads...
+[WARNING] [mc.automation] [10:38:16] [MVA][WARN] 53571593 — vehicle properties container not found (likely unknown MVA)
+[WARNING] [mc.automation] [10:38:16] [MVA] 53571593 — invalid/unknown MVA, skipping
+[INFO] [mc.automation] [10:38:16] ================================================================================
+[INFO] [mc.automation] [10:38:16] >>> Starting MVA 51539121
+[INFO] [mc.automation] [10:38:16] ================================================================================
+[DEBUG] [mc.automation] [10:38:16] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:38:46] [MVA] 51539121 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:38:46] [MVA] 51539121 — vehicle properties container detected
+[INFO] [mc.automation] [10:38:46] [WORKITEM] 51539121 - handling PM work items
+[DEBUG] [mc.automation] [10:38:46] [LIGHTHOUSE] 51539121 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:38:46] [LIGHTHOUSE] 51539121 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:38:46] [LIGHTHOUSE] 51539121 - Found status: Rentable
+[INFO] [mc.automation] [10:38:46] [LIGHTHOUSE] 51539121 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:38:46] [WORKITEM] 51539121 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51539121'}
+[INFO] [mc.automation] [10:38:46] ================================================================================
+[INFO] [mc.automation] [10:38:46] >>> Starting MVA 51372355
+[INFO] [mc.automation] [10:38:46] ================================================================================
+[DEBUG] [mc.automation] [10:38:46] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:39:16] [MVA] 51372355 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:39:16] [MVA] 51372355 — vehicle properties container detected
+[INFO] [mc.automation] [10:39:16] [WORKITEM] 51372355 - handling PM work items
+[DEBUG] [mc.automation] [10:39:16] [LIGHTHOUSE] 51372355 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:39:16] [LIGHTHOUSE] 51372355 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:39:17] [LIGHTHOUSE] 51372355 - Found status: Rentable
+[INFO] [mc.automation] [10:39:17] [LIGHTHOUSE] 51372355 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:39:17] [WORKITEM] 51372355 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51372355'}
+[INFO] [mc.automation] [10:39:17] ================================================================================
+[INFO] [mc.automation] [10:39:17] >>> Starting MVA 57805263
+[INFO] [mc.automation] [10:39:17] ================================================================================
+[DEBUG] [mc.automation] [10:39:17] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:39:47] [MVA] 57805263 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:39:47] [MVA] 57805263 — vehicle properties container detected
+[INFO] [mc.automation] [10:39:47] [WORKITEM] 57805263 - handling PM work items
+[DEBUG] [mc.automation] [10:39:47] [LIGHTHOUSE] 57805263 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:39:47] [LIGHTHOUSE] 57805263 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:39:47] [LIGHTHOUSE] 57805263 - Found status: Rentable
+[INFO] [mc.automation] [10:39:47] [LIGHTHOUSE] 57805263 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:39:47] [WORKITEM] 57805263 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57805263'}
+[INFO] [mc.automation] [10:39:47] ================================================================================
+[INFO] [mc.automation] [10:39:47] >>> Starting MVA 57817826
+[INFO] [mc.automation] [10:39:47] ================================================================================
+[DEBUG] [mc.automation] [10:39:47] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:40:17] [MVA] 57817826 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:40:17] [MVA] 57817826 — vehicle properties container detected
+[INFO] [mc.automation] [10:40:17] [WORKITEM] 57817826 - handling PM work items
+[DEBUG] [mc.automation] [10:40:17] [LIGHTHOUSE] 57817826 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:40:17] [LIGHTHOUSE] 57817826 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:40:17] [LIGHTHOUSE] 57817826 - Found status: Rentable
+[INFO] [mc.automation] [10:40:17] [LIGHTHOUSE] 57817826 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:40:17] [WORKITEM] 57817826 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57817826'}
+[INFO] [mc.automation] [10:40:17] ================================================================================
+[INFO] [mc.automation] [10:40:17] >>> Starting MVA 57469086
+[INFO] [mc.automation] [10:40:17] ================================================================================
+[DEBUG] [mc.automation] [10:40:17] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:40:47] [MVA] 57469086 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:40:47] [MVA] 57469086 — vehicle properties container detected
+[INFO] [mc.automation] [10:40:47] [WORKITEM] 57469086 - handling PM work items
+[DEBUG] [mc.automation] [10:40:47] [LIGHTHOUSE] 57469086 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:40:47] [LIGHTHOUSE] 57469086 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:40:47] [LIGHTHOUSE] 57469086 - Found status: PM
+[DEBUG] [mc.automation] [10:40:47] [WORKITEM] 57469086 - Getting work items.
+[INFO] [mc.automation] [10:40:47] [WORKITEM] 57469086 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:40:56] [WORKITEMS] 57469086 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:40:56] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:40:56] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:40:56] [WORKITEM] 57469086 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:40:56] [COMPLAINT] 57469086 - Associating existing complaint.
+[INFO] [mc.automation] [10:40:59] [COMPLAINT][ASSOCIATED] 57469086 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [10:40:59] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:41:09] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:41:10] [MILEAGE] 57469086 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:41:10] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:41:10] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:41:10] [MILEAGE] 57469086 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:41:10] [OPCODE] 57469086 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:41:10]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:41:10]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:41:11] [COMPLAINT] 57469086 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:41:11] [FINALIZE] 57469086 - Finalizing work item.
+[DEBUG] [mc.automation] [10:41:11] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:41:11] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:41:11] [WORKITEM] 57469086 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:41:13] [WORKITEM] 57469086 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:41:18] [WORKITEM] 57469086 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:41:18] [WORKITEM] 57469086 - Found the parent card.
+[INFO] [mc.automation] [10:41:18] [WORKITEM] 57469086 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:41:18] [WORKITEM] 57469086 - Found the title bar.
+[INFO] [mc.automation] [10:41:18] [WORKITEM] 57469086 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:41:23] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:41:23] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:41:24] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:41:44] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:41:54] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:41:54] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:42:04] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:42:09] [WORKITEM] 57469086 - Work Item finalized and closed
+[INFO] [mc.automation] [10:42:09] [WORKITEM] 57469086 — flow completed successfully
+[INFO] [mc.automation] [10:42:09] ================================================================================
+[INFO] [mc.automation] [10:42:09] >>> Starting MVA 57561840
+[INFO] [mc.automation] [10:42:09] ================================================================================
+[DEBUG] [mc.automation] [10:42:09] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:42:39] [MVA] 57561840 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:42:39] [MVA] 57561840 — vehicle properties container detected
+[INFO] [mc.automation] [10:42:39] [WORKITEM] 57561840 - handling PM work items
+[DEBUG] [mc.automation] [10:42:39] [LIGHTHOUSE] 57561840 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:42:39] [LIGHTHOUSE] 57561840 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:42:39] [LIGHTHOUSE] 57561840 - Found status: Rentable
+[INFO] [mc.automation] [10:42:39] [LIGHTHOUSE] 57561840 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:42:39] [WORKITEM] 57561840 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57561840'}
+[INFO] [mc.automation] [10:42:39] ================================================================================
+[INFO] [mc.automation] [10:42:39] >>> Starting MVA 53549414
+[INFO] [mc.automation] [10:42:39] ================================================================================
+[DEBUG] [mc.automation] [10:42:39] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:43:09] [MVA] 53549414 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:43:09] [MVA] 53549414 — vehicle properties container detected
+[INFO] [mc.automation] [10:43:09] [WORKITEM] 53549414 - handling PM work items
+[DEBUG] [mc.automation] [10:43:09] [LIGHTHOUSE] 53549414 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:43:09] [LIGHTHOUSE] 53549414 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:43:09] [LIGHTHOUSE] 53549414 - Found status: Rentable
+[INFO] [mc.automation] [10:43:09] [LIGHTHOUSE] 53549414 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [10:43:09] [WORKITEM] 53549414 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '53549414'}
+[INFO] [mc.automation] [10:43:09] ================================================================================
+[INFO] [mc.automation] [10:43:09] >>> Starting MVA 53539986
+[INFO] [mc.automation] [10:43:09] ================================================================================
+[DEBUG] [mc.automation] [10:43:09] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:43:40] [MVA] 53539986 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:43:40] [MVA] 53539986 — vehicle properties container detected
+[INFO] [mc.automation] [10:43:40] [WORKITEM] 53539986 - handling PM work items
+[DEBUG] [mc.automation] [10:43:40] [LIGHTHOUSE] 53539986 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:43:40] [LIGHTHOUSE] 53539986 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:43:40] [LIGHTHOUSE] 53539986 - Found status: PM
+[DEBUG] [mc.automation] [10:43:40] [WORKITEM] 53539986 - Getting work items.
+[INFO] [mc.automation] [10:43:40] [WORKITEM] 53539986 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:43:49] [WORKITEMS] 53539986 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:43:49] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:43:49] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:43:49] [WORKITEM] 53539986 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:43:49] [COMPLAINT] 53539986 - Associating existing complaint.
+[INFO] [mc.automation] [10:43:52] [COMPLAINT][ASSOCIATED] 53539986 - complaint 'PM Hard Hold - PM' selected
+[DEBUG] [mc.automation] [10:43:52] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:44:02] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:44:03] [MILEAGE] 53539986 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:44:03] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:44:03] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:44:03] [MILEAGE] 53539986 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:44:03] [OPCODE] 53539986 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:44:03]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:44:03]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:44:04] [COMPLAINT] 53539986 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:44:04] [FINALIZE] 53539986 - Finalizing work item.
+[DEBUG] [mc.automation] [10:44:04] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:44:04] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:44:04] [WORKITEM] 53539986 - 'Create Work Item' clicked
+[WARNING] [mc.automation] [10:44:06] [WORKITEM][WARN] 53539986 - no Work Item tiles found after creation
+[WARNING] [mc.automation] [10:44:06] [WORKITEM] 53539986 — failed flow: {'status': 'failed', 'reason': 'no_tiles', 'mva': '53539986'}
+[INFO] [mc.automation] [10:44:06] ================================================================================
+[INFO] [mc.automation] [10:44:06] >>> Starting MVA 53558525
+[INFO] [mc.automation] [10:44:06] ================================================================================
+[DEBUG] [mc.automation] [10:44:06] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[DEBUG] [mc.automation] [10:44:10] [FIND] Waiting for element with locator ('xpath', "//input[@type='text' and contains(@placeholder,'MVA')]") and timeout 4s.
+[DEBUG] [mc.automation] [10:44:14] [FIND] Waiting for element with locator ('xpath', "//div[@role='tabpanel' and @aria-hidden='false']//input[@type='text']") and timeout 4s.
+[INFO] [mc.automation] [10:44:18] [MVA_INPUT] No candidate locator matched — input field not found
+[ERROR] [mc.automation] [10:44:18] [MVA] 53558525 — input field not found
+[INFO] [mc.automation] [10:44:19] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [10:45:15] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [10:45:15] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [10:45:18] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="332b7a5ee1294016ede963d890756511")>
+[INFO] [mc.automation] [10:45:18] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [10:45:18] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [10:45:19] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [10:45:19] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [10:45:19] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [10:45:29] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [10:45:29] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [10:45:29] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [10:45:32] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [10:45:32] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [10:45:33] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [10:45:33] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:45:33] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [10:45:33] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [10:45:42] ================================================================================
+[INFO] [mc.automation] [10:45:42] >>> Starting MVA 53558525
+[INFO] [mc.automation] [10:45:42] ================================================================================
+[DEBUG] [mc.automation] [10:45:42] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:46:12] [MVA] 53558525 — checking if vehicle loads...
+[DEBUG] [mc.automation] [10:46:12] [MVA] 53558525 — vehicle properties container detected
+[INFO] [mc.automation] [10:46:12] [WORKITEM] 53558525 - handling PM work items
+[DEBUG] [mc.automation] [10:46:12] [LIGHTHOUSE] 53558525 - Checking Lighthouse status.
+[INFO] [mc.automation] [10:46:12] [LIGHTHOUSE] 53558525 - Checking Lighthouse status...
+[INFO] [mc.automation] [10:46:12] [LIGHTHOUSE] 53558525 - Found status: PM
+[DEBUG] [mc.automation] [10:46:12] [WORKITEM] 53558525 - Getting work items.
+[INFO] [mc.automation] [10:46:12] [WORKITEM] 53558525 - pausing to let Work Items render...
+[INFO] [mc.automation] [10:46:21] [WORKITEMS] 53558525 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [10:46:21] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [10:46:21] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [10:46:21] [WORKITEM] 53558525 - Add Work Item clicked
+[DEBUG] [mc.automation] [10:46:21] [COMPLAINT] 53558525 - Associating existing complaint.
+[INFO] [mc.automation] [10:46:24] [COMPLAINT][ASSOCIATED] 53558525 - complaint 'PM - PM' selected
+[DEBUG] [mc.automation] [10:46:24] [NAV] Attempting to click Next button in dialog with timeout 8s.
+[INFO] [mc.automation] [10:46:35] [NEXT][CAND] #{i} text='{txt}' enabled={c.is_enabled()} aria-disabled={aria} class='{clz}'
+[DEBUG] [mc.automation] [10:46:35] [MILEAGE] 53558525 - Completing mileage dialog.
+[DEBUG] [mc.automation] [10:46:35] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Next']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:46:35] [CLICK] clicked ('xpath', "//button[normalize-space()='Next']") (element) successfully 
+[INFO] [mc.automation] [10:46:35] [MILEAGE] 53558525 - Next clicked on mileage dialog
+[DEBUG] [mc.automation] [10:46:35] [OPCODE] 53558525 - Selecting opcode: PM Gas
+[DEBUG] [mc.automation] [10:46:35]  searching for opcode tile -> //div[contains(@class,'opCodeItem')][.//div[contains(@class,'opCodeText')][normalize-space()='PM Gas']]
+[DEBUG] [mc.automation] [10:46:35]  found 1 matching opcode tiles
+[INFO] [mc.automation] [10:46:36] [COMPLAINT] 53558525 - Opcode 'PM Gas' selected
+[DEBUG] [mc.automation] [10:46:36] [FINALIZE] 53558525 - Finalizing work item.
+[DEBUG] [mc.automation] [10:46:36] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Create Work Item']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:46:36] [CLICK] clicked ('xpath', "//button[normalize-space()='Create Work Item']") (element) successfully 
+[INFO] [mc.automation] [10:46:36] [WORKITEM] 53558525 - 'Create Work Item' clicked
+[INFO] [mc.automation] [10:46:38] [WORKITEM] 53558525 - Work Item created successfully (6 total)
+[INFO] [mc.automation] [10:46:43] [WORKITEM] 53558525 - Searching for the PM work item card...
+[INFO] [mc.automation] [10:46:43] [WORKITEM] 53558525 - Found the parent card.
+[INFO] [mc.automation] [10:46:43] [WORKITEM] 53558525 - Searching for the title bar within the found card...
+[INFO] [mc.automation] [10:46:43] [WORKITEM] 53558525 - Found the title bar.
+[INFO] [mc.automation] [10:46:43] [WORKITEM] 53558525 - Open PM Work Item card clicked
+[DEBUG] [mc.automation] [10:46:48] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Mark Complete']") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [10:46:49] [CLICK] clicked ('xpath', "//button[normalize-space()='Mark Complete']") (element) successfully 
+[INFO] [mc.automation] [10:46:49] [DIALOG] Correction dialog opened
+[INFO] [mc.automation] [10:47:09] [DIALOG] Entered note text: 'Done'
+[INFO] [mc.automation] [10:47:19] [DIALOG] 'Complete Work Item' button clicked
+[INFO] [mc.automation] [10:47:19] [DIALOG] Correction dialog closed
+[INFO] [mc.automation] [10:47:29] [MARKCOMPLETE] complete_work_item_dialog -> {'status': 'ok'}
+[INFO] [mc.automation] [10:47:34] [WORKITEM] 53558525 - Work Item finalized and closed
+[INFO] [mc.automation] [10:47:34] [WORKITEM] 53558525 — flow completed successfully
+[INFO] [mc.automation] [10:47:34] ================================================================================
+[INFO] [mc.automation] [10:47:34] >>> Starting MVA 53571744
+[INFO] [mc.automation] [10:47:34] ================================================================================
+[DEBUG] [mc.automation] [10:47:34] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [10:48:04] [MVA] 53571744 — checking if vehicle loads...
+[WARNING] [mc.automation] [10:48:13] [MVA][WARN] 53571744 — vehicle properties container not found (likely unknown MVA)
+[WARNING] [mc.automation] [10:48:13] [MVA] 53571744 — invalid/unknown MVA, skipping
+[INFO] [mc.automation] [10:48:13] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [13:00:37] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [13:00:37] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [13:00:40] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="3f45406d159d82155b2c03251b4eaf98")>
+[INFO] [mc.automation] [13:00:40] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [13:00:40] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [13:00:43] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [13:00:43] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [13:00:43] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [13:00:53] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [13:00:53] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [13:00:53] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [13:00:56] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [13:00:56] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [13:00:57] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [13:00:57] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [13:00:57] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [13:00:57] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [13:01:06] ================================================================================
+[INFO] [mc.automation] [13:01:06] >>> Starting MVA 56978736
+[INFO] [mc.automation] [13:01:06] ================================================================================
+[DEBUG] [mc.automation] [13:01:06] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:01:36] [MVA] 56978736 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:01:36] [MVA] 56978736 — vehicle properties container detected
+[INFO] [mc.automation] [13:01:36] [WORKITEM] 56978736 - handling PM work items
+[DEBUG] [mc.automation] [13:01:36] [LIGHTHOUSE] 56978736 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:01:36] [LIGHTHOUSE] 56978736 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:01:36] [LIGHTHOUSE] 56978736 - Found status: Rentable
+[INFO] [mc.automation] [13:01:36] [LIGHTHOUSE] 56978736 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:01:36] [WORKITEM] 56978736 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '56978736'}
+[INFO] [mc.automation] [13:01:36] ================================================================================
+[INFO] [mc.automation] [13:01:36] >>> Starting MVA 57247643
+[INFO] [mc.automation] [13:01:36] ================================================================================
+[DEBUG] [mc.automation] [13:01:36] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:02:06] [MVA] 57247643 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:02:06] [MVA] 57247643 — vehicle properties container detected
+[INFO] [mc.automation] [13:02:06] [WORKITEM] 57247643 - handling PM work items
+[DEBUG] [mc.automation] [13:02:06] [LIGHTHOUSE] 57247643 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:02:06] [LIGHTHOUSE] 57247643 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:02:06] [LIGHTHOUSE] 57247643 - Found status: Other Identified Issue
+[DEBUG] [mc.automation] [13:02:06] [WORKITEM] 57247643 - Getting work items.
+[INFO] [mc.automation] [13:02:06] [WORKITEM] 57247643 - pausing to let Work Items render...
+[INFO] [mc.automation] [13:02:15] [WORKITEMS] 57247643 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [13:02:15] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [13:02:15] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [13:02:15] [WORKITEM] 57247643 - Add Work Item clicked
+[DEBUG] [mc.automation] [13:02:15] [COMPLAINT] 57247643 - Associating existing complaint.
+[INFO] [mc.automation] [13:02:18] [COMPLAINT][EXISTING] 57247643 - no PM complaints found
+[INFO] [mc.automation] [13:02:18] [WORKITEM] 57247643 - navigating back home after skip
+[DEBUG] [mc.automation] [13:02:18] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:02:22] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [13:02:23] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:02:23] [WORKITEM] 57247643 — navigating back home after skip
+[DEBUG] [mc.automation] [13:02:23] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:02:23] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:02:28] ================================================================================
+[INFO] [mc.automation] [13:02:28] >>> Starting MVA 55965206
+[INFO] [mc.automation] [13:02:28] ================================================================================
+[DEBUG] [mc.automation] [13:02:28] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:02:58] [MVA] 55965206 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:02:58] [MVA] 55965206 — vehicle properties container detected
+[INFO] [mc.automation] [13:02:58] [WORKITEM] 55965206 - handling PM work items
+[DEBUG] [mc.automation] [13:02:58] [LIGHTHOUSE] 55965206 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:02:58] [LIGHTHOUSE] 55965206 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:02:58] [LIGHTHOUSE] 55965206 - Found status: Rentable
+[INFO] [mc.automation] [13:02:58] [LIGHTHOUSE] 55965206 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:02:58] [WORKITEM] 55965206 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '55965206'}
+[INFO] [mc.automation] [13:02:58] ================================================================================
+[INFO] [mc.automation] [13:02:58] >>> Starting MVA 55891286
+[INFO] [mc.automation] [13:02:58] ================================================================================
+[DEBUG] [mc.automation] [13:02:58] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:03:28] [MVA] 55891286 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:03:28] [MVA] 55891286 — vehicle properties container detected
+[INFO] [mc.automation] [13:03:28] [WORKITEM] 55891286 - handling PM work items
+[DEBUG] [mc.automation] [13:03:28] [LIGHTHOUSE] 55891286 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:03:28] [LIGHTHOUSE] 55891286 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:03:28] [LIGHTHOUSE] 55891286 - Found status: Rentable
+[INFO] [mc.automation] [13:03:28] [LIGHTHOUSE] 55891286 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:03:28] [WORKITEM] 55891286 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '55891286'}
+[INFO] [mc.automation] [13:03:28] ================================================================================
+[INFO] [mc.automation] [13:03:28] >>> Starting MVA 57615972
+[INFO] [mc.automation] [13:03:28] ================================================================================
+[DEBUG] [mc.automation] [13:03:28] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:03:59] [MVA] 57615972 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:03:59] [MVA] 57615972 — vehicle properties container detected
+[INFO] [mc.automation] [13:03:59] [WORKITEM] 57615972 - handling PM work items
+[DEBUG] [mc.automation] [13:03:59] [LIGHTHOUSE] 57615972 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:03:59] [LIGHTHOUSE] 57615972 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:03:59] [LIGHTHOUSE] 57615972 - Found status: Rentable
+[INFO] [mc.automation] [13:03:59] [LIGHTHOUSE] 57615972 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:03:59] [WORKITEM] 57615972 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57615972'}
+[INFO] [mc.automation] [13:03:59] ================================================================================
+[INFO] [mc.automation] [13:03:59] >>> Starting MVA 51426701
+[INFO] [mc.automation] [13:03:59] ================================================================================
+[DEBUG] [mc.automation] [13:03:59] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:04:29] [MVA] 51426701 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:04:29] [MVA] 51426701 — vehicle properties container detected
+[INFO] [mc.automation] [13:04:29] [WORKITEM] 51426701 - handling PM work items
+[DEBUG] [mc.automation] [13:04:29] [LIGHTHOUSE] 51426701 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:04:29] [LIGHTHOUSE] 51426701 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:04:29] [LIGHTHOUSE] 51426701 - Found status: Other Identified Issue
+[DEBUG] [mc.automation] [13:04:29] [WORKITEM] 51426701 - Getting work items.
+[INFO] [mc.automation] [13:04:29] [WORKITEM] 51426701 - pausing to let Work Items render...
+[INFO] [mc.automation] [13:04:38] [WORKITEMS] 51426701 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [13:04:38] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [13:04:38] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [13:04:38] [WORKITEM] 51426701 - Add Work Item clicked
+[DEBUG] [mc.automation] [13:04:38] [COMPLAINT] 51426701 - Associating existing complaint.
+[INFO] [mc.automation] [13:04:41] [COMPLAINT][EXISTING] 51426701 - no PM complaints found
+[INFO] [mc.automation] [13:04:41] [WORKITEM] 51426701 - navigating back home after skip
+[DEBUG] [mc.automation] [13:04:41] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:04:44] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [13:04:46] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:04:46] [WORKITEM] 51426701 — navigating back home after skip
+[DEBUG] [mc.automation] [13:04:46] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [13:04:46] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [13:04:51] ================================================================================
+[INFO] [mc.automation] [13:04:51] >>> Starting MVA 51546596
+[INFO] [mc.automation] [13:04:51] ================================================================================
+[DEBUG] [mc.automation] [13:04:51] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:05:21] [MVA] 51546596 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:05:21] [MVA] 51546596 — vehicle properties container detected
+[INFO] [mc.automation] [13:05:21] [WORKITEM] 51546596 - handling PM work items
+[DEBUG] [mc.automation] [13:05:21] [LIGHTHOUSE] 51546596 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:05:21] [LIGHTHOUSE] 51546596 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:05:21] [LIGHTHOUSE] 51546596 - Found status: Rentable
+[INFO] [mc.automation] [13:05:21] [LIGHTHOUSE] 51546596 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:05:21] [WORKITEM] 51546596 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51546596'}
+[INFO] [mc.automation] [13:05:21] ================================================================================
+[INFO] [mc.automation] [13:05:21] >>> Starting MVA 58641166
+[INFO] [mc.automation] [13:05:21] ================================================================================
+[DEBUG] [mc.automation] [13:05:21] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:05:52] [MVA] 58641166 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:05:52] [MVA] 58641166 — vehicle properties container detected
+[INFO] [mc.automation] [13:05:52] [WORKITEM] 58641166 - handling PM work items
+[DEBUG] [mc.automation] [13:05:52] [LIGHTHOUSE] 58641166 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:05:52] [LIGHTHOUSE] 58641166 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:05:52] [LIGHTHOUSE] 58641166 - Found status: Rentable
+[INFO] [mc.automation] [13:05:52] [LIGHTHOUSE] 58641166 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:05:52] [WORKITEM] 58641166 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '58641166'}
+[INFO] [mc.automation] [13:05:52] ================================================================================
+[INFO] [mc.automation] [13:05:52] >>> Starting MVA 57805263
+[INFO] [mc.automation] [13:05:52] ================================================================================
+[DEBUG] [mc.automation] [13:05:52] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:06:22] [MVA] 57805263 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:06:22] [MVA] 57805263 — vehicle properties container detected
+[INFO] [mc.automation] [13:06:22] [WORKITEM] 57805263 - handling PM work items
+[DEBUG] [mc.automation] [13:06:22] [LIGHTHOUSE] 57805263 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:06:22] [LIGHTHOUSE] 57805263 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:06:22] [LIGHTHOUSE] 57805263 - Found status: Rentable
+[INFO] [mc.automation] [13:06:22] [LIGHTHOUSE] 57805263 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:06:22] [WORKITEM] 57805263 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57805263'}
+[INFO] [mc.automation] [13:06:22] ================================================================================
+[INFO] [mc.automation] [13:06:22] >>> Starting MVA 57805941
+[INFO] [mc.automation] [13:06:22] ================================================================================
+[DEBUG] [mc.automation] [13:06:22] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:06:52] [MVA] 57805941 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:06:52] [MVA] 57805941 — vehicle properties container detected
+[INFO] [mc.automation] [13:06:52] [WORKITEM] 57805941 - handling PM work items
+[DEBUG] [mc.automation] [13:06:52] [LIGHTHOUSE] 57805941 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:06:52] [LIGHTHOUSE] 57805941 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:06:52] [LIGHTHOUSE] 57805941 - Found status: Rentable
+[INFO] [mc.automation] [13:06:52] [LIGHTHOUSE] 57805941 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:06:52] [WORKITEM] 57805941 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57805941'}
+[INFO] [mc.automation] [13:06:52] ================================================================================
+[INFO] [mc.automation] [13:06:52] >>> Starting MVA 57340846
+[INFO] [mc.automation] [13:06:52] ================================================================================
+[DEBUG] [mc.automation] [13:06:52] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [13:07:22] [MVA] 57340846 — checking if vehicle loads...
+[DEBUG] [mc.automation] [13:07:22] [MVA] 57340846 — vehicle properties container detected
+[INFO] [mc.automation] [13:07:22] [WORKITEM] 57340846 - handling PM work items
+[DEBUG] [mc.automation] [13:07:22] [LIGHTHOUSE] 57340846 - Checking Lighthouse status.
+[INFO] [mc.automation] [13:07:22] [LIGHTHOUSE] 57340846 - Checking Lighthouse status...
+[INFO] [mc.automation] [13:07:22] [LIGHTHOUSE] 57340846 - Found status: Rentable
+[INFO] [mc.automation] [13:07:22] [LIGHTHOUSE] 57340846 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [13:07:22] [WORKITEM] 57340846 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57340846'}
+[INFO] [mc.automation] [13:07:22] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:27:19] [DRIVER] Detected Browser=142.0.3595.53, Driver=142.0.3595.53
+[INFO] [mc.automation] [11:27:19] [DRIVER] Launching Edge - Browser 142.0.3595.53, Driver 142.0.3595.53
+[INFO] [mc.automation] [11:27:23] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="3a51b1bff42921995f8916b113905a51")>
+[INFO] [mc.automation] [11:27:24] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:33:03] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [11:33:03] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [11:33:06] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="2175f60878f2ccc6456bfd02cb2cd7fc")>
+[INFO] [mc.automation] [11:33:07] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:49:10] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [11:49:10] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [11:49:14] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="636a3da0af69545ee7ea41f846da83b2")>
+[INFO] [mc.automation] [11:49:15] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:56:13] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [11:56:13] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [11:56:16] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="dbe01763e204fcd50cc0421c38a941a8")>
+[INFO] [mc.automation] [11:56:17] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [11:58:48] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [11:58:48] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [11:58:52] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="9583b739c2a4db6d90876930bffc4212")>
+[INFO] [mc.automation] [11:58:53] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [12:17:51] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [12:17:51] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [12:17:55] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="87a6ada9eec63cbd04efa4eec4703561")>
+[INFO] [mc.automation] [12:17:56] [DRIVER] Quitting Edge WebDriver...
+[INFO] [mc.automation] [12:22:22] [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+[INFO] [mc.automation] [12:22:22] [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+[INFO] [mc.automation] [12:22:27] Driver initialized: <selenium.webdriver.edge.webdriver.WebDriver (session="fae6ad1dd9f73041063ffb259fe51acb")>
+[INFO] [mc.automation] [12:22:27] [LOGIN_FLOW] Starting login handler.
+[INFO] [mc.automation] [12:22:27] [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+[WARNING] [mc.automation] [12:22:28] [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+[INFO] [mc.automation] [12:22:28] [LOGIN] Automatic login page detected. Assuming login will succeed.
+[DEBUG] [mc.automation] [12:22:28] [SSO] Checking for SSO page presence with timeout 10s.
+[INFO] [mc.automation] [12:22:39] [LOGIN_FLOW] Microsoft SSO page not detected. Proceeding with standard login flow.
+[INFO] [mc.automation] [12:22:39] [LOGIN] Clicking Compass Mobile button
+[INFO] [mc.automation] [12:22:39] [LOGIN] Switched to Compass Mobile tab
+[INFO] [mc.automation] [12:22:42] [LOGIN] WWID input field detected
+[INFO] [mc.automation] [12:22:42] [LOGIN] Proceeding to WWID entry
+[DEBUG] [mc.automation] [12:22:43] [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+[DEBUG] [mc.automation] [12:22:43] [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+[DEBUG] [mc.automation] [12:22:44] [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+[INFO] [mc.automation] [12:22:44] [LOGIN] WWID submitted via button
+[INFO] [mc.automation] [12:22:53] ================================================================================
+[INFO] [mc.automation] [12:22:53] >>> Starting MVA 56978736
+[INFO] [mc.automation] [12:22:53] ================================================================================
+[DEBUG] [mc.automation] [12:22:53] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:23:23] [MVA] 56978736 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:23:23] [MVA] 56978736 — vehicle properties container detected
+[INFO] [mc.automation] [12:23:23] [WORKITEM] 56978736 - handling PM work items
+[DEBUG] [mc.automation] [12:23:23] [LIGHTHOUSE] 56978736 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:23:23] [LIGHTHOUSE] 56978736 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:23:23] [LIGHTHOUSE] 56978736 - Found status: Rentable
+[INFO] [mc.automation] [12:23:23] [LIGHTHOUSE] 56978736 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:23:23] [WORKITEM] 56978736 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '56978736'}
+[INFO] [mc.automation] [12:23:23] ================================================================================
+[INFO] [mc.automation] [12:23:23] >>> Starting MVA 57247643
+[INFO] [mc.automation] [12:23:23] ================================================================================
+[DEBUG] [mc.automation] [12:23:23] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:23:53] [MVA] 57247643 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:23:53] [MVA] 57247643 — vehicle properties container detected
+[INFO] [mc.automation] [12:23:53] [WORKITEM] 57247643 - handling PM work items
+[DEBUG] [mc.automation] [12:23:53] [LIGHTHOUSE] 57247643 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:23:53] [LIGHTHOUSE] 57247643 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:23:53] [LIGHTHOUSE] 57247643 - Found status: Other Identified Issue
+[DEBUG] [mc.automation] [12:23:53] [WORKITEM] 57247643 - Getting work items.
+[INFO] [mc.automation] [12:23:53] [WORKITEM] 57247643 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:24:02] [WORKITEMS] 57247643 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:24:02] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:24:02] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:24:02] [WORKITEM] 57247643 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:24:02] [COMPLAINT] 57247643 - Associating existing complaint.
+[INFO] [mc.automation] [12:24:05] [COMPLAINT][EXISTING] 57247643 - no PM complaints found
+[INFO] [mc.automation] [12:24:05] [WORKITEM] 57247643 - navigating back home after skip
+[DEBUG] [mc.automation] [12:24:05] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:24:08] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [12:24:10] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:24:10] [WORKITEM] 57247643 — navigating back home after skip
+[DEBUG] [mc.automation] [12:24:10] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:24:10] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:24:15] ================================================================================
+[INFO] [mc.automation] [12:24:15] >>> Starting MVA 55965206
+[INFO] [mc.automation] [12:24:15] ================================================================================
+[DEBUG] [mc.automation] [12:24:15] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:24:45] [MVA] 55965206 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:24:45] [MVA] 55965206 — vehicle properties container detected
+[INFO] [mc.automation] [12:24:45] [WORKITEM] 55965206 - handling PM work items
+[DEBUG] [mc.automation] [12:24:45] [LIGHTHOUSE] 55965206 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:24:45] [LIGHTHOUSE] 55965206 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:24:45] [LIGHTHOUSE] 55965206 - Found status: Rentable
+[INFO] [mc.automation] [12:24:45] [LIGHTHOUSE] 55965206 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:24:45] [WORKITEM] 55965206 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '55965206'}
+[INFO] [mc.automation] [12:24:45] ================================================================================
+[INFO] [mc.automation] [12:24:45] >>> Starting MVA 55891286
+[INFO] [mc.automation] [12:24:45] ================================================================================
+[DEBUG] [mc.automation] [12:24:45] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:25:15] [MVA] 55891286 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:25:15] [MVA] 55891286 — vehicle properties container detected
+[INFO] [mc.automation] [12:25:15] [WORKITEM] 55891286 - handling PM work items
+[DEBUG] [mc.automation] [12:25:15] [LIGHTHOUSE] 55891286 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:25:15] [LIGHTHOUSE] 55891286 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:25:15] [LIGHTHOUSE] 55891286 - Found status: Rentable
+[INFO] [mc.automation] [12:25:15] [LIGHTHOUSE] 55891286 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:25:15] [WORKITEM] 55891286 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '55891286'}
+[INFO] [mc.automation] [12:25:15] ================================================================================
+[INFO] [mc.automation] [12:25:15] >>> Starting MVA 57615972
+[INFO] [mc.automation] [12:25:15] ================================================================================
+[DEBUG] [mc.automation] [12:25:15] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:25:45] [MVA] 57615972 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:25:46] [MVA] 57615972 — vehicle properties container detected
+[INFO] [mc.automation] [12:25:46] [WORKITEM] 57615972 - handling PM work items
+[DEBUG] [mc.automation] [12:25:46] [LIGHTHOUSE] 57615972 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:25:46] [LIGHTHOUSE] 57615972 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:25:46] [LIGHTHOUSE] 57615972 - Found status: Rentable
+[INFO] [mc.automation] [12:25:46] [LIGHTHOUSE] 57615972 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:25:46] [WORKITEM] 57615972 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57615972'}
+[INFO] [mc.automation] [12:25:46] ================================================================================
+[INFO] [mc.automation] [12:25:46] >>> Starting MVA 51426701
+[INFO] [mc.automation] [12:25:46] ================================================================================
+[DEBUG] [mc.automation] [12:25:46] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:26:16] [MVA] 51426701 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:26:16] [MVA] 51426701 — vehicle properties container detected
+[INFO] [mc.automation] [12:26:16] [WORKITEM] 51426701 - handling PM work items
+[DEBUG] [mc.automation] [12:26:16] [LIGHTHOUSE] 51426701 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:26:16] [LIGHTHOUSE] 51426701 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:26:16] [LIGHTHOUSE] 51426701 - Found status: Other Identified Issue
+[DEBUG] [mc.automation] [12:26:16] [WORKITEM] 51426701 - Getting work items.
+[INFO] [mc.automation] [12:26:16] [WORKITEM] 51426701 - pausing to let Work Items render...
+[INFO] [mc.automation] [12:26:25] [WORKITEMS] 51426701 - collected 0 open PM item(s)
+[DEBUG] [mc.automation] [12:26:25] [CLICK] attempting to click ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) and a timeout of 8s
+[DEBUG] [mc.automation] [12:26:25] [CLICK] clicked ('xpath', "//button[normalize-space()='Add Work Item']") (Add Work Item) successfully 
+[INFO] [mc.automation] [12:26:25] [WORKITEM] 51426701 - Add Work Item clicked
+[DEBUG] [mc.automation] [12:26:25] [COMPLAINT] 51426701 - Associating existing complaint.
+[INFO] [mc.automation] [12:26:28] [COMPLAINT][EXISTING] 51426701 - no PM complaints found
+[INFO] [mc.automation] [12:26:28] [WORKITEM] 51426701 - navigating back home after skip
+[DEBUG] [mc.automation] [12:26:28] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:26:31] [NAV] back arrow clicked (1/3)
+[INFO] [mc.automation] [12:26:33] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:26:33] [WORKITEM] 51426701 — navigating back home after skip
+[DEBUG] [mc.automation] [12:26:33] [NAV] Navigating back to home screen (max_clicks=3).
+[INFO] [mc.automation] [12:26:33] [NAV] back at MVA input screen (camera button visible)
+[INFO] [mc.automation] [12:26:38] ================================================================================
+[INFO] [mc.automation] [12:26:38] >>> Starting MVA 51546596
+[INFO] [mc.automation] [12:26:38] ================================================================================
+[DEBUG] [mc.automation] [12:26:38] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:27:08] [MVA] 51546596 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:27:08] [MVA] 51546596 — vehicle properties container detected
+[INFO] [mc.automation] [12:27:08] [WORKITEM] 51546596 - handling PM work items
+[DEBUG] [mc.automation] [12:27:08] [LIGHTHOUSE] 51546596 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:27:08] [LIGHTHOUSE] 51546596 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:27:08] [LIGHTHOUSE] 51546596 - Found status: Rentable
+[INFO] [mc.automation] [12:27:08] [LIGHTHOUSE] 51546596 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:27:08] [WORKITEM] 51546596 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '51546596'}
+[INFO] [mc.automation] [12:27:08] ================================================================================
+[INFO] [mc.automation] [12:27:08] >>> Starting MVA 58641166
+[INFO] [mc.automation] [12:27:08] ================================================================================
+[DEBUG] [mc.automation] [12:27:08] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:27:38] [MVA] 58641166 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:27:38] [MVA] 58641166 — vehicle properties container detected
+[INFO] [mc.automation] [12:27:38] [WORKITEM] 58641166 - handling PM work items
+[DEBUG] [mc.automation] [12:27:38] [LIGHTHOUSE] 58641166 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:27:38] [LIGHTHOUSE] 58641166 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:27:38] [LIGHTHOUSE] 58641166 - Found status: Rentable
+[INFO] [mc.automation] [12:27:38] [LIGHTHOUSE] 58641166 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:27:38] [WORKITEM] 58641166 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '58641166'}
+[INFO] [mc.automation] [12:27:38] ================================================================================
+[INFO] [mc.automation] [12:27:38] >>> Starting MVA 57805263
+[INFO] [mc.automation] [12:27:38] ================================================================================
+[DEBUG] [mc.automation] [12:27:38] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:28:08] [MVA] 57805263 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:28:08] [MVA] 57805263 — vehicle properties container detected
+[INFO] [mc.automation] [12:28:08] [WORKITEM] 57805263 - handling PM work items
+[DEBUG] [mc.automation] [12:28:08] [LIGHTHOUSE] 57805263 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:28:08] [LIGHTHOUSE] 57805263 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:28:09] [LIGHTHOUSE] 57805263 - Found status: Rentable
+[INFO] [mc.automation] [12:28:09] [LIGHTHOUSE] 57805263 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:28:09] [WORKITEM] 57805263 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57805263'}
+[INFO] [mc.automation] [12:28:09] ================================================================================
+[INFO] [mc.automation] [12:28:09] >>> Starting MVA 57805941
+[INFO] [mc.automation] [12:28:09] ================================================================================
+[DEBUG] [mc.automation] [12:28:09] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:28:39] [MVA] 57805941 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:28:39] [MVA] 57805941 — vehicle properties container detected
+[INFO] [mc.automation] [12:28:39] [WORKITEM] 57805941 - handling PM work items
+[DEBUG] [mc.automation] [12:28:39] [LIGHTHOUSE] 57805941 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:28:39] [LIGHTHOUSE] 57805941 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:28:39] [LIGHTHOUSE] 57805941 - Found status: Rentable
+[INFO] [mc.automation] [12:28:39] [LIGHTHOUSE] 57805941 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:28:39] [WORKITEM] 57805941 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57805941'}
+[INFO] [mc.automation] [12:28:39] ================================================================================
+[INFO] [mc.automation] [12:28:39] >>> Starting MVA 57340846
+[INFO] [mc.automation] [12:28:39] ================================================================================
+[DEBUG] [mc.automation] [12:28:39] [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+[INFO] [mc.automation] [12:29:09] [MVA] 57340846 — checking if vehicle loads...
+[DEBUG] [mc.automation] [12:29:09] [MVA] 57340846 — vehicle properties container detected
+[INFO] [mc.automation] [12:29:09] [WORKITEM] 57340846 - handling PM work items
+[DEBUG] [mc.automation] [12:29:09] [LIGHTHOUSE] 57340846 - Checking Lighthouse status.
+[INFO] [mc.automation] [12:29:09] [LIGHTHOUSE] 57340846 - Checking Lighthouse status...
+[INFO] [mc.automation] [12:29:09] [LIGHTHOUSE] 57340846 - Found status: Rentable
+[INFO] [mc.automation] [12:29:09] [LIGHTHOUSE] 57340846 - Status is 'Rentable', skipping MVA.
+[WARNING] [mc.automation] [12:29:09] [WORKITEM] 57340846 — failed flow: {'status': 'skipped_lighthouse_rentable', 'mva': '57340846'}
+[INFO] [mc.automation] [12:29:09] [DRIVER] Quitting Edge WebDriver...

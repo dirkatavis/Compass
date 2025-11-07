@@ -1,0 +1,85 @@
+﻿C:\temp\Python\run_compass.py:5: def main():
+C:\temp\Python\config\config_loader.py:18: def get_config(key: str, default: Any = None) -> Any:
+C:\temp\Python\core\base_test.py:7: def driver():
+C:\temp\Python\core\driver_manager.py:21: def get_browser_version() -> str:
+C:\temp\Python\core\driver_manager.py:42: def get_driver_version(driver_path: str) -> str:
+C:\temp\Python\core\driver_manager.py:55: def get_or_create_driver():
+C:\temp\Python\core\driver_manager.py:89: def quit_driver():
+C:\temp\Python\core\navigator.py:7: class Navigator:
+C:\temp\Python\flows\complaints_flows.py:15: def handle_existing_complaint(driver, mva: str) -> dict:
+C:\temp\Python\flows\complaints_flows.py:25: def handle_new_complaint(driver, mva: str) -> dict:
+C:\temp\Python\flows\complaints_flows.py:68: def handle_complaint(driver, mva: str, found_existing: bool) -> dict:
+C:\temp\Python\flows\complaints_flows.py:75: def find_dialog(driver):
+C:\temp\Python\flows\complaints_flows.py:79: def detect_existing_complaints(driver, mva: str):
+C:\temp\Python\flows\complaints_flows.py:99: def find_pm_tiles(driver, mva: str):
+C:\temp\Python\flows\complaints_flows.py:117: def associate_existing_complaint(driver, mva: str) -> dict:
+C:\temp\Python\flows\complaints_flows.py:171: def create_new_complaint(driver, mva: str) -> dict:
+C:\temp\Python\flows\complaints_flows.py:221: def click_next_in_dialog(driver, timeout: int = 10) -> bool:
+C:\temp\Python\flows\dialog_helpers.py:7: def find_dialog(driver):
+C:\temp\Python\flows\dialog_helpers.py:13: def dbg_dialog(driver):
+C:\temp\Python\flows\dialog_helpers.py:32: def find_next_buttons(driver):
+C:\temp\Python\flows\dialog_helpers.py:41: def _dbg_dialog(driver):
+C:\temp\Python\flows\finalize_flow.py:9: def finalize_workitem(driver, mva: str) -> dict:
+C:\temp\Python\flows\mileage_flows.py:7: def complete_mileage_dialog(driver, mva: str) -> dict:
+C:\temp\Python\flows\mileage_flows.py:21: def enter_mileage(driver, mva: str, mileage: int) -> dict:
+C:\temp\Python\flows\opcode_flows.py:9: def select_opcode(driver, mva: str, code_text: str = "PM Gas") -> dict:
+C:\temp\Python\flows\opcode_flows.py:32: def find_opcode_tile(driver, name: str):
+C:\temp\Python\flows\work_item_flow.py:12: def get_work_items(driver, mva: str):
+C:\temp\Python\flows\work_item_flow.py:35: def create_new_workitem(driver, mva: str):
+C:\temp\Python\flows\work_item_flow.py:73: def handle_pm_workitems(driver, mva: str) -> dict:
+C:\temp\Python\flows\work_item_flow.py:122: def process_workitem(driver, mva: str):
+C:\temp\Python\flows\work_item_flow.py:141: def open_pm_workitem_card(driver, mva: str, timeout: int = 8) -> dict:
+C:\temp\Python\flows\work_item_flow.py:160: def complete_work_item_dialog(driver, note: str = "Done", timeout: int = 10, observe: int = 0) -> dict:
+C:\temp\Python\flows\work_item_flow.py:220: def mark_complete_pm_workitem(driver, mva: str, note: str = "Done", timeout: int = 8) -> dict:
+C:\temp\Python\flows\work_item_flow.py:238: def complete_pm_workitem(driver, mva: str, timeout: int = 8) -> dict:
+C:\temp\Python\pages\additional_information_page.py:25: class AdditionalInfoPage(BasePage):
+C:\temp\Python\pages\base_page.py:1: class BasePage:
+C:\temp\Python\pages\complaint.py:14: class Complaint:
+C:\temp\Python\pages\complaint_type_page.py:26: class ComplaintTypePage(BasePage):
+C:\temp\Python\pages\drivability_page.py:21: class DrivabilityPage(BasePage):
+C:\temp\Python\pages\drivability_page.py:56: def has_next_button(self) -> bool:
+C:\temp\Python\pages\home_page.py:6: class HomePage:
+C:\temp\Python\pages\login_page.py:15: class LoginPage:
+C:\temp\Python\pages\mileage_dialog.py:25: class MileageDialog(BasePage):
+C:\temp\Python\pages\mva_input_page.py:7: class MVAInputPage:
+C:\temp\Python\pages\opcode_dialog.py:23: class OpcodeDialog(BasePage):
+C:\temp\Python\pages\vehicle.py:12: class Vehicle:
+C:\temp\Python\pages\vehicle_properties_page.py:7: class VehiclePropertiesPage:
+C:\temp\Python\pages\work_item.py:14: class WorkItem:
+C:\temp\Python\pages\work_items_tab.py:24: class ComplaintItemsTab(BasePage):
+C:\temp\Python\tests\conftest.py:17: def _quit_browser_after_session():
+C:\temp\Python\tests\test_mva_complaints_tab_fixed.py:22: def test_mva_complaints_tab():
+C:\temp\Python\utils\data_loader.py:5: def load_mvas(csv_path="data/mva.csv"):
+C:\temp\Python\utils\logger.py:4: class ColorFormatter(logging.Formatter):
+C:\temp\Python\utils\mva_helpers.py:7: def wait_for_mva_match(driver, mva, timeout=30):
+C:\temp\Python\utils\mva_helpers.py:16: def click_add_new_complaint_button(driver, timeout=15):
+C:\temp\Python\utils\mva_helpers.py:32: def select_pm_complaint(driver, timeout=30):
+C:\temp\Python\utils\ui_helpers.py:12: def safe_wait(driver, timeout, condition, desc="condition"):
+C:\temp\Python\utils\ui_helpers.py:23: def _click_tab(driver, data_tab_id: str, timeout: int = 10) -> bool:
+C:\temp\Python\utils\ui_helpers.py:53: def click_work_items(driver, timeout: int = 10) -> bool:
+C:\temp\Python\utils\ui_helpers.py:57: def click_complaints(driver, timeout: int = 10) -> bool:
+C:\temp\Python\utils\ui_helpers.py:67: def send_text(
+C:\temp\Python\utils\ui_helpers.py:119: def get_complaints(driver, timeout: int = 10):
+C:\temp\Python\utils\ui_helpers.py:159: def has_open_of_type(items, ctype: str) -> bool:
+C:\temp\Python\utils\ui_helpers.py:163: def find_dialog(driver):
+C:\temp\Python\utils\ui_helpers.py:169: def find_elements(driver, locator, timeout=10):
+C:\temp\Python\utils\ui_helpers.py:176: def get_text(driver, xpath: str, timeout: int = 6) -> str:
+C:\temp\Python\utils\ui_helpers.py:183: def get_create_date_workitem(driver, complaint: str = "PM", timeout: int = 6) -> str:
+C:\temp\Python\utils\ui_helpers.py:193: def get_create_date_complaint(driver, complaint: str = "PM", timeout: int = 6) -> str:
+C:\temp\Python\utils\ui_helpers.py:203: def has_open_workitems_of_type(items, itype: str) -> bool:
+C:\temp\Python\utils\ui_helpers.py:208: def debug_list_work_items(driver, timeout: int = 10):
+C:\temp\Python\utils\ui_helpers.py:242: def _dump_artifacts(driver, label: str):
+C:\temp\Python\utils\ui_helpers.py:263: def is_mva_known(driver, mva: str, timeout: int = 8) -> bool:
+C:\temp\Python\utils\ui_helpers.py:282: def is_stale(element) -> bool:
+C:\temp\Python\utils\ui_helpers.py:294: def is_stale(element) -> bool:
+C:\temp\Python\utils\ui_helpers.py:303: def click_element(driver, locator: tuple, desc: str = "element", timeout: int = 8) -> bool:
+C:\temp\Python\utils\ui_helpers.py:334: def _is_selected_tile(tile) -> bool:
+C:\temp\Python\utils\ui_helpers.py:342: def select_opcode_pm_gas(driver, timeout: int = 8) -> bool:
+C:\temp\Python\utils\ui_helpers.py:376: def create_work_item(driver) -> bool:
+C:\temp\Python\utils\ui_helpers.py:382: def next_step(driver, timeout: int = 10) -> bool:
+C:\temp\Python\utils\ui_helpers.py:392: def has_complete_of_type(items, ctype: str) -> bool:
+C:\temp\Python\utils\ui_helpers.py:431: def find_element(driver, locator, timeout=10):
+C:\temp\Python\utils\ui_helpers.py:443: def click_next_in_dialog(driver, timeout: int = 10) -> bool:
+C:\temp\Python\utils\ui_helpers.py:536: def click_done(driver, timeout: int = 8) -> bool:
+C:\temp\Python\utils\ui_helpers.py:613: def navigate_back_to_home(driver, max_clicks: int = 3) -> bool:
+C:\temp\Python\utils\ui_helpers.py:644: def take_screenshot(driver, prefix="screenshot"):
