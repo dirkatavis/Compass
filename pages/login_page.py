@@ -1,6 +1,7 @@
 import json
 import time
 import pytest
+import os
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys  # ✅ add this import at the top
@@ -21,7 +22,8 @@ class LoginPage:
         self.driver = driver
 
         # Hardcoded config path
-        config_path = r"C:\Temp\Code\Scripts\Py\CompassAutomation\tests\config.json"
+        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        config_path = os.path.join(project_root, "config", "config.json")
         with open(config_path, "r") as f:
             config = json.load(f)
             self.delay_seconds = config.get("delay_seconds", 4)
