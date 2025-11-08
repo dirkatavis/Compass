@@ -264,12 +264,15 @@ def debug_list_work_items(driver, timeout: int = 10):
 
 
  
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 def _dump_artifacts(driver, label: str):
     log.debug(f"[ARTIFACT] Dumping artifacts for label: {label}")
     ts = time.strftime("%Y%m%d-%H%M%S")
-    os.makedirs("artifacts", exist_ok=True)
-    png = os.path.join("artifacts", f"{ts}_{label}.png")
-    html = os.path.join("artifacts", f"{ts}_{label}.html")
+    artifacts_dir = os.path.join(PROJECT_ROOT, "artifacts")
+    os.makedirs(artifacts_dir, exist_ok=True)
+    png = os.path.join(artifacts_dir, f"{ts}_{label}.png")
+    html = os.path.join(artifacts_dir, f"{ts}_{label}.html")
     try:
         driver.save_screenshot(png)
     except Exception as _:

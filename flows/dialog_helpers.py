@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 from utils.logger import log
-from utils.ui_helpers import find_element, find_elements
+from utils.ui_helpers import find_element, find_elements, _dump_artifacts
 
 
 def find_dialog(driver):
@@ -24,11 +24,7 @@ def dbg_dialog(driver):
     )
     labels = [b.text.strip() for b in btns if b.text.strip()]
     log.debug(f" dialog buttons -> {labels[:12]}")
-    try:
-        driver.save_screenshot("debug_drivable.png")
-        print("[DBG] screenshot -> debug_drivable.png")
-    except Exception:
-        pass
+    _dump_artifacts(driver, "debug_dialog")
 
 
 def find_next_buttons(driver):
@@ -52,8 +48,4 @@ def _dbg_dialog(driver):
     )
     labels = [b.text.strip() for b in btns if b.text.strip()]
     log.debug(f" dialog buttons -> {labels[:12]}")
-    try:
-        driver.save_screenshot("debug_drivable.png")
-        print("[DBG] screenshot -> debug_drivable.png")
-    except Exception:
-        pass
+    _dump_artifacts(driver, "debug_dialog")

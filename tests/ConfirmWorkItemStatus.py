@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     # Load MVAs from CSV
     try:
-        csv_file_path = os.path.join(r"C:\Temp\Python\data", f"{SCRIPT_NAME}.csv")
+        csv_file_path = os.path.join(r"C:\Temp\Code\Scripts\Py\CompassAutomation\data", "mva.csv")
         mvas = load_mvas(csv_file_path)
     except FileNotFoundError:
         log.error(f"Could not find the CSV file. Please make sure {csv_file_path} exists.")

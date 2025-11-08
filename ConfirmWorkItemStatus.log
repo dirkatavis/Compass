@@ -1,0 +1,329 @@
+2025-11-08 09:49:15,089 - INFO - ================================================================================
+2025-11-08 09:49:15,090 - INFO - >>> Starting Work Item Status Confirmation from ConfirmWorkItemStatus.py
+2025-11-08 09:49:15,090 - INFO - ================================================================================
+2025-11-08 09:49:15,244 - INFO - [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+2025-11-08 09:49:15,246 - INFO - [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+2025-11-08 09:49:19,647 - INFO - Driver initialized.
+2025-11-08 09:49:19,649 - INFO - [DEBUG] before ensure_logged_in
+2025-11-08 09:49:19,649 - INFO - [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+2025-11-08 09:49:28,086 - WARNING - [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/workspace/module/view/latest/ri.workshop.main.module.d62ba12c-018c-41c1-8214-0749f6591b30
+2025-11-08 09:49:28,249 - INFO - [LOGIN] Already on workspace page after redirection. Considering logged in.
+2025-11-08 09:49:28,250 - DEBUG - [LOGIN] ensure_logged_in - {'status': 'ok'}
+2025-11-08 09:49:37,295 - INFO - [LOGIN] Clicking Compass Mobile button
+2025-11-08 09:49:37,638 - INFO - [LOGIN] Switched to Compass Mobile tab
+2025-11-08 09:49:40,791 - INFO - [LOGIN] WWID input field detected
+2025-11-08 09:49:40,792 - INFO - [LOGIN] Proceeding to WWID entry
+2025-11-08 09:49:41,518 - DEBUG - [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+2025-11-08 09:49:41,530 - DEBUG - [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+2025-11-08 09:49:41,657 - DEBUG - [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+2025-11-08 09:49:41,657 - INFO - [LOGIN] WWID submitted via button
+2025-11-08 09:49:41,658 - INFO - Login successful.
+2025-11-08 09:49:50,659 - INFO - ================================================================================
+2025-11-08 09:49:50,659 - INFO - >>> Processing MVA: 55285112
+2025-11-08 09:49:50,659 - INFO - ================================================================================
+2025-11-08 09:49:50,660 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:49:55,809 - INFO - [MVA] 55285112 — checking if vehicle loads...
+2025-11-08 09:49:58,428 - DEBUG - [MVA] 55285112 — vehicle properties container detected
+2025-11-08 09:49:58,428 - INFO - Checking work item status for 55285112
+2025-11-08 09:49:58,543 - INFO - Work item tab clicked for 55285112.
+2025-11-08 09:49:59,089 - INFO - Found PM work item status: complete
+2025-11-08 09:49:59,089 - INFO - [WORKITEM] 55285112 — Work item is CLOSED.
+2025-11-08 09:49:59,089 - INFO - ================================================================================
+2025-11-08 09:49:59,090 - INFO - >>> Processing MVA: 56648071
+2025-11-08 09:49:59,090 - INFO - ================================================================================
+2025-11-08 09:49:59,090 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:04,284 - INFO - [MVA] 56648071 — checking if vehicle loads...
+2025-11-08 09:50:04,297 - DEBUG - [MVA] 56648071 — vehicle properties container detected
+2025-11-08 09:50:04,298 - INFO - Checking work item status for 56648071
+2025-11-08 09:50:04,407 - INFO - Work item tab clicked for 56648071.
+2025-11-08 09:50:14,761 - WARNING - Could not find a PM work item status for 56648071, status is UNKNOWN.
+2025-11-08 09:50:14,761 - WARNING - [WORKITEM] 56648071 — Work item status is UNKNOWN: unknown.
+2025-11-08 09:50:14,762 - INFO - ================================================================================
+2025-11-08 09:50:14,762 - INFO - >>> Processing MVA: 58849276
+2025-11-08 09:50:14,763 - INFO - ================================================================================
+2025-11-08 09:50:14,763 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:20,000 - INFO - [MVA] 58849276 — checking if vehicle loads...
+2025-11-08 09:50:20,012 - DEBUG - [MVA] 58849276 — vehicle properties container detected
+2025-11-08 09:50:20,012 - INFO - Checking work item status for 58849276
+2025-11-08 09:50:20,145 - INFO - Work item tab clicked for 58849276.
+2025-11-08 09:50:20,171 - INFO - Found PM work item status: deferred
+2025-11-08 09:50:20,171 - INFO - [WORKITEM] 58849276 — Work item is OPEN.
+2025-11-08 09:50:20,171 - INFO - ================================================================================
+2025-11-08 09:50:20,172 - INFO - >>> Processing MVA: 53545483
+2025-11-08 09:50:20,172 - INFO - ================================================================================
+2025-11-08 09:50:20,172 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:25,397 - INFO - [MVA] 53545483 — checking if vehicle loads...
+2025-11-08 09:50:25,409 - DEBUG - [MVA] 53545483 — vehicle properties container detected
+2025-11-08 09:50:25,409 - INFO - Checking work item status for 53545483
+2025-11-08 09:50:25,501 - INFO - Work item tab clicked for 53545483.
+2025-11-08 09:50:25,519 - INFO - Found PM work item status: complete
+2025-11-08 09:50:25,519 - INFO - [WORKITEM] 53545483 — Work item is CLOSED.
+2025-11-08 09:50:25,519 - INFO - ================================================================================
+2025-11-08 09:50:25,519 - INFO - >>> Processing MVA: 56170973
+2025-11-08 09:50:25,519 - INFO - ================================================================================
+2025-11-08 09:50:25,519 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:30,715 - INFO - [MVA] 56170973 — checking if vehicle loads...
+2025-11-08 09:50:30,730 - DEBUG - [MVA] 56170973 — vehicle properties container detected
+2025-11-08 09:50:30,730 - INFO - Checking work item status for 56170973
+2025-11-08 09:50:30,848 - INFO - Work item tab clicked for 56170973.
+2025-11-08 09:50:30,870 - INFO - Found PM work item status: deferred
+2025-11-08 09:50:30,870 - INFO - [WORKITEM] 56170973 — Work item is OPEN.
+2025-11-08 09:50:30,870 - INFO - ================================================================================
+2025-11-08 09:50:30,870 - INFO - >>> Processing MVA: 55090254
+2025-11-08 09:50:30,870 - INFO - ================================================================================
+2025-11-08 09:50:30,871 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:36,117 - INFO - [MVA] 55090254 — checking if vehicle loads...
+2025-11-08 09:50:36,128 - DEBUG - [MVA] 55090254 — vehicle properties container detected
+2025-11-08 09:50:36,128 - INFO - Checking work item status for 55090254
+2025-11-08 09:50:36,226 - INFO - Work item tab clicked for 55090254.
+2025-11-08 09:50:36,242 - INFO - Found PM work item status: complete
+2025-11-08 09:50:36,243 - INFO - [WORKITEM] 55090254 — Work item is CLOSED.
+2025-11-08 09:50:36,243 - INFO - ================================================================================
+2025-11-08 09:50:36,243 - INFO - >>> Processing MVA: 58235321
+2025-11-08 09:50:36,243 - INFO - ================================================================================
+2025-11-08 09:50:36,243 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:41,411 - INFO - [MVA] 58235321 — checking if vehicle loads...
+2025-11-08 09:50:41,423 - DEBUG - [MVA] 58235321 — vehicle properties container detected
+2025-11-08 09:50:41,424 - INFO - Checking work item status for 58235321
+2025-11-08 09:50:41,519 - INFO - Work item tab clicked for 58235321.
+2025-11-08 09:50:41,540 - INFO - Found PM work item status: deferred
+2025-11-08 09:50:41,540 - INFO - [WORKITEM] 58235321 — Work item is OPEN.
+2025-11-08 09:50:41,540 - INFO - ================================================================================
+2025-11-08 09:50:41,540 - INFO - >>> Processing MVA: 54351371
+2025-11-08 09:50:41,541 - INFO - ================================================================================
+2025-11-08 09:50:41,541 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:46,746 - INFO - [MVA] 54351371 — checking if vehicle loads...
+2025-11-08 09:50:46,778 - DEBUG - [MVA] 54351371 — vehicle properties container detected
+2025-11-08 09:50:46,779 - INFO - Checking work item status for 54351371
+2025-11-08 09:50:46,897 - INFO - Work item tab clicked for 54351371.
+2025-11-08 09:50:46,922 - INFO - Found PM work item status: complete
+2025-11-08 09:50:46,922 - INFO - [WORKITEM] 54351371 — Work item is CLOSED.
+2025-11-08 09:50:46,922 - INFO - ================================================================================
+2025-11-08 09:50:46,923 - INFO - >>> Processing MVA: 56834341
+2025-11-08 09:50:46,923 - INFO - ================================================================================
+2025-11-08 09:50:46,923 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:52,162 - INFO - [MVA] 56834341 — checking if vehicle loads...
+2025-11-08 09:50:52,174 - DEBUG - [MVA] 56834341 — vehicle properties container detected
+2025-11-08 09:50:52,175 - INFO - Checking work item status for 56834341
+2025-11-08 09:50:52,268 - INFO - Work item tab clicked for 56834341.
+2025-11-08 09:50:52,293 - INFO - Found PM work item status: complete
+2025-11-08 09:50:52,293 - INFO - [WORKITEM] 56834341 — Work item is CLOSED.
+2025-11-08 09:50:52,293 - INFO - ================================================================================
+2025-11-08 09:50:52,293 - INFO - >>> Processing MVA: 58135593
+2025-11-08 09:50:52,293 - INFO - ================================================================================
+2025-11-08 09:50:52,293 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:50:57,464 - INFO - [MVA] 58135593 — checking if vehicle loads...
+2025-11-08 09:50:57,475 - DEBUG - [MVA] 58135593 — vehicle properties container detected
+2025-11-08 09:50:57,475 - INFO - Checking work item status for 58135593
+2025-11-08 09:50:57,576 - INFO - Work item tab clicked for 58135593.
+2025-11-08 09:55:13,707 - INFO - ================================================================================
+2025-11-08 09:55:13,707 - INFO - >>> Starting Work Item Status Confirmation from ConfirmWorkItemStatus.py
+2025-11-08 09:55:13,707 - INFO - ================================================================================
+2025-11-08 09:55:13,869 - INFO - [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+2025-11-08 09:55:13,870 - INFO - [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+2025-11-08 09:55:17,699 - INFO - Driver initialized.
+2025-11-08 09:55:17,700 - INFO - [DEBUG] before ensure_logged_in
+2025-11-08 09:55:17,719 - INFO - [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+2025-11-08 09:55:18,586 - WARNING - [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+2025-11-08 09:55:18,599 - INFO - [LOGIN] Automatic login page detected. Assuming login will succeed.
+2025-11-08 09:55:18,599 - DEBUG - [LOGIN] ensure_logged_in - {'status': 'ok'}
+2025-11-08 09:55:27,701 - INFO - [LOGIN] Clicking Compass Mobile button
+2025-11-08 09:55:28,729 - INFO - [LOGIN] Switched to Compass Mobile tab
+2025-11-08 09:55:31,101 - INFO - [LOGIN] WWID input field detected
+2025-11-08 09:55:31,102 - INFO - [LOGIN] Proceeding to WWID entry
+2025-11-08 09:55:31,829 - DEBUG - [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+2025-11-08 09:55:31,838 - DEBUG - [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+2025-11-08 09:55:31,934 - DEBUG - [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+2025-11-08 09:55:31,934 - INFO - [LOGIN] WWID submitted via button
+2025-11-08 09:55:31,935 - INFO - Login successful.
+2025-11-08 09:57:41,201 - INFO - ================================================================================
+2025-11-08 09:57:41,201 - INFO - >>> Starting Work Item Status Confirmation from ConfirmWorkItemStatus.py
+2025-11-08 09:57:41,201 - INFO - ================================================================================
+2025-11-08 09:57:41,368 - INFO - [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+2025-11-08 09:57:41,369 - INFO - [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+2025-11-08 09:57:45,216 - INFO - Driver initialized.
+2025-11-08 09:57:45,217 - INFO - [DEBUG] before ensure_logged_in
+2025-11-08 09:57:45,218 - INFO - [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+2025-11-08 09:57:46,329 - WARNING - [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+2025-11-08 09:57:46,369 - INFO - [LOGIN] Automatic login page detected. Assuming login will succeed.
+2025-11-08 09:57:46,369 - DEBUG - [LOGIN] ensure_logged_in - {'status': 'ok'}
+2025-11-08 09:57:55,413 - INFO - [LOGIN] Clicking Compass Mobile button
+2025-11-08 09:57:55,713 - INFO - [LOGIN] Switched to Compass Mobile tab
+2025-11-08 09:57:58,537 - INFO - [LOGIN] WWID input field detected
+2025-11-08 09:57:58,537 - INFO - [LOGIN] Proceeding to WWID entry
+2025-11-08 09:57:59,293 - DEBUG - [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+2025-11-08 09:57:59,303 - DEBUG - [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+2025-11-08 09:57:59,411 - DEBUG - [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+2025-11-08 09:57:59,411 - INFO - [LOGIN] WWID submitted via button
+2025-11-08 09:57:59,412 - INFO - Login successful.
+2025-11-08 09:58:08,413 - INFO - ================================================================================
+2025-11-08 09:58:08,413 - INFO - >>> Processing MVA: 55285112
+2025-11-08 09:58:08,414 - INFO - ================================================================================
+2025-11-08 09:58:08,414 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:58:13,779 - INFO - [MVA] 55285112 — checking if vehicle loads...
+2025-11-08 09:58:17,518 - DEBUG - [MVA] 55285112 — vehicle properties container detected
+2025-11-08 09:58:17,519 - INFO - Checking work item status for 55285112
+2025-11-08 09:58:17,623 - INFO - Work item tab clicked for 55285112.
+2025-11-08 09:58:18,187 - INFO - Found PM work item status: complete
+2025-11-08 09:58:18,187 - INFO - [WORKITEM] 55285112 — Work item is CLOSED.
+2025-11-08 09:58:18,187 - INFO - ================================================================================
+2025-11-08 09:58:18,187 - INFO - >>> Processing MVA: 56648071
+2025-11-08 09:58:18,187 - INFO - ================================================================================
+2025-11-08 09:58:18,187 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 09:58:23,386 - INFO - [MVA] 56648071 — checking if vehicle loads...
+2025-11-08 09:58:23,400 - DEBUG - [MVA] 56648071 — vehicle properties container detected
+2025-11-08 09:58:23,401 - INFO - Checking work item status for 56648071
+2025-11-08 09:58:23,533 - INFO - Work item tab clicked for 56648071.
+2025-11-08 10:01:10,573 - INFO - ================================================================================
+2025-11-08 10:01:10,574 - INFO - >>> Starting Work Item Status Confirmation from ConfirmWorkItemStatus.py
+2025-11-08 10:01:10,574 - INFO - ================================================================================
+2025-11-08 10:01:10,574 - INFO - Loading MVAs from: C:\Temp\Code\Scripts\Py\CompassAutomation\data\ConfirmWorkItemStatus.csv
+2025-11-08 10:01:10,759 - INFO - [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+2025-11-08 10:01:10,760 - INFO - [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+2025-11-08 10:01:14,538 - INFO - Driver initialized.
+2025-11-08 10:01:14,539 - INFO - [DEBUG] before ensure_logged_in
+2025-11-08 10:01:14,540 - INFO - [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+2025-11-08 10:01:16,406 - WARNING - [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+2025-11-08 10:01:16,419 - INFO - [LOGIN] Automatic login page detected. Assuming login will succeed.
+2025-11-08 10:01:16,420 - DEBUG - [LOGIN] ensure_logged_in - {'status': 'ok'}
+2025-11-08 10:01:25,469 - INFO - [LOGIN] Clicking Compass Mobile button
+2025-11-08 10:01:25,759 - INFO - [LOGIN] Switched to Compass Mobile tab
+2025-11-08 10:01:28,801 - INFO - [LOGIN] WWID input field detected
+2025-11-08 10:01:28,802 - INFO - [LOGIN] Proceeding to WWID entry
+2025-11-08 10:01:29,515 - DEBUG - [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+2025-11-08 10:01:29,524 - DEBUG - [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+2025-11-08 10:01:29,626 - DEBUG - [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+2025-11-08 10:01:29,627 - INFO - [LOGIN] WWID submitted via button
+2025-11-08 10:01:29,628 - INFO - Login successful.
+2025-11-08 10:01:38,629 - INFO - ================================================================================
+2025-11-08 10:01:38,629 - INFO - >>> Processing MVA: 55285112
+2025-11-08 10:01:38,630 - INFO - ================================================================================
+2025-11-08 10:01:38,630 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:01:43,795 - INFO - [MVA] 55285112 — checking if vehicle loads...
+2025-11-08 10:01:46,904 - DEBUG - [MVA] 55285112 — vehicle properties container detected
+2025-11-08 10:01:46,904 - INFO - Checking work item status for 55285112
+2025-11-08 10:01:47,025 - INFO - Work item tab clicked for 55285112.
+2025-11-08 10:01:47,566 - INFO - Found PM work item status: complete
+2025-11-08 10:01:47,566 - INFO - [WORKITEM] 55285112 — Work item is CLOSED.
+2025-11-08 10:01:47,566 - INFO - ================================================================================
+2025-11-08 10:01:47,566 - INFO - >>> Processing MVA: 56648071
+2025-11-08 10:01:47,566 - INFO - ================================================================================
+2025-11-08 10:01:47,567 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:01:52,777 - INFO - [MVA] 56648071 — checking if vehicle loads...
+2025-11-08 10:01:52,789 - DEBUG - [MVA] 56648071 — vehicle properties container detected
+2025-11-08 10:01:52,789 - INFO - Checking work item status for 56648071
+2025-11-08 10:01:52,891 - INFO - Work item tab clicked for 56648071.
+2025-11-08 10:02:03,325 - WARNING - Could not find a PM work item status for 56648071, status is UNKNOWN.
+2025-11-08 10:02:03,326 - WARNING - [WORKITEM] 56648071 — Work item status is UNKNOWN: unknown.
+2025-11-08 10:02:03,326 - INFO - ================================================================================
+2025-11-08 10:02:03,326 - INFO - >>> Processing MVA: 58849276
+2025-11-08 10:02:03,326 - INFO - ================================================================================
+2025-11-08 10:02:03,326 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:08,540 - INFO - [MVA] 58849276 — checking if vehicle loads...
+2025-11-08 10:02:08,554 - DEBUG - [MVA] 58849276 — vehicle properties container detected
+2025-11-08 10:02:08,554 - INFO - Checking work item status for 58849276
+2025-11-08 10:02:08,659 - INFO - Work item tab clicked for 58849276.
+2025-11-08 10:02:08,683 - INFO - Found PM work item status: deferred
+2025-11-08 10:02:08,684 - INFO - [WORKITEM] 58849276 — Work item is OPEN.
+2025-11-08 10:02:08,684 - INFO - ================================================================================
+2025-11-08 10:02:08,684 - INFO - >>> Processing MVA: 53545483
+2025-11-08 10:02:08,684 - INFO - ================================================================================
+2025-11-08 10:02:08,684 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:13,923 - INFO - [MVA] 53545483 — checking if vehicle loads...
+2025-11-08 10:02:13,950 - DEBUG - [MVA] 53545483 — vehicle properties container detected
+2025-11-08 10:02:13,951 - INFO - Checking work item status for 53545483
+2025-11-08 10:02:14,074 - INFO - Work item tab clicked for 53545483.
+2025-11-08 10:02:14,093 - INFO - Found PM work item status: complete
+2025-11-08 10:02:14,094 - INFO - [WORKITEM] 53545483 — Work item is CLOSED.
+2025-11-08 10:02:14,094 - INFO - ================================================================================
+2025-11-08 10:02:14,094 - INFO - >>> Processing MVA: 56170973
+2025-11-08 10:02:14,095 - INFO - ================================================================================
+2025-11-08 10:02:14,095 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:19,367 - INFO - [MVA] 56170973 — checking if vehicle loads...
+2025-11-08 10:02:19,381 - DEBUG - [MVA] 56170973 — vehicle properties container detected
+2025-11-08 10:02:19,382 - INFO - Checking work item status for 56170973
+2025-11-08 10:02:19,564 - INFO - Work item tab clicked for 56170973.
+2025-11-08 10:02:19,596 - INFO - Found PM work item status: deferred
+2025-11-08 10:02:19,596 - INFO - [WORKITEM] 56170973 — Work item is OPEN.
+2025-11-08 10:02:19,597 - INFO - ================================================================================
+2025-11-08 10:02:19,597 - INFO - >>> Processing MVA: 55090254
+2025-11-08 10:02:19,597 - INFO - ================================================================================
+2025-11-08 10:02:19,598 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:24,914 - INFO - [MVA] 55090254 — checking if vehicle loads...
+2025-11-08 10:02:24,936 - DEBUG - [MVA] 55090254 — vehicle properties container detected
+2025-11-08 10:02:24,937 - INFO - Checking work item status for 55090254
+2025-11-08 10:02:25,032 - INFO - Work item tab clicked for 55090254.
+2025-11-08 10:02:25,050 - INFO - Found PM work item status: complete
+2025-11-08 10:02:25,051 - INFO - [WORKITEM] 55090254 — Work item is CLOSED.
+2025-11-08 10:02:25,051 - INFO - ================================================================================
+2025-11-08 10:02:25,051 - INFO - >>> Processing MVA: 58235321
+2025-11-08 10:02:25,051 - INFO - ================================================================================
+2025-11-08 10:02:25,051 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:30,383 - INFO - [MVA] 58235321 — checking if vehicle loads...
+2025-11-08 10:02:30,393 - DEBUG - [MVA] 58235321 — vehicle properties container detected
+2025-11-08 10:02:30,393 - INFO - Checking work item status for 58235321
+2025-11-08 10:02:30,482 - INFO - Work item tab clicked for 58235321.
+2025-11-08 10:02:30,502 - INFO - Found PM work item status: deferred
+2025-11-08 10:02:30,502 - INFO - [WORKITEM] 58235321 — Work item is OPEN.
+2025-11-08 10:02:30,502 - INFO - ================================================================================
+2025-11-08 10:02:30,502 - INFO - >>> Processing MVA: 54351371
+2025-11-08 10:02:30,502 - INFO - ================================================================================
+2025-11-08 10:02:30,502 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:35,688 - INFO - [MVA] 54351371 — checking if vehicle loads...
+2025-11-08 10:02:35,704 - DEBUG - [MVA] 54351371 — vehicle properties container detected
+2025-11-08 10:02:35,704 - INFO - Checking work item status for 54351371
+2025-11-08 10:02:35,800 - INFO - Work item tab clicked for 54351371.
+2025-11-08 10:02:35,822 - INFO - Found PM work item status: complete
+2025-11-08 10:02:35,823 - INFO - [WORKITEM] 54351371 — Work item is CLOSED.
+2025-11-08 10:02:35,823 - INFO - ================================================================================
+2025-11-08 10:02:35,823 - INFO - >>> Processing MVA: 56834341
+2025-11-08 10:02:35,823 - INFO - ================================================================================
+2025-11-08 10:02:35,823 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:41,170 - INFO - [MVA] 56834341 — checking if vehicle loads...
+2025-11-08 10:02:41,182 - DEBUG - [MVA] 56834341 — vehicle properties container detected
+2025-11-08 10:02:41,182 - INFO - Checking work item status for 56834341
+2025-11-08 10:02:41,300 - INFO - Work item tab clicked for 56834341.
+2025-11-08 10:02:41,323 - INFO - Found PM work item status: complete
+2025-11-08 10:02:41,324 - INFO - [WORKITEM] 56834341 — Work item is CLOSED.
+2025-11-08 10:02:41,324 - INFO - ================================================================================
+2025-11-08 10:02:41,324 - INFO - >>> Processing MVA: 58135593
+2025-11-08 10:02:41,324 - INFO - ================================================================================
+2025-11-08 10:02:41,324 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:02:46,498 - INFO - [MVA] 58135593 — checking if vehicle loads...
+2025-11-08 10:02:46,508 - DEBUG - [MVA] 58135593 — vehicle properties container detected
+2025-11-08 10:02:46,508 - INFO - Checking work item status for 58135593
+2025-11-08 10:02:46,618 - INFO - Work item tab clicked for 58135593.
+2025-11-08 10:03:58,022 - INFO - ================================================================================
+2025-11-08 10:03:58,022 - INFO - >>> Starting Work Item Status Confirmation from ConfirmWorkItemStatus.py
+2025-11-08 10:03:58,022 - INFO - ================================================================================
+2025-11-08 10:03:58,023 - INFO - Loading MVAs from: C:\Temp\Code\Scripts\Py\CompassAutomation\data\mva.csv
+2025-11-08 10:03:58,196 - INFO - [DRIVER] Detected Browser=142.0.3595.65, Driver=142.0.3595.65
+2025-11-08 10:03:58,197 - INFO - [DRIVER] Launching Edge - Browser 142.0.3595.65, Driver 142.0.3595.65
+2025-11-08 10:04:01,808 - INFO - Driver initialized.
+2025-11-08 10:04:01,810 - INFO - [DEBUG] before ensure_logged_in
+2025-11-08 10:04:01,913 - INFO - [NAV] Navigating to Login page - https://avisbudget.palantirfoundry.com/multipass/login
+2025-11-08 10:04:03,353 - WARNING - [NAV] Expected https://avisbudget.palantirfoundry.com/multipass/login, got https://avisbudget.palantirfoundry.com/multipass/automatic-login?realm=e6e04a33-f159-4321-ba01-d0c5cb20214b&collector_type=saml
+2025-11-08 10:04:03,389 - INFO - [LOGIN] Automatic login page detected. Assuming login will succeed.
+2025-11-08 10:04:03,394 - DEBUG - [LOGIN] ensure_logged_in - {'status': 'ok'}
+2025-11-08 10:04:12,437 - INFO - [LOGIN] Clicking Compass Mobile button
+2025-11-08 10:04:12,743 - INFO - [LOGIN] Switched to Compass Mobile tab
+2025-11-08 10:04:15,581 - INFO - [LOGIN] WWID input field detected
+2025-11-08 10:04:15,581 - INFO - [LOGIN] Proceeding to WWID entry
+2025-11-08 10:04:16,334 - DEBUG - [SENDTEXT] Sent text to ('css selector', "input[class*='fleet-operations-pwa__text-input__']")
+2025-11-08 10:04:16,343 - DEBUG - [CLICK] attempting to click ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) and a timeout of 8s
+2025-11-08 10:04:16,446 - DEBUG - [CLICK] clicked ('xpath', "//button[.//span[normalize-space()='Submit']]") (element) successfully 
+2025-11-08 10:04:16,447 - INFO - [LOGIN] WWID submitted via button
+2025-11-08 10:04:16,448 - INFO - Login successful.
+2025-11-08 10:04:25,451 - INFO - ================================================================================
+2025-11-08 10:04:25,451 - INFO - >>> Processing MVA: 56978736
+2025-11-08 10:04:25,452 - INFO - ================================================================================
+2025-11-08 10:04:25,452 - DEBUG - [FIND] Waiting for element with locator ('css selector', "input.bp6-input[placeholder*='Enter MVA']") and timeout 4s.
+2025-11-08 10:04:31,195 - INFO - [MVA] 56978736 — checking if vehicle loads...
+2025-11-08 10:04:38,022 - DEBUG - [MVA] 56978736 — vehicle properties container detected
+2025-11-08 10:04:38,023 - INFO - Checking work item status for 56978736
+2025-11-08 10:04:38,164 - INFO - Work item tab clicked for 56978736.
+2025-11-08 10:04:38,713 - INFO - Found PM work item status: complete
+2025-11-08 10:04:38,713 - INFO - [WORKITEM] 56978736 — Work item is CLOSED.
+2025-11-08 10:04:38,713 - INFO - Process finished. Closing browser...
+2025-11-08 10:04:38,714 - INFO - [DRIVER] Quitting Edge WebDriver...
+2025-11-08 10:04:41,576 - INFO - Browser closed.
