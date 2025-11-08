@@ -7,7 +7,10 @@ from selenium import webdriver
 from selenium.common.exceptions import SessionNotCreatedException
 from selenium.webdriver.edge.service import Service
 
-DRIVER_PATH = r"C:\Temp\Code\Scripts\Py\CompassAutomation\msedgedriver.exe"
+import os
+# ...
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DRIVER_PATH = os.path.join(PROJECT_ROOT, "msedgedriver.exe")
 # Logger
 log = logging.getLogger("mc.automation")
 
