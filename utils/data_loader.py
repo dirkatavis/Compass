@@ -2,9 +2,11 @@
 # utils/data_loader.py
 import csv
 import os
+from utils.logger import log
 
 
 def load_mvas(csv_path):
+    log.info(f"Loading MVAs from: {csv_path}")
     assert os.path.exists(csv_path), f"CSV file not found: {csv_path}"
     with open(csv_path, newline="") as csvfile:
         reader = csv.reader(csvfile)

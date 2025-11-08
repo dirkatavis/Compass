@@ -1,6 +1,12 @@
 import logging
 import time
 import os
+import sys
+
+# Ensure project root is on sys.path before importing project modules
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -75,7 +81,8 @@ if __name__ == "__main__":
 
     # Load MVAs from CSV
     try:
-        csv_file_path = os.path.join(r"C:\Temp\Code\Scripts\Py\CompassAutomation\data", "mva.csv")
+        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        csv_file_path = os.path.join(project_root, "data", "mva.csv")
         mvas = load_mvas(csv_file_path)
     except FileNotFoundError:
         log.error(f"Could not find the CSV file. Please make sure {csv_file_path} exists.")
