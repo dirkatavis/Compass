@@ -17,12 +17,18 @@ class ColorFormatter(logging.Formatter):
         return f"{color}{message}{self.RESET}"
 
 # Get log level and format from config
-log_level = get_config('logging.level', 'INFO').upper()
-log_format = get_config('logging.format', "[%(levelname)s] [%(asctime)s] %(message)s")
+log_level = get_config("logging.level", "INFO").upper()
+log_format_raw = get_config("logging.format", "[%(levelname)s] [%(asctime)s] %(message)s")
+
+if "%(name)s" in log_format_raw:
+    # Remove logger-name tokens to avoid noisy output like [mc.automation]
+    log_format = log_format_raw.replace("[%(name)s]", "").replace("%(name)s", "").replace("  ", " ").strip()
+else:
+    log_format = log_format_raw
 
 # Create one logger instance for the whole project
-log = logging.getLogger() # Get the root logger
-log.setLevel(logging.DEBUG) # Set logger to capture all levels
+log = logging.getLogger("mc.automation")
+log.setLevel(getattr(logging, log_level, logging.INFO))
 
 # Clear existing handlers to prevent duplicate or unwanted output
 if log.handlers:
@@ -30,20 +36,14 @@ if log.handlers:
         log.removeHandler(handler)
 
 # Attach handler/formatter only once
-# if not log.handlers: # This check is no longer needed after clearing handlers
-    # Console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO) # Set console to INFO
-    console_formatter = ColorFormatter(
-        "[%(levelname)s] [%(asctime)s] %(message)s", # Explicitly set format
-        datefmt="%H:%M:%S"
-    )
-    console_handler.setFormatter(console_formatter)
-    log.addHandler(console_handler)
+# Console handler obeys configured log level
+console_handler = logging.StreamHandler()
+console_handler.setLevel(getattr(logging, log_level, logging.INFO))
+console_handler.setFormatter(ColorFormatter(log_format, datefmt="%H:%M:%S"))
+log.addHandler(console_handler)
 
-    # File handler
-    file_handler = logging.FileHandler("Compass.log", encoding='utf-8')
-    file_handler.setLevel(logging.DEBUG) # Set file to DEBUG
-    file_formatter = logging.Formatter("[%(levelname)s] [%(asctime)s] %(message)s", datefmt="%H:%M:%S") # Explicitly set format
-    file_handler.setFormatter(file_formatter)
-    log.addHandler(file_handler)
+# File handler captures DEBUG and above with same format
+file_handler = logging.FileHandler("Compass.log", encoding="utf-8")
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(logging.Formatter(log_format, datefmt="%H:%M:%S"))
+log.addHandler(file_handler)
