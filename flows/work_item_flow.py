@@ -17,9 +17,9 @@ def get_work_items(driver, mva: str):
     try:
         tiles = driver.find_elements(
             By.XPATH,
-            "//div[contains(@class, 'fleet-operations-pwa__scan-record__') and .//div[contains(@class, 'fleet-operations-pwa__scan-record-header-title-right__') and normalize-space()='Open'] and .//strong[text()='Complaints']/following-sibling::text()[normalize-space()=': PM']]"
+            "//div[contains(@class, 'fleet-operations-pwa__scan-record__') and .//div[contains(@class, 'fleet-operations-pwa__scan-record-header-title-right__') and normalize-space()='Open'] and .//div[contains(@class, 'fleet-operations-pwa__scan-record-header-title__') and normalize-space()='PM Gas']]"
         )
-        log.info(f"[WORKITEMS] {mva} - collected {len(tiles)} open PM item(s)")
+        log.info(f"[WORKITEMS] {mva} - collected {len(tiles)} open PM work item(s)")
         for t in tiles:
             log.debug(f"[DBG] {mva} - tile text = {t.text!r}")
         return tiles
@@ -70,25 +70,26 @@ def create_new_workitem(driver, mva: str):
     return {"status": "created", "mva": mva}
 
 
-def check_lighthouse_status(driver, mva: str) -> bool:
-    """Check the Lighthouse status for the given MVA."""
-    log.debug(f"[LIGHTHOUSE] {mva} - Checking Lighthouse status.")
-    log.info(f"[LIGHTHOUSE] {mva} - Checking Lighthouse status...")
+def get_lighthouse_status(driver, mva: str) -> str | None:
+    """
+    Return the Lighthouse status string for the given MVA, or None.
+    Statuses: 'Rentable', 'PM', 'PM Hard Hold', etc.
+    """
+    log.debug(f"[LIGHTHOUSE] {mva} - getting Lighthouse status")
     try:
-        lighthouse_status_element = driver.find_element(
+        status_el = driver.find_element(
             By.XPATH,
-            "//div[contains(@class, 'fleet-operations-pwa__vehicle-property__tniqjm') and ./div[contains(@class, 'fleet-operations-pwa__vehicle-property-name__tniqjm') and text()='Lighthouse']]/div[contains(@class, 'fleet-operations-pwa__vehicle-property-value__tniqjm')]"
+            "//div[contains(@class, 'fleet-operations-pwa__vehicle-property__') and ./div[contains(., 'Lighthouse')]]//div[contains(@class, 'fleet-operations-pwa__vehicle-property-value__')]",
         )
-        lighthouse_status = lighthouse_status_element.text.strip()
-        log.info(f"[LIGHTHOUSE] {mva} - Found status: {lighthouse_status}")
-        if lighthouse_status == "Rentable":
-            log.info(f"[LIGHTHOUSE] {mva} - Status is 'Rentable', skipping MVA.")
-            return True
+        status = status_el.text.strip()
+        log.info(f"[LIGHTHOUSE] {mva} - found status: {status}")
+        return status
     except NoSuchElementException:
-        log.info(f"[LIGHTHOUSE] {mva} - Lighthouse field not found or not visible.")
+        log.info(f"[LIGHTHOUSE] {mva} - status field not found")
+        return None
     except Exception as e:
-        log.error(f"[LIGHTHOUSE] {mva} - Error checking Lighthouse status: {e}")
-    return False
+        log.error(f"[LIGHTHOUSE] {mva} - error getting status: {e}")
+        return None
 
 
 def handle_pm_workitems(driver, mva: str) -> dict:
@@ -101,42 +102,56 @@ def handle_pm_workitems(driver, mva: str) -> dict:
     """
     log.info(f"[WORKITEM] {mva} - handling PM work items")
 
-    # Check Lighthouse status first
-    if check_lighthouse_status(driver, mva):
+    # Get Lighthouse status
+    lighthouse_status = get_lighthouse_status(driver, mva)
+
+    # Case 1: Rentable
+    if lighthouse_status and "rentable" in lighthouse_status.lower():
+        log.info(f"[LIGHTHOUSE] {mva} - Status is 'Rentable', skipping MVA.")
         return {"status": "skipped_lighthouse_rentable", "mva": mva}
 
-    # Step 1: check for open PM Work Items
+    # Case 2: Existing open PM work items
     items = get_work_items(driver, mva)
     if items:
         log.info(f"[WORKITEM] {mva} - open PM Work Item found, completing it")
         from flows.work_item_flow import complete_pm_workitem
         return complete_pm_workitem(driver, mva)
 
-    # Step 2: no open WI → start a new one
-    from selenium.webdriver.common.by import By
-    if click_element(driver, (By.XPATH, "//button[normalize-space()='Add Work Item']"),
+    # Case 3: No open work items.
+    # Click "Add Work Item" to proceed to the complaint association screen.
+    if not click_element(driver, (By.XPATH, "//button[normalize-space()='Add Work Item']"),
                      desc="Add Work Item", timeout=8):
-        log.info(f"[WORKITEM] {mva} - Add Work Item clicked")
+        log.warning(f"[WORKITEM][WARN] {mva} - could not click Add Work Item")
+        return {"status": "failed", "reason": "add_btn", "mva": mva}
+    
+    log.info(f"[WORKITEM] {mva} - Add Work Item clicked")
 
-        # Required Action: immediately try to associate existing complaints
-        from flows.complaints_flows import associate_existing_complaint
-        res = associate_existing_complaint(driver, mva)
+    # Now, on the complaints screen, check for existing complaints.
+    from flows.complaints_flows import associate_existing_complaint
+    res = associate_existing_complaint(driver, mva)
 
-        if res.get("status") == "associated":
-            from flows.finalize_flow import finalize_workitem
-            return finalize_workitem(driver, mva)
+    # Sub-case 3a: A complaint was successfully associated.
+    if res.get("status") == "associated":
+        from flows.finalize_flow import finalize_workitem
+        return finalize_workitem(driver, mva)
 
-        elif res.get("status") == "skipped_no_complaint":
+    # Sub-case 3b: No existing PM complaint was found.
+    elif res.get("status") == "skipped_no_complaint":
+        # NEW: Check for the special CDK case.
+        if lighthouse_status and "pm" in lighthouse_status.lower():
+            log.info(f"[WORKITEM] {mva} - ***PM for MVA {mva} must be closed out in CDK***")
+            from utils.ui_helpers import navigate_back_to_home
+            navigate_back_to_home(driver)
+            return {"status": "skipped_cdk_pm", "mva": mva}
+        else:
+            # Original behavior: just navigate back if no complaint and not a PM case.
             log.info(f"[WORKITEM] {mva} - navigating back home after skip")
             from utils.ui_helpers import navigate_back_to_home
             navigate_back_to_home(driver)
             return res
-
-        return res
-
-    else:
-        log.warning(f"[WORKITEM][WARN] {mva} - could not click Add Work Item")
-        return {"status": "failed", "reason": "add_btn", "mva": mva}
+    
+    # Sub-case 3c: The complaint association process failed.
+    return res
 
 
 

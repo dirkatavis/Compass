@@ -289,18 +289,20 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-def is_mva_known(driver, mva: str, timeout: int = 8) -> bool:
-    """Return True if vehicle-properties-container loads, else False (unknown MVA)."""
-    log.info(f"[MVA] {mva} — checking if vehicle loads...")
+def is_mva_known(driver, mva: str, timeout: int = 12) -> bool:
+    """Return True when the vehicle properties container renders."""
+    log.info(f"[MVA] {mva} — verifying vehicle properties render...")
+    container_selector = (By.CSS_SELECTOR, "div[class*='vehicle-properties-container']")
     try:
-        WebDriverWait(driver, timeout).until(
-            EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "div.fleet-operations-pwa__vehicle-properties-container__tniqjm")
-            )
+        container = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located(container_selector)
         )
-        log.debug(f"[MVA] {mva} — vehicle properties container detected")
+        log.debug(
+            f"[MVA] {mva} — vehicle properties container detected (class={container.get_attribute('class')!r})"
+        )
         return True
     except TimeoutException:
+        _dump_artifacts(driver, f"mva_{mva}_missing_vehicle_props")
         log.warning(f"[MVA][WARN] {mva} — vehicle properties container not found (likely unknown MVA)")
         return False
 
