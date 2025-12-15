@@ -1,21 +1,22 @@
-from logging import log
+from selenium.webdriver.common.by import By
 
-from selenium.webdriver.support.ui import WebDriverWait
+from utils.logger import log
+from utils import ui_helpers
 
 
 class HomePage:
-    """A Page Object for a generic home page."""
+    """Minimal HomePage page object exposing a single Supply Chain locator.
+
+    Only responsibility: locate and click the Supply Chain control using the
+    reliable `data-test-id='workshop-inline-button'` attribute.
+    """
+
+    SUPPLY_CHAIN_LOCATOR = (By.XPATH, "//a[@data-test-id='workshop-inline-button']")
 
     def __init__(self, driver):
-        """Initializes the Page Object with a WebDriver instance."""
         self.driver = driver
-        self.wait = WebDriverWait(self.driver, 10)
 
-    def go_to_page(self, url):
-        """Navigates to the specified URL."""
-        self.driver.get(url)
-        self.driver.maximize_window()
+    def click_supply_chain(self) -> bool:
+        """Click the Supply Chain control. Returns True on success."""
+        return ui_helpers.click_element(self.driver, self.SUPPLY_CHAIN_LOCATOR, desc="Supply Chain", timeout=8)
 
-    def print_page_title(self):
-        """Prints the title of the current page."""
-        log.info(f"Current Page Title: {self.driver.title}")

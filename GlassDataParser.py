@@ -41,13 +41,33 @@ MVA_CSV = "data/mva.csv"
 
 
 def read_mva_list(csv_path):
+    import re
+
+    def normalize_mva(raw: str) -> str:
+        s = raw.strip()
+        # prefer leading 8 digits
+        m = re.match(r"^(\d{8})", s)
+        if m:
+            return m.group(1)
+        # fallback: take first 8 characters
+        return s[:8]
+
+    mvas = []
     with open(csv_path, newline="") as f:
         reader = csv.reader(f)
         rows = [row[0] for row in reader if row]
         # Skip header if present (e.g., starts with '#' or 'MVA')
         if rows and (rows[0].startswith('#') or rows[0].lower().startswith('mva')):
-            return rows[1:]
-        return rows
+            rows = rows[1:]
+
+        for raw in rows:
+            if not raw:
+                continue
+            if raw.startswith('#'):
+                continue
+            mvas.append(normalize_mva(raw))
+
+    return mvas
 
 
 def main():
