@@ -36,7 +36,7 @@ from core.driver_manager import get_or_create_driver
 from config.config_loader import get_config
 from utils.logger import log
 
-RESULTS_FILE = "results.txt"
+RESULTS_FILE = "GlassResults.txt"
 MVA_CSV = "data/mva.csv"
 
 
