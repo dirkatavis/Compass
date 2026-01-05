@@ -1,8 +1,16 @@
-﻿__pycache__/
+﻿# Python cache files
+__pycache__/
 *.pyc
+
+# VS Code files
 *.code-workspace
+.vscode/
+
+# Debug artifacts and logs
 artifacts/
 *.log
 *.html
 *.png
-.vscode/
+
+# Temporary files
+*.tmp
