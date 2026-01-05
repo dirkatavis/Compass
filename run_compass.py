@@ -9,11 +9,14 @@ from flows import work_item_flow
 from flows.LoginFlow import LoginFlow
 from pages.mva_input_page import MVAInputPage
 from utils.data_loader import load_mvas
-from utils.logger import log
+from utils.logger import log, log_session_header
 from utils.ui_helpers import is_mva_known, navigate_back_to_home
 
 def main():
     print("Starting Compass automation...")
+    
+    # Log professional session header with date
+    log_session_header()
 
     driver = driver_manager.get_or_create_driver()
     login_flow = LoginFlow(driver)

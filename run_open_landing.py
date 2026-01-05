@@ -9,7 +9,7 @@ import time
 from selenium.webdriver.common.by import By
 
 from core import driver_manager
-from utils.logger import log
+from utils.logger import log, log_session_header
 
 
 LANDING_URL = (
@@ -44,6 +44,9 @@ def _dump_artifacts(driver, label: str):
 
 
 def main():
+    # Log professional session header with date
+    log_session_header()
+    
     log.info(f"Opening landing page: {LANDING_URL}")
     driver = driver_manager.get_or_create_driver()
     driver.get(LANDING_URL)
