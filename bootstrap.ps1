@@ -304,9 +304,9 @@ try {
     Write-Bootstrap "Creating directory: $InstallPath" "INFO"
     New-Item -ItemType Directory -Path $InstallPath -Force | Out-Null
     
-    Write-Bootstrap "Cloning Compass repository..." "INFO"
+    Write-Bootstrap "Cloning Compass repository (feature branch)..." "INFO"
     Set-Location $InstallPath
-    git clone https://github.com/dirkatavis/Compass.git . | Out-Host
+    git clone -b feature/setup_script https://github.com/dirkatavis/Compass.git . | Out-Host
     
     if ($LASTEXITCODE -ne 0) {
         throw "Git clone failed"
