@@ -22,7 +22,7 @@ Write-Host "Installing to: $installPath" -ForegroundColor Green
 try {
     Write-Host "Downloading bootstrap script..." -ForegroundColor Cyan
     $bootstrapScript = "$env:TEMP\compass-bootstrap.ps1"
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/main/bootstrap.ps1" -OutFile $bootstrapScript
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/feature/setup_script/bootstrap.ps1" -OutFile $bootstrapScript
     
     Write-Host "Running bootstrap..." -ForegroundColor Cyan
     & $bootstrapScript -InstallPath $installPath -UseWinget
