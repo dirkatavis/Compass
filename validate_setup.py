@@ -17,7 +17,7 @@ from pathlib import Path
 
 def validate_python_environment():
     """Test Python environment and dependencies"""
-    print("🔍 Validating Python Environment...")
+    print(">> Validating Python Environment...")
     
     # Test basic imports
     try:
@@ -56,7 +56,7 @@ def validate_python_environment():
 
 def validate_configuration():
     """Test configuration files"""
-    print("🔍 Validating Configuration Files...")
+    print(">> Validating Configuration Files...")
     
     project_root = Path(__file__).parent
     config_file = project_root / "config" / "config.json"
@@ -96,7 +96,7 @@ def validate_configuration():
 
 def validate_data_files():
     """Test data files"""
-    print("🔍 Validating Data Files...")
+    print(">> Validating Data Files...")
     
     project_root = Path(__file__).parent
     mva_file = project_root / "data" / "mva.csv"
@@ -124,7 +124,7 @@ def validate_data_files():
 
 def validate_driver():
     """Test WebDriver availability"""
-    print("🔍 Validating WebDriver...")
+    print(">> Validating WebDriver...")
     
     project_root = Path(__file__).parent
     driver_path = project_root / "msedgedriver.exe"
@@ -153,7 +153,7 @@ def validate_driver():
 
 def validate_project_structure():
     """Test project structure"""
-    print("🔍 Validating Project Structure...")
+    print(">> Validating Project Structure...")
     
     project_root = Path(__file__).parent
     required_dirs = ["config", "core", "data", "flows", "pages", "tests", "utils"]
@@ -172,7 +172,7 @@ def validate_project_structure():
 
 def run_basic_test():
     """Run a basic test to ensure everything works together"""
-    print("🔍 Running Basic Integration Test...")
+    print(">> Running Basic Integration Test...")
     
     try:
         # Test driver creation
@@ -227,7 +227,7 @@ def main():
     
     # Summary
     print("=" * 60)
-    print("📊 Validation Summary")
+    print(">> Validation Summary")
     print("=" * 60)
     
     passed = sum(1 for _, result in results if result)
