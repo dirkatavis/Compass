@@ -22,33 +22,33 @@ def validate_python_environment():
     # Test basic imports
     try:
         import selenium
-        print("  ✅ Selenium imported successfully")
+        print("  [OK] Selenium imported successfully")
         print(f"     Version: {selenium.__version__}")
     except ImportError as e:
-        print(f"  ❌ Selenium import failed: {e}")
+        print(f"  [ERROR] Selenium import failed: {e}")
         return False
     
     try:
         import pytest
-        print("  ✅ Pytest imported successfully")
+        print("  [OK] Pytest imported successfully")
         print(f"     Version: {pytest.__version__}")
     except ImportError as e:
-        print(f"  ❌ Pytest import failed: {e}")
+        print(f"  [ERROR] Pytest import failed: {e}")
         return False
     
     # Test project imports
     try:
         from config.config_loader import get_config
-        print("  ✅ Config loader imported successfully")
+        print("  [OK] Config loader imported successfully")
     except ImportError as e:
-        print(f"  ❌ Config loader import failed: {e}")
+        print(f"  [ERROR] Config loader import failed: {e}")
         return False
     
     try:
         from utils.logger import log
-        print("  ✅ Logger imported successfully")
+        print("  [OK] Logger imported successfully")
     except ImportError as e:
-        print(f"  ❌ Logger import failed: {e}")
+        print(f"  [ERROR] Logger import failed: {e}")
         return False
     
     return True
@@ -62,7 +62,7 @@ def validate_configuration():
     config_file = project_root / "config" / "config.json"
     
     if not config_file.exists():
-        print(f"  ❌ Config file missing: {config_file}")
+        print(f"  [ERROR] Config file missing: {config_file}")
         return False
     
     try:
@@ -74,7 +74,7 @@ def validate_configuration():
         missing_keys = [key for key in required_keys if key not in config]
         
         if missing_keys:
-            print(f"  ❌ Missing config keys: {missing_keys}")
+            print(f"  [ERROR] Missing config keys: {missing_keys}")
             return False
         
         # Check if still using default values
@@ -82,15 +82,15 @@ def validate_configuration():
         using_defaults = any(config.get(key) in default_values for key in required_keys)
         
         if using_defaults:
-            print("  ⚠️  Still using default config values - UPDATE config.json with your credentials")
+            print("  [WARN] Still using default config values - UPDATE config.json with your credentials")
         else:
-            print("  ✅ Config file contains custom values")
+            print("  [OK] Config file contains custom values")
         
-        print(f"  ✅ Config file loaded successfully: {config_file}")
+        print(f"  [OK] Config file loaded successfully: {config_file}")
         return True
         
     except Exception as e:
-        print(f"  ❌ Config file validation failed: {e}")
+        print(f"  [ERROR] Config file validation failed: {e}")
         return False
 
 
@@ -102,7 +102,7 @@ def validate_data_files():
     mva_file = project_root / "data" / "mva.csv"
     
     if not mva_file.exists():
-        print(f"  ❌ MVA data file missing: {mva_file}")
+        print(f"  [ERROR] MVA data file missing: {mva_file}")
         return False
     
     try:
@@ -110,15 +110,15 @@ def validate_data_files():
             lines = f.readlines()
         
         if len(lines) < 2:
-            print("  ⚠️  MVA file only contains header - ADD your MVA numbers")
+            print("  [WARN] MVA file only contains header - ADD your MVA numbers")
         else:
-            print(f"  ✅ MVA file contains {len(lines)-1} MVA entries")
+            print(f"  [OK] MVA file contains {len(lines)-1} MVA entries")
         
-        print(f"  ✅ MVA data file loaded successfully: {mva_file}")
+        print(f"  [OK] MVA data file loaded successfully: {mva_file}")
         return True
         
     except Exception as e:
-        print(f"  ❌ MVA file validation failed: {e}")
+        print(f"  [ERROR] MVA file validation failed: {e}")
         return False
 
 
@@ -130,11 +130,11 @@ def validate_driver():
     driver_path = project_root / "msedgedriver.exe"
     
     if not driver_path.exists():
-        print(f"  ❌ msedgedriver.exe not found: {driver_path}")
+        print(f"  [ERROR] msedgedriver.exe not found: {driver_path}")
         print("     Download from: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/")
         return False
     
-    print(f"  ✅ msedgedriver.exe found: {driver_path}")
+    print(f"  [OK] msedgedriver.exe found: {driver_path}")
     
     # Try to get driver version
     try:
@@ -162,9 +162,9 @@ def validate_project_structure():
     for dir_name in required_dirs:
         dir_path = project_root / dir_name
         if dir_path.exists():
-            print(f"  ✅ {dir_name}/ directory exists")
+            print(f"  [OK] {dir_name}/ directory exists")
         else:
-            print(f"  ❌ {dir_name}/ directory missing")
+            print(f"  [ERROR] {dir_name}/ directory missing")
             missing_dirs.append(dir_name)
     
     return len(missing_dirs) == 0
@@ -177,31 +177,31 @@ def run_basic_test():
     try:
         # Test driver creation
         from core import driver_manager
-        print("  ✅ Driver manager imported successfully")
+        print("  [OK] Driver manager imported successfully")
         
         # Test config loading  
         from config.config_loader import get_config
         username = get_config("username")
-        print(f"  ✅ Config loaded successfully (username: {username[:5]}...)")
+        print(f"  [OK] Config loaded successfully (username: {username[:5]}...)")
         
         # Test data loading
         from utils.data_loader import load_mvas
         project_root = Path(__file__).parent
         csv_path = project_root / "data" / "mva.csv"
         mvas = load_mvas(str(csv_path))
-        print(f"  ✅ Data loading successful ({len(mvas)} MVAs loaded)")
+        print(f"  [OK] Data loading successful ({len(mvas)} MVAs loaded)")
         
         return True
         
     except Exception as e:
-        print(f"  ❌ Integration test failed: {e}")
+        print(f"  [ERROR] Integration test failed: {e}")
         return False
 
 
 def main():
     """Main validation function"""
     print("=" * 60)
-    print("🚀 Compass Automation Environment Validation")
+    print(">> Compass Automation Environment Validation")
     print("=" * 60)
     print()
     
@@ -221,7 +221,7 @@ def main():
             result = validation_func()
             results.append((name, result))
         except Exception as e:
-            print(f"  ❌ {name} validation crashed: {e}")
+            print(f"  [ERROR] {name} validation crashed: {e}")
             results.append((name, False))
         print()
     
@@ -234,7 +234,7 @@ def main():
     total = len(results)
     
     for name, result in results:
-        status = "✅ PASS" if result else "❌ FAIL"
+        status = "[PASS]" if result else "[FAIL]"
         print(f"  {status:10} {name}")
     
     print(f"\n📈 Overall: {passed}/{total} validations passed")
@@ -247,7 +247,7 @@ def main():
         print("  3. Run: pytest -v tests/")
         print("  4. Run: python run_compass.py")
     else:
-        print(f"\n⚠️  WARNING: {total - passed} validation(s) failed!")
+        print(f"\n[WARNING] {total - passed} validation(s) failed!")
         print("Please fix the issues above before proceeding.")
         return False
     
