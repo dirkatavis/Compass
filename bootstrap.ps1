@@ -39,12 +39,19 @@ function Test-AdminRights {
 }
 
 function Install-Python {
+    param([bool]$UseUserInstall = $false)
+    
     Write-Bootstrap "Installing Python..." "STEP"
     
     if ($UseWinget) {
         # Try winget first (Windows 10 1709+ / Windows 11)
         try {
-            winget install Python.Python.3.13 --accept-source-agreements --accept-package-agreements
+            $wingetArgs = @("install", "Python.Python.3.13", "--accept-source-agreements", "--accept-package-agreements")
+            if ($UseUserInstall) {
+                $wingetArgs += "--scope", "user"
+                Write-Bootstrap "Installing Python for current user only..." "INFO"
+            }
+            winget @wingetArgs
             Write-Bootstrap "Python installed via winget" "SUCCESS"
             return $true
         } catch {
@@ -59,8 +66,13 @@ function Install-Python {
     Write-Bootstrap "Downloading Python from python.org..." "INFO"
     Invoke-WebRequest -Uri $pythonUrl -OutFile $pythonInstaller
     
-    Write-Bootstrap "Installing Python (this may take a few minutes)..." "INFO"
-    Start-Process -FilePath $pythonInstaller -ArgumentList "/quiet", "InstallAllUsers=1", "PrependPath=1", "Include_test=0" -Wait
+    if ($UseUserInstall) {
+        Write-Bootstrap "Installing Python for current user (no admin required)..." "INFO"
+        Start-Process -FilePath $pythonInstaller -ArgumentList "/quiet", "InstallAllUsers=0", "PrependPath=1", "Include_test=0", "InstallLauncherAllUsers=0" -Wait
+    } else {
+        Write-Bootstrap "Installing Python system-wide..." "INFO"
+        Start-Process -FilePath $pythonInstaller -ArgumentList "/quiet", "InstallAllUsers=1", "PrependPath=1", "Include_test=0" -Wait
+    }
     
     Remove-Item $pythonInstaller -Force -ErrorAction SilentlyContinue
     
@@ -71,11 +83,18 @@ function Install-Python {
 }
 
 function Install-Git {
+    param([bool]$UseUserInstall = $false)
+    
     Write-Bootstrap "Installing Git..." "STEP"
     
     if ($UseWinget) {
         try {
-            winget install Git.Git --accept-source-agreements --accept-package-agreements
+            $wingetArgs = @("install", "Git.Git", "--accept-source-agreements", "--accept-package-agreements")
+            if ($UseUserInstall) {
+                $wingetArgs += "--scope", "user"
+                Write-Bootstrap "Installing Git for current user only..." "INFO"
+            }
+            winget @wingetArgs
             Write-Bootstrap "Git installed via winget" "SUCCESS"
             return $true
         } catch {
@@ -90,8 +109,41 @@ function Install-Git {
     Write-Bootstrap "Downloading Git for Windows..." "INFO"
     Invoke-WebRequest -Uri $gitUrl -OutFile $gitInstaller
     
-    Write-Bootstrap "Installing Git (this may take a few minutes)..." "INFO"
-    Start-Process -FilePath $gitInstaller -ArgumentList "/VERYSILENT", "/NORESTART", "/NOCANCEL", "/SP-", "/CLOSEAPPLICATIONS", "/RESTARTAPPLICATIONS" -Wait
+    if ($UseUserInstall) {
+        Write-Bootstrap "Installing Git for current user (no admin required)..." "INFO"
+        # Create a custom INF file for user-only installation
+        $gitInf = @"
+[Setup]
+Lang=default
+Dir=C:\Users\$env:USERNAME\AppData\Local\Programs\Git
+Group=Git
+NoIcons=0
+SetupType=default
+Components=ext,ext\shellhere,ext\guihere,gitlfs,assoc,assoc_sh,consolefont,autoupdate
+Tasks=
+EditorOption=VIM
+CustomEditorPath=
+DefaultBranchOption=main
+PathOption=Cmd
+SSHOption=OpenSSH
+TortoiseOption=false
+CURLOption=OpenSSL
+CRLFOption=CRLFAlways
+BashCompletionOption=true
+BashTerminalOption=ConHost
+GitPullBehaviorOption=Merge
+UseCredentialManager=Enabled
+PerformanceTweaksFSCache=Enabled
+EnableSymlinks=Disabled
+EnablePseudoConsoleSupport=Disabled
+"@
+        $gitInf | Out-File "$env:TEMP\git-user-install.inf" -Encoding UTF8
+        Start-Process -FilePath $gitInstaller -ArgumentList "/LOADINF=$env:TEMP\git-user-install.inf", "/VERYSILENT", "/NORESTART" -Wait
+        Remove-Item "$env:TEMP\git-user-install.inf" -Force -ErrorAction SilentlyContinue
+    } else {
+        Write-Bootstrap "Installing Git system-wide..." "INFO"
+        Start-Process -FilePath $gitInstaller -ArgumentList "/VERYSILENT", "/NORESTART", "/NOCANCEL", "/SP-", "/CLOSEAPPLICATIONS", "/RESTARTAPPLICATIONS" -Wait
+    }
     
     Remove-Item $gitInstaller -Force -ErrorAction SilentlyContinue
     
@@ -166,13 +218,34 @@ Write-Bootstrap "This will set up everything needed for Compass automation" "INF
 Write-Bootstrap "Target installation path: $InstallPath" "INFO"
 
 # Check admin rights for software installation
-if (-not $SkipSoftwareInstall -and -not (Test-AdminRights)) {
-    Write-Bootstrap "Administrator rights recommended for software installation" "WARN"
-    $continue = Read-Host "Continue anyway? [y/N]"
-    if ($continue -notmatch "^[yY]") {
-        Write-Bootstrap "Please run as Administrator for automatic software installation" "ERROR"
-        Write-Bootstrap "Or use -SkipSoftwareInstall to skip software checks" "INFO"
-        exit 1
+$hasAdminRights = Test-AdminRights
+
+if (-not $SkipSoftwareInstall) {
+    if (-not $hasAdminRights) {
+        Write-Bootstrap "No administrator rights detected" "WARN"
+        Write-Bootstrap "Options for software installation:" "INFO"
+        Write-Bootstrap "1. Continue with user-level installation (recommended)" "INFO"
+        Write-Bootstrap "2. Skip software installation and install manually" "INFO"
+        Write-Bootstrap "3. Exit and run as Administrator" "INFO"
+        
+        $choice = Read-Host "Choose option [1/2/3]"
+        switch ($choice) {
+            "2" { 
+                $SkipSoftwareInstall = $true
+                Write-Bootstrap "Will skip automatic software installation" "INFO"
+            }
+            "3" {
+                Write-Bootstrap "Please run PowerShell as Administrator and try again" "INFO"
+                exit 0
+            }
+            default {
+                Write-Bootstrap "Continuing with user-level installation..." "INFO"
+                $useUserInstall = $true
+            }
+        }
+    } else {
+        Write-Bootstrap "Administrator rights detected" "SUCCESS"
+        $useUserInstall = $false
     }
 }
 
@@ -189,9 +262,11 @@ try {
     } catch {
         if ($SkipSoftwareInstall) {
             Write-Bootstrap "Python not found. Please install Python 3.8+ manually" "ERROR"
+            Write-Bootstrap "Download from: https://www.python.org/downloads/" "INFO"
+            Write-Bootstrap "During installation, check 'Add Python to PATH'" "INFO"
             exit 1
         } else {
-            Install-Python
+            Install-Python -UseUserInstall $useUserInstall
         }
     }
     
@@ -207,9 +282,10 @@ try {
     } catch {
         if ($SkipSoftwareInstall) {
             Write-Bootstrap "Git not found. Please install Git manually" "ERROR"
+            Write-Bootstrap "Download from: https://git-scm.com/download/win" "INFO"
             exit 1
         } else {
-            Install-Git
+            Install-Git -UseUserInstall $useUserInstall
         }
     }
     

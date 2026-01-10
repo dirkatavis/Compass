@@ -44,9 +44,12 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/mai
 # Use Windows Package Manager (faster if available)
 .\bootstrap.ps1 -UseWinget
 
-# Skip automatic software installation (if you prefer manual)
+# Skip automatic software installation (if you don't have admin rights)
 .\bootstrap.ps1 -SkipSoftwareInstall
 ```
+
+**⚠️ No Administrator Rights?**
+The bootstrap script can install Python and Git for your user account only (no admin required). When prompted, choose option 1 to continue with user-level installation.
 
 ## Option 2: Manual Setup
 
@@ -203,6 +206,17 @@ ERROR: Python not found. Install Python 3.8+ and add to PATH.
 2. During installation, check "Add Python to PATH"
 3. Restart PowerShell
 4. Verify with `python --version`
+
+### No Administrator Rights
+```
+[WARN] Administrator rights recommended for software installation
+Options for software installation:
+1. Continue with user-level installation (recommended)
+2. Skip software installation and install manually
+3. Exit and run as Administrator
+Choose option [1/2/3]
+```
+**Solution:** Choose option **1** - the script can install Python and Git for your user account only (no admin rights needed).
 
 ### PowerShell Execution Policy Error
 ```
