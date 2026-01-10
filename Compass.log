@@ -898,3 +898,16 @@
 [INFO] [mc.automation] [13:56:33] [WORKITEM] 15985804 - Work Item finalized and closed
 [INFO] [mc.automation] [13:56:33] [WORKITEM] 15985804 — flow completed successfully
 [INFO] [mc.automation] [13:56:33] [DRIVER] Quitting Edge WebDriver...
+[INFO] [11:23:39] Loading MVAs from: C:\Temp\Code\Scripts\py\Compass\data\mva.csv
+[INFO] [11:24:05] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-7\test_load_mvas_valid_csv0\valid.csv
+[INFO] [11:24:05] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-7\test_load_mvas_empty_csv0\empty.csv
+[INFO] [11:24:05] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-7\test_load_mvas_with_comments_a0\comments_blanks.csv
+[INFO] [11:24:05] Loading MVAs from: non_existent_file.csv
+[INFO] [11:24:05] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-7\test_load_mvas_with_whitespace0\whitespace.csv
+[INFO] [11:24:05] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-7\test_load_mvas_multiple_column0\multiple_columns.csv
+[INFO] [11:24:17] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-8\test_load_mvas_valid_csv0\valid.csv
+[INFO] [11:24:17] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-8\test_load_mvas_empty_csv0\empty.csv
+[INFO] [11:24:17] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-8\test_load_mvas_with_comments_a0\comments_blanks.csv
+[INFO] [11:24:17] Loading MVAs from: non_existent_file.csv
+[INFO] [11:24:17] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-8\test_load_mvas_with_whitespace0\whitespace.csv
+[INFO] [11:24:17] Loading MVAs from: C:\Users\howardon\AppData\Local\Temp\pytest-of-howardon\pytest-8\test_load_mvas_multiple_column0\multiple_columns.csv

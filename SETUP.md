@@ -7,7 +7,7 @@ Complete step-by-step guide for setting up the Compass Automation development en
 **The absolute easiest way** - just copy and paste this into PowerShell:
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/dirkatavis/Compass/main/install-compass.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/dirkatavis/Compass/feature/setup_script/install-compass.ps1 | iex
 ```
 
 This single command:
@@ -23,7 +23,7 @@ This single command:
 
 ```powershell
 # Download and run the bootstrap script (requires internet connection)
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/main/bootstrap.ps1" -OutFile "bootstrap.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/feature/setup_script/bootstrap.ps1" -OutFile "bootstrap.ps1"
 .\bootstrap.ps1
 ```
 
