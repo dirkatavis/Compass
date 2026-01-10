@@ -12,7 +12,8 @@
 param(
     [string]$InstallPath = "C:\Dev\Compass",
     [switch]$UseWinget,
-    [switch]$SkipSoftwareInstall
+    [switch]$SkipSoftwareInstall,
+    [switch]$DevMode
 )
 
 Set-StrictMode -Version Latest
@@ -214,6 +215,17 @@ function Download-EdgeDriver {
 
 # Main bootstrap process
 Write-Bootstrap "Starting Compass Automation Bootstrap..." "STEP"
+
+# DevMode: Override settings for smooth development iteration
+if ($DevMode) {
+    $InstallPath = "C:\Temp\DevCompass"
+    Write-Bootstrap "*** DEV MODE: Using hardcoded path: $InstallPath ***" "WARN"
+    if (Test-Path $InstallPath) {
+        Write-Bootstrap "*** DEV MODE: Auto-deleting existing directory ***" "WARN"
+        Remove-Item $InstallPath -Recurse -Force
+    }
+}
+
 Write-Bootstrap "This will set up everything needed for Compass automation" "INFO"
 Write-Bootstrap "Target installation path: $InstallPath" "INFO"
 
@@ -293,12 +305,17 @@ try {
     Write-Bootstrap "=== Step 3: Repository Setup ===" "STEP"
     
     if (Test-Path $InstallPath) {
-        Write-Bootstrap "Directory already exists: $InstallPath" "WARN"
-        $continue = Read-Host "Continue and overwrite? [y/N]"
-        if ($continue -notmatch "^[yY]") {
-            exit 1
+        if ($DevMode) {
+            Write-Bootstrap "*** DEV MODE: Auto-removing existing directory ***" "WARN"
+            Remove-Item $InstallPath -Recurse -Force
+        } else {
+            Write-Bootstrap "Directory already exists: $InstallPath" "WARN"
+            $continue = Read-Host "Continue and overwrite? [y/N]"
+            if ($continue -notmatch "^[yY]") {
+                exit 1
+            }
+            Remove-Item $InstallPath -Recurse -Force
         }
-        Remove-Item $InstallPath -Recurse -Force
     }
     
     Write-Bootstrap "Creating directory: $InstallPath" "INFO"

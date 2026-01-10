@@ -12,9 +12,17 @@ Write-Host "  - Virtual environment with dependencies" -ForegroundColor Yellow
 Write-Host "  - Edge WebDriver" -ForegroundColor Yellow
 Write-Host ""
 
-$installPath = Read-Host "Installation path (press Enter for C:\Dev\Compass)"
-if ([string]::IsNullOrWhiteSpace($installPath)) {
-    $installPath = "C:\Dev\Compass"
+# Check for DEV mode environment variable
+$isDevMode = $env:COMPASS_DEV_MODE -eq "1"
+
+if ($isDevMode) {
+    $installPath = "C:\Temp\DevCompass"
+    Write-Host "*** DEV MODE: Using hardcoded path: $installPath ***" -ForegroundColor Red
+} else {
+    $installPath = Read-Host "Installation path (press Enter for C:\Dev\Compass)"
+    if ([string]::IsNullOrWhiteSpace($installPath)) {
+        $installPath = "C:\Dev\Compass"
+    }
 }
 
 Write-Host "Installing to: $installPath" -ForegroundColor Green
@@ -25,7 +33,11 @@ try {
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/dirkatavis/Compass/feature/setup_script/bootstrap.ps1" -OutFile $bootstrapScript
     
     Write-Host "Running bootstrap..." -ForegroundColor Cyan
-    & $bootstrapScript -InstallPath $installPath -UseWinget
+    if ($isDevMode) {
+        & $bootstrapScript -InstallPath $installPath -UseWinget -DevMode
+    } else {
+        & $bootstrapScript -InstallPath $installPath -UseWinget
+    }
     
     Write-Host ""
     Write-Host "Setup complete! Compass automation is ready." -ForegroundColor Green
