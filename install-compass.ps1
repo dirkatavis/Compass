@@ -1,13 +1,19 @@
 # Compass Automation Installer (single entrypoint)
-# Intended to be run via:
-# iwr -useb https://raw.githubusercontent.com/<owner>/<repo>/<branch>/install-compass.ps1 | iex
+#
+# Because -InstallPath and -Branch are mandatory, prefer the scriptblock form
+# (Invoke-Expression cannot accept parameters):
+#
+#   $url = "https://raw.githubusercontent.com/dirkatavis/Compass/feature/DriverAutoUpdate/install-compass.ps1"
+#   & ([scriptblock]::Create((iwr -useb $url).Content)) -InstallPath "C:\Dev\Compass" -Branch "feature/DriverAutoUpdate"
 
 [CmdletBinding()]
 param(
-    [string]$InstallPath = 'C:\Dev\Compass',
+    [Parameter(Mandatory)]
+    [string]$InstallPath,
     [string]$RepoOwner = 'dirkatavis',
     [string]$RepoName = 'Compass',
-    [string]$Branch = 'main'
+    [Parameter(Mandatory)]
+    [string]$Branch
 )
 
 Set-StrictMode -Version Latest
