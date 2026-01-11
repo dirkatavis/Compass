@@ -16,7 +16,8 @@
 ## Key Workflows
 - **Run all tests:** `pytest -q -s tests/test_mva_complaints_tab_fixed.py`
 - **Standalone run:** `py run_compass.py` (uses `data/mva.csv` as input)
-- **Driver:** Place `msedgedriver.exe` in project root. Driver/browser version must match (see `core/driver_manager.py`).
+- **Driver:** Prefer `webdriver-manager` (auto-downloads EdgeDriver). Fallback: `msedgedriver.exe` in repo root (see `core/driver_manager.py`).
+- **Install deps:** `pip install -r requirements.txt`
 - **Logging:** Use `[TAG] {mva} - action` format. Tags: `[LOGIN]`, `[MVA]`, `[WORKITEM]`, `[COMPLAINT]`, `[WARN]`, `[ERROR]`.
 
 ## Patterns & Conventions

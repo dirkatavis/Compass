@@ -27,16 +27,18 @@ This project is a Python-based automation tool for the Compass Mobile PWA. It us
 **1. Prerequisites:**
 
 *   Python 3.13+
-*   `msedgedriver.exe` for Microsoft Edge, placed in the project root.
+*   Microsoft Edge WebDriver:
+    *   Recommended: install `webdriver-manager` (auto-downloads EdgeDriver)
+    *   Fallback: `msedgedriver.exe` in the project root
 
 **2. Installation:**
 
-While a `requirements.txt` file is mentioned in the `README.md`, it is not present in the project. The dependencies can be inferred from the imports in the source code. A virtual environment is recommended.
+Install dependencies from `requirements.txt` (recommended). A virtual environment is recommended.
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-pip install selenium pytest
+pip install -r requirements.txt
 ```
 
 **3. Running the Application:**
