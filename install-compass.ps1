@@ -74,13 +74,10 @@ function Download-ZipRepo {
 Write-Install "Installing Compass to: $InstallPath"
 
 if (Test-Path $InstallPath -PathType Container) {
-    $existing = Get-ChildItem -LiteralPath $InstallPath -Force -ErrorAction SilentlyContinue
-    if ($existing -and $existing.Count -gt 0) {
-        throw "InstallPath already exists and is not empty: $InstallPath"
-    }
-} else {
-    Ensure-Directory $InstallPath
+    throw "InstallPath already exists: $InstallPath (choose a new folder or delete the existing one)"
 }
+
+Ensure-Directory $InstallPath
 
 $repoUrl = "https://github.com/$RepoOwner/$RepoName.git"
 
