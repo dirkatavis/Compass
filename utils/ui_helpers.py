@@ -345,18 +345,23 @@ def click_element(driver, locator: tuple, desc: str = "element", timeout: int = 
             return True
         except StaleElementReferenceException:
             log.warning(f"[CLICK][WARN] stale element → retrying {locator} ({desc})")
+            time.sleep(1)
             el = WebDriverWait(driver, timeout).until(
                 EC.element_to_be_clickable(locator)
             )
-            input(f"Pausing before clicking {locator} ({desc}). Press Enter to continue...")
             el.click()
             log.debug(f"[CLICK] clicked after retry {locator} ({desc})")
             return True
-    except TimeoutException:
-        log.warning(f"[CLICK][WARN] timeout waiting for {locator} ({desc})")
-        
-        return False
     except Exception as e:
+        # Check if it was an interception error
+        if "is not clickable at point" in str(e) or "Other element would receive the click" in str(e):
+            log.warning(f"[CLICK][WARN] Element {locator} obscured. Attempting JS click.")
+            try:
+                el = driver.find_element(*locator)
+                driver.execute_script("arguments[0].click();", el)
+                return True
+            except:
+                pass
         log.exception(f"[CLICK][ERR] could not click {locator} ({desc})")
         return False
 
@@ -411,7 +416,7 @@ def select_opcode_pm_gas(driver, timeout: int = 8) -> bool:
 def create_work_item(driver) -> bool:
     """Click 'Create Work Item'."""
     log.debug("[WORKITEM] Attempting to click 'Create Work Item'.")
-    locator = (By.XPATH, "//button[normalize-space()='Create Work Item']")
+    locator = (By.XPATH, "//button[descendant-or-self::*[normalize-space()='Create Work Item']]")
     return click_element(driver, locator)
 
 
@@ -419,7 +424,7 @@ def next_step(driver, timeout: int = 10) -> bool:
     """Click the Next button when it is actually enabled."""
     log.debug(f"[NAV] Attempting to click Next button with timeout {timeout}s.")
     # Prefer visible text; fallback to known class
-    if click_element(driver, (By.XPATH, "//button[normalize-space()='Next']")):
+    if click_element(driver, (By.XPATH, "//button[descendant-or-self::*[normalize-space()='Next']]")):
         time.sleep(0.3)
         return True
     return click_element(driver, (By.CSS_SELECTOR, "button.fleet-operations-pwa__nextButton__153vo4c"))
@@ -490,16 +495,11 @@ def click_next_in_dialog(driver, timeout: int = 10) -> bool:
         cs = driver.find_elements(
             By.CSS_SELECTOR, "button.fleet-operations-pwa__nextButton__153vo4c"
         )
-        # 2) Button with a <p> 'Next' inside (your DOM shape)
-        x1 = driver.find_elements(By.XPATH, "//button[.//p[normalize-space()='Next']]")
-        # 3) Any role=button with that inner <p> text (fallback)
+        # 2) Robust text locator targeting button (parent or self)
+        x1 = driver.find_elements(By.XPATH, "//button[descendant-or-self::*[normalize-space()='Next']]")
+        # 3) Any role=button with child text (fallback)
         x2 = driver.find_elements(
-            By.XPATH, "//*[@role='button' and .//p[normalize-space()='Next']]"
-        )
-        # 4) Last resort: visible text 'Next' on/inside a button-ish thing
-        x3 = driver.find_elements(
-            By.XPATH,
-            "//*[self::button or @role='button'][.//span or .//p][.//p[normalize-space()='Next'] or normalize-space()='Next']",
+            By.XPATH, "//*[@role='button' and descendant-or-self::*[normalize-space()='Next']]"
         )
         seen = set()
         out = []
@@ -515,7 +515,6 @@ def click_next_in_dialog(driver, timeout: int = 10) -> bool:
                 out.append(el)
             except Exception:
                 continue
-        time.sleep(10)
         return out
 
     def _enabled(el):
@@ -587,11 +586,9 @@ def click_done(driver, timeout: int = 8) -> bool:
         return True
 
     xpaths = [
-        "//div[contains(@class,'bp6-dialog')]//button[normalize-space()='Done']",
-        "//div[contains(@class,'bp6-dialog')]//span[normalize-space()='Done']/ancestor::button[1]",
-        "//div[contains(@class,'bp6-dialog')]//*[@role='button' and normalize-space()='Done']",
-        "//div[contains(@class,'bp6-dialog')]//button[normalize-space()='Finish']",
-        "//div[contains(@class,'bp6-dialog')]//button[normalize-space()='Close']",
+        "//div[contains(@class,'bp6-dialog')]//button[descendant-or-self::*[normalize-space()='Done']]",
+        "//div[contains(@class,'bp6-dialog')]//button[descendant-or-self::*[normalize-space()='Finish']]",
+        "//div[contains(@class,'bp6-dialog')]//button[descendant-or-self::*[normalize-space()='Close']]",
     ]
     for xp in xpaths:
         try:
