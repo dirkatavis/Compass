@@ -20,7 +20,10 @@ class ColorFormatter(logging.Formatter):
 log_level = get_config("logging.level", "INFO").upper()
 log_format_raw = get_config("logging.format", "[%(levelname)s] [%(asctime)s] %(message)s")
 
-# Tokens to identify for suppression (placeholders and literal strings)
+# Tokens to identify for suppression (placeholders and literal strings).
+# Note: We explicitly remove "mc.automation" to handle cases where it might be 
+# hardcoded statically in config.json format strings. This ensures maximum 
+# scannability but assumes "mc.automation" is never desired as literal log text.
 suppress_targets = ["%(name)s", "mc.automation"]
 log_format = log_format_raw
 
