@@ -5,18 +5,30 @@ from utils.ui_helpers import click_element, send_text
 
 
 def complete_mileage_dialog(driver, mva: str) -> dict:
-    """Click Next on the mileage dialog."""
+    """Click Next on the mileage dialog and wait for Opcode screen."""
     log.debug(f"[MILEAGE] {mva} - Completing mileage dialog.")
     try:
-        if click_element(driver, (By.XPATH, "//button[normalize-space()='Next']")):
+        if click_element(driver, (By.XPATH, "//button[descendant-or-self::*[normalize-space()='Next']]")):
             log.info(f"[MILEAGE] {mva} - Next clicked on mileage dialog")
+            
+            # Pillar 2: Wait for state transition to Opcode selection
+            from selenium.webdriver.support.ui import WebDriverWait
+            from selenium.webdriver.support import expected_conditions as EC
+            
+            log.info(f"[MILEAGE] {mva} - Waiting for Opcode selection screen...")
+            # Look for any opcode item or a common label in that dialog
+            opcode_indicator = "//*[contains(text(), 'PM Gas') or contains(@class, 'opCodeItem')]"
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, opcode_indicator))
+            )
+            log.info(f"[MILEAGE] {mva} - Transition to Opcode screen successful.")
             return {"status": "ok"}
         else:
             log.info(f"[MILEAGE][FAIL] {mva} - Next button not found")
             return {"status": "failed", "reason": "next_btn"}
     except Exception as e:
-        log.error(f"[MILEAGE][ERROR] {mva} - exception -> {e}")
-        return {"status": "failed", "reason": "exception"}
+        log.error(f"[MILEAGE][ERROR] {mva} - transition to Opcode failed: {e}")
+        return {"status": "failed", "reason": "transition_to_opcode"}
 
 
 def enter_mileage(driver, mva: str, mileage: int) -> dict:

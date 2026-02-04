@@ -9,9 +9,9 @@ Automate end-to-end Preventive Maintenance (PM) Work Item workflows in Compass M
 
 ## Current State
 - ✅ Login + MVA validation stable
-- ✅ Open PM Work Items detected and completed
-- ✅ Recent PM Work Items skipped (<30 days)
-- 🚧 Creating new PM Work Items under test
+- ✅ Dual-factor Data Integrity Auditor logic implemented (RENTABLE + 4000 gap)
+- ✅ Gate 2 Verification flow documented (Create/Complete vs Verified)
+- 🚧 Implementing Auditor logic in Python flows
 
 ## How We Work (Chat Reminders)
 - Keep responses **concise**
@@ -22,5 +22,5 @@ Automate end-to-end Preventive Maintenance (PM) Work Item workflows in Compass M
 - Prefer reusing helpers over adding new files
 
 ## Next Focus
+- Harden mileage-based navigation and validation
 - Improve reliability of complaint association
-- Harden dialog navigation flows
