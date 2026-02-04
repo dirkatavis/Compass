@@ -26,8 +26,22 @@ def select_opcode(driver, mva: str, code_text: str = "PM Gas") -> dict:
     driver.execute_script("arguments[0].scrollIntoView({block:'center'});", tile)
     time.sleep(1)
     tile.click()
-    log.info(f"[COMPLAINT] {mva} - Opcode '{code_text}' selected")
-    return {"status": "ok"}
+    log.info(f"[COMPLAINT] {mva} - Opcode '{code_text}' selected. Verifying transition to Finalize...")
+    
+    # Pillar 2: State-matched interaction. Wait for Create Work Item button to appear
+    try:
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+        
+        create_btn_xpath = "//button[descendant-or-self::*[normalize-space()='Create Work Item']]"
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, create_btn_xpath))
+        )
+        log.info(f"[OPCODE] {mva} - SUCCESS: Create Work Item button is visible.")
+        return {"status": "ok"}
+    except Exception as e:
+        log.error(f"[OPCODE][ERROR] {mva} - TRANSITION FAIL: Create Work Item button did not appear after selecting opcode: {e}")
+        return {"status": "failed", "reason": "opcode_transition_failure"}
 
 
 def find_opcode_tile(driver, name: str):

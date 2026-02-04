@@ -17,7 +17,7 @@ def finalize_workitem(driver, mva: str) -> dict:
     log.debug(f"[FINALIZE] {mva} - Finalizing work item.")
     try:
         # Step 1: Click Create Work Item
-        if not click_element(driver, (By.XPATH, "//button[normalize-space()='Create Work Item']")):
+        if not click_element(driver, (By.XPATH, "//button[descendant-or-self::*[normalize-space()='Create Work Item']]")):
             log.warning(f"[WORKITEM][WARN] {mva} - 'Create Work Item' button not found")
             return {"status": "failed", "reason": "create_btn", "mva": mva}
 
