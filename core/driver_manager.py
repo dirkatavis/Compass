@@ -2,17 +2,14 @@ import subprocess
 import re
 import os
 import winreg
-import logging
 from selenium import webdriver
 from selenium.common.exceptions import SessionNotCreatedException
 from selenium.webdriver.edge.service import Service
+from utils.logger import log
 
-import os
 # ...
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DRIVER_PATH = os.path.join(PROJECT_ROOT, "msedgedriver.exe")
-# Logger
-log = logging.getLogger("mc.automation")
 
 _driver = None  # singleton instance
 

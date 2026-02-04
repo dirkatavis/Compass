@@ -20,11 +20,16 @@ class ColorFormatter(logging.Formatter):
 log_level = get_config("logging.level", "INFO").upper()
 log_format_raw = get_config("logging.format", "[%(levelname)s] [%(asctime)s] %(message)s")
 
-if "%(name)s" in log_format_raw:
-    # Remove logger-name tokens to avoid noisy output like [mc.automation]
-    log_format = log_format_raw.replace("[%(name)s]", "").replace("%(name)s", "").replace("  ", " ").strip()
-else:
-    log_format = log_format_raw
+# Tokens to identify for suppression (placeholders and literal strings)
+suppress_targets = ["%(name)s", "mc.automation"]
+log_format = log_format_raw
+
+# Remove tokens and literal names to avoid noisy output like [mc.automation]
+for target in suppress_targets:
+    log_format = log_format.replace(f"[{target}]", "").replace(target, "")
+
+# Cleanup whitespace resulting from removals
+log_format = log_format.replace("  ", " ").strip()
 
 # Create one logger instance for the whole project
 log = logging.getLogger("mc.automation")
