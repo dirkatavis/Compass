@@ -9,6 +9,6 @@
       },
       "logging": {
     "level": "DEBUG",
-    "format": "[%(levelname)s] [mc.automation] [%(asctime)s] %(message)s"
+    "format": "[%(levelname)s] [%(asctime)s] %(message)s"
   }
 }
